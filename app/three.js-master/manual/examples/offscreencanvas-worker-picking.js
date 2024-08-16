@@ -17,7 +17,7 @@ function mouse( data ) {
 const handlers = {
 	init,
 	mouse,
-	size,
+	size
 };
 
 self.onmessage = function ( e ) {

@@ -361,7 +361,7 @@ const BokehDepthShader = {
 	uniforms: {
 
 		'mNear': { value: 1.0 },
-		'mFar': { value: 1000.0 },
+		'mFar': { value: 1000.0 }
 
 	},
 

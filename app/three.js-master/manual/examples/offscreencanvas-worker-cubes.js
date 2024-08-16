@@ -9,7 +9,7 @@ function size( data ) {
 
 const handlers = {
 	init,
-	size,
+	size
 };
 
 self.onmessage = function ( e ) {

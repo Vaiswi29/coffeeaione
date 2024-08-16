@@ -52,7 +52,7 @@ const FilmShader = {
 
 			gl_FragColor = vec4( color, base.a );
 
-		}`,
+		}`
 
 };
 

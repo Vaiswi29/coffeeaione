@@ -24,7 +24,7 @@ export default QUnit.module( 'Geometries', () => {
 				new CircleGeometry( parameters.radius ),
 				new CircleGeometry( parameters.radius, parameters.segments ),
 				new CircleGeometry( parameters.radius, parameters.segments, parameters.thetaStart ),
-				new CircleGeometry( parameters.radius, parameters.segments, parameters.thetaStart, parameters.thetaLength ),
+				new CircleGeometry( parameters.radius, parameters.segments, parameters.thetaStart, parameters.thetaLength )
 			];
 
 		} );

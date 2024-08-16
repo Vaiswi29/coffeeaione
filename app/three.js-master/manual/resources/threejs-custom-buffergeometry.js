@@ -14,7 +14,7 @@ import { threejsLessonUtils } from './threejs-lesson-utils.js';
 		const material = new THREE.MeshPhongMaterial( {
 			color: 'hsl(300,50%,50%)',
 			side: THREE.DoubleSide,
-			map: texture,
+			map: texture
 		} );
 		return new THREE.Mesh( geometry, material );
 
@@ -26,7 +26,7 @@ import { threejsLessonUtils } from './threejs-lesson-utils.js';
 
 				return new THREE.Object3D();
 
-			},
+			}
 		},
 		bufferGeometryCylinder: {
 			create() {
@@ -53,7 +53,7 @@ import { threejsLessonUtils } from './threejs-lesson-utils.js';
 					const ndx = s * 2;
 					indices.push(
 						ndx, ndx + 2, ndx + 1,
-						ndx + 1, ndx + 2, ndx + 3,
+						ndx + 1, ndx + 2, ndx + 3
 					);
 
 				}
@@ -73,8 +73,8 @@ import { threejsLessonUtils } from './threejs-lesson-utils.js';
 				geometry.scale( 5, 5, 5 );
 				return makeMesh( geometry );
 
-			},
-		},
+			}
+		}
 	} );
 
 }

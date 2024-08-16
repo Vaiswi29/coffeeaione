@@ -9,7 +9,7 @@ import {
 	LinearFilter,
 	Loader,
 	RGBAFormat,
-	UnsignedByteType,
+	UnsignedByteType
 } from 'three';
 
 export class LUT3dlLoader extends Loader {
@@ -160,7 +160,7 @@ export class LUT3dlLoader extends Loader {
 
 		return {
 			size,
-			texture3D,
+			texture3D
 		};
 
 	}

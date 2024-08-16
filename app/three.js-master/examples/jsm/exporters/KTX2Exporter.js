@@ -11,7 +11,7 @@ import {
 	LinearSRGBColorSpace,
 	SRGBColorSpace,
 	DataTexture,
-	REVISION,
+	REVISION
 } from 'three';
 
 import {
@@ -40,7 +40,7 @@ import {
 	VK_FORMAT_R8G8_SRGB,
 	VK_FORMAT_R8G8_UNORM,
 	VK_FORMAT_R8G8B8A8_SRGB,
-	VK_FORMAT_R8G8B8A8_UNORM,
+	VK_FORMAT_R8G8B8A8_UNORM
 } from '../libs/ktx-parse.module.js';
 
 const VK_FORMAT_MAP = {
@@ -48,50 +48,50 @@ const VK_FORMAT_MAP = {
 	[ RGBAFormat ]: {
 		[ FloatType ]: {
 			[ NoColorSpace ]: VK_FORMAT_R32G32B32A32_SFLOAT,
-			[ LinearSRGBColorSpace ]: VK_FORMAT_R32G32B32A32_SFLOAT,
+			[ LinearSRGBColorSpace ]: VK_FORMAT_R32G32B32A32_SFLOAT
 		},
 		[ HalfFloatType ]: {
 			[ NoColorSpace ]: VK_FORMAT_R16G16B16A16_SFLOAT,
-			[ LinearSRGBColorSpace ]: VK_FORMAT_R16G16B16A16_SFLOAT,
+			[ LinearSRGBColorSpace ]: VK_FORMAT_R16G16B16A16_SFLOAT
 		},
 		[ UnsignedByteType ]: {
 			[ NoColorSpace ]: VK_FORMAT_R8G8B8A8_UNORM,
 			[ LinearSRGBColorSpace ]: VK_FORMAT_R8G8B8A8_UNORM,
-			[ SRGBColorSpace ]: VK_FORMAT_R8G8B8A8_SRGB,
-		},
+			[ SRGBColorSpace ]: VK_FORMAT_R8G8B8A8_SRGB
+		}
 	},
 
 	[ RGFormat ]: {
 		[ FloatType ]: {
 			[ NoColorSpace ]: VK_FORMAT_R32G32_SFLOAT,
-			[ LinearSRGBColorSpace ]: VK_FORMAT_R32G32_SFLOAT,
+			[ LinearSRGBColorSpace ]: VK_FORMAT_R32G32_SFLOAT
 		},
 		[ HalfFloatType ]: {
 			[ NoColorSpace ]: VK_FORMAT_R16G16_SFLOAT,
-			[ LinearSRGBColorSpace ]: VK_FORMAT_R16G16_SFLOAT,
+			[ LinearSRGBColorSpace ]: VK_FORMAT_R16G16_SFLOAT
 		},
 		[ UnsignedByteType ]: {
 			[ NoColorSpace ]: VK_FORMAT_R8G8_UNORM,
 			[ LinearSRGBColorSpace ]: VK_FORMAT_R8G8_UNORM,
-			[ SRGBColorSpace ]: VK_FORMAT_R8G8_SRGB,
-		},
+			[ SRGBColorSpace ]: VK_FORMAT_R8G8_SRGB
+		}
 	},
 
 	[ RedFormat ]: {
 		[ FloatType ]: {
 			[ NoColorSpace ]: VK_FORMAT_R32_SFLOAT,
-			[ LinearSRGBColorSpace ]: VK_FORMAT_R32_SFLOAT,
+			[ LinearSRGBColorSpace ]: VK_FORMAT_R32_SFLOAT
 		},
 		[ HalfFloatType ]: {
 			[ NoColorSpace ]: VK_FORMAT_R16_SFLOAT,
-			[ LinearSRGBColorSpace ]: VK_FORMAT_R16_SFLOAT,
+			[ LinearSRGBColorSpace ]: VK_FORMAT_R16_SFLOAT
 		},
 		[ UnsignedByteType ]: {
 			[ NoColorSpace ]: VK_FORMAT_R8_UNORM,
 			[ LinearSRGBColorSpace ]: VK_FORMAT_R8_UNORM,
-			[ SRGBColorSpace ]: VK_FORMAT_R8_SRGB,
-		},
-	},
+			[ SRGBColorSpace ]: VK_FORMAT_R8_SRGB
+		}
+	}
 
 };
 
@@ -100,7 +100,7 @@ const KHR_DF_CHANNEL_MAP = {
 	0: KHR_DF_CHANNEL_RGBSDA_RED,
 	1: KHR_DF_CHANNEL_RGBSDA_GREEN,
 	2: KHR_DF_CHANNEL_RGBSDA_BLUE,
-	3: KHR_DF_CHANNEL_RGBSDA_ALPHA,
+	3: KHR_DF_CHANNEL_RGBSDA_ALPHA
 
 };
 
@@ -180,7 +180,7 @@ export class KTX2Exporter {
 
 		basicDesc.bytesPlane = [
 
-			container.typeSize * channelCount, 0, 0, 0, 0, 0, 0, 0,
+			container.typeSize * channelCount, 0, 0, 0, 0, 0, 0, 0
 
 		];
 
@@ -208,7 +208,7 @@ export class KTX2Exporter {
 				bitLength: array.BYTES_PER_ELEMENT * 8 - 1,
 				samplePosition: [ 0, 0, 0, 0 ],
 				sampleLower: texture.type === UnsignedByteType ? 0 : - 1,
-				sampleUpper: texture.type === UnsignedByteType ? 255 : 1,
+				sampleUpper: texture.type === UnsignedByteType ? 255 : 1
 
 			} );
 
@@ -219,7 +219,7 @@ export class KTX2Exporter {
 		container.levels = [ {
 
 			levelData: new Uint8Array( array.buffer, array.byteOffset, array.byteLength ),
-			uncompressedByteLength: array.byteLength,
+			uncompressedByteLength: array.byteLength
 
 		} ];
 
@@ -269,23 +269,23 @@ function getChannelCount( texture ) {
 
 	switch ( texture.format ) {
 
-		case RGBAFormat:
+	case RGBAFormat:
 
-			return 4;
+		return 4;
 
-		case RGFormat:
-		case RGIntegerFormat:
+	case RGFormat:
+	case RGIntegerFormat:
 
-			return 2;
+		return 2;
 
-		case RedFormat:
-		case RedIntegerFormat:
+	case RedFormat:
+	case RedIntegerFormat:
 
-			return 1;
+		return 1;
 
-		default:
+	default:
 
-			throw new Error( ERROR_FORMAT );
+		throw new Error( ERROR_FORMAT );
 
 	}
 

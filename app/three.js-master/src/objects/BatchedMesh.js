@@ -45,7 +45,7 @@ class MultiDrawRenderList {
 				start: - 1,
 				count: - 1,
 				z: - 1,
-				index: - 1,
+				index: - 1
 
 			} );
 
@@ -356,7 +356,7 @@ class BatchedMesh extends Mesh {
 
 			visible: true,
 			active: true,
-			geometryIndex: geometryId,
+			geometryIndex: geometryId
 
 		} );
 
@@ -397,7 +397,7 @@ class BatchedMesh extends Mesh {
 			vertexStart: - 1,
 			vertexCount: - 1,
 			indexStart: - 1,
-			indexCount: - 1,
+			indexCount: - 1
 		};
 
 		let lastRange = null;

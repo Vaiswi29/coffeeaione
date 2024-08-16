@@ -2167,20 +2167,20 @@ class MMDToonMaterial extends ShaderMaterial {
 
 				switch ( value ) {
 
-					case MultiplyOperation:
-						this.defines.MATCAP_BLENDING_MULTIPLY = true;
-						delete this.defines.MATCAP_BLENDING_ADD;
-						break;
+				case MultiplyOperation:
+					this.defines.MATCAP_BLENDING_MULTIPLY = true;
+					delete this.defines.MATCAP_BLENDING_ADD;
+					break;
 
-					default:
-					case AddOperation:
-						this.defines.MATCAP_BLENDING_ADD = true;
-						delete this.defines.MATCAP_BLENDING_MULTIPLY;
-						break;
+				default:
+				case AddOperation:
+					this.defines.MATCAP_BLENDING_ADD = true;
+					delete this.defines.MATCAP_BLENDING_MULTIPLY;
+					break;
 
 				}
 
-			},
+			}
 
 		} );
 
@@ -2220,7 +2220,7 @@ class MMDToonMaterial extends ShaderMaterial {
 			'alphaMap',
 
 			'reflectivity',
-			'refractionRatio',
+			'refractionRatio'
 		];
 		for ( const propertyName of exposePropertyNames ) {
 
@@ -2236,7 +2236,7 @@ class MMDToonMaterial extends ShaderMaterial {
 
 					this.uniforms[ propertyName ].value = value;
 
-				},
+				}
 
 			} );
 
@@ -2257,7 +2257,7 @@ class MMDToonMaterial extends ShaderMaterial {
 				this._shininess = value;
 				this.uniforms.shininess.value = Math.max( this._shininess, 1e-4 ); // To prevent pow( 0.0, 0.0 )
 
-			},
+			}
 
 		} );
 

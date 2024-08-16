@@ -709,21 +709,21 @@ class UINumber extends UIElement {
 
 			switch ( event.code ) {
 
-				case 'Enter':
-					scope.dom.blur();
-					break;
+			case 'Enter':
+				scope.dom.blur();
+				break;
 
-				case 'ArrowUp':
-					event.preventDefault();
-					scope.setValue( scope.getValue() + scope.nudge );
-					scope.dom.dispatchEvent( changeEvent );
-					break;
+			case 'ArrowUp':
+				event.preventDefault();
+				scope.setValue( scope.getValue() + scope.nudge );
+				scope.dom.dispatchEvent( changeEvent );
+				break;
 
-				case 'ArrowDown':
-					event.preventDefault();
-					scope.setValue( scope.getValue() - scope.nudge );
-					scope.dom.dispatchEvent( changeEvent );
-					break;
+			case 'ArrowDown':
+				event.preventDefault();
+				scope.setValue( scope.getValue() - scope.nudge );
+				scope.dom.dispatchEvent( changeEvent );
+				break;
 
 			}
 
@@ -925,21 +925,21 @@ class UIInteger extends UIElement {
 
 			switch ( event.code ) {
 
-				case 'Enter':
-					scope.dom.blur();
-					break;
+			case 'Enter':
+				scope.dom.blur();
+				break;
 
-				case 'ArrowUp':
-					event.preventDefault();
-					scope.setValue( scope.getValue() + scope.nudge );
-					scope.dom.dispatchEvent( changeEvent );
-					break;
+			case 'ArrowUp':
+				event.preventDefault();
+				scope.setValue( scope.getValue() + scope.nudge );
+				scope.dom.dispatchEvent( changeEvent );
+				break;
 
-				case 'ArrowDown':
-					event.preventDefault();
-					scope.setValue( scope.getValue() - scope.nudge );
-					scope.dom.dispatchEvent( changeEvent );
-					break;
+			case 'ArrowDown':
+				event.preventDefault();
+				scope.setValue( scope.getValue() - scope.nudge );
+				scope.dom.dispatchEvent( changeEvent );
+				break;
 
 			}
 

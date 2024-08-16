@@ -99,70 +99,70 @@ function SidebarSettingsShortcuts( editor ) {
 
 		switch ( event.key.toLowerCase() ) {
 
-			case 'backspace':
+		case 'backspace':
 
-				event.preventDefault(); // prevent browser back
+			event.preventDefault(); // prevent browser back
 
-				// fall-through
+			// fall-through
 
-			case 'delete':
+		case 'delete':
 
-				const object = editor.selected;
+			const object = editor.selected;
 
-				if ( object === null ) return;
+			if ( object === null ) return;
 
-				const parent = object.parent;
-				if ( parent !== null ) editor.execute( new RemoveObjectCommand( editor, object ) );
+			const parent = object.parent;
+			if ( parent !== null ) editor.execute( new RemoveObjectCommand( editor, object ) );
 
-				break;
+			break;
 
-			case config.getKey( 'settings/shortcuts/translate' ):
+		case config.getKey( 'settings/shortcuts/translate' ):
 
-				signals.transformModeChanged.dispatch( 'translate' );
+			signals.transformModeChanged.dispatch( 'translate' );
 
-				break;
+			break;
 
-			case config.getKey( 'settings/shortcuts/rotate' ):
+		case config.getKey( 'settings/shortcuts/rotate' ):
 
-				signals.transformModeChanged.dispatch( 'rotate' );
+			signals.transformModeChanged.dispatch( 'rotate' );
 
-				break;
+			break;
 
-			case config.getKey( 'settings/shortcuts/scale' ):
+		case config.getKey( 'settings/shortcuts/scale' ):
 
-				signals.transformModeChanged.dispatch( 'scale' );
+			signals.transformModeChanged.dispatch( 'scale' );
 
-				break;
+			break;
 
-			case config.getKey( 'settings/shortcuts/undo' ):
+		case config.getKey( 'settings/shortcuts/undo' ):
 
-				if ( IS_MAC ? event.metaKey : event.ctrlKey ) {
+			if ( IS_MAC ? event.metaKey : event.ctrlKey ) {
 
-					event.preventDefault(); // Prevent browser specific hotkeys
+				event.preventDefault(); // Prevent browser specific hotkeys
 
-					if ( event.shiftKey ) {
+				if ( event.shiftKey ) {
 
-						editor.redo();
+					editor.redo();
 
-					} else {
+				} else {
 
-						editor.undo();
-
-					}
+					editor.undo();
 
 				}
 
-				break;
+			}
 
-			case config.getKey( 'settings/shortcuts/focus' ):
+			break;
 
-				if ( editor.selected !== null ) {
+		case config.getKey( 'settings/shortcuts/focus' ):
 
-					editor.focus( editor.selected );
+			if ( editor.selected !== null ) {
 
-				}
+				editor.focus( editor.selected );
 
-				break;
+			}
+
+			break;
 
 		}
 

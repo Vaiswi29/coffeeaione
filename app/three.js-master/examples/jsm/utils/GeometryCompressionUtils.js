@@ -635,5 +635,5 @@ function quantizedEncodeUV( array, bytes ) {
 export {
 	compressNormals,
 	compressPositions,
-	compressUvs,
+	compressUvs
 };

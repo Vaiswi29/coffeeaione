@@ -8,10 +8,10 @@ import { threejsLessonUtils } from './threejs-lesson-utils.js';
 	const isDarkMode = darkMatcher.matches;
 
 	const darkColors = {
-		wire: '#DDD',
+		wire: '#DDD'
 	};
 	const lightColors = {
-		wire: '#000',
+		wire: '#000'
 	};
 	const colors = isDarkMode ? darkColors : lightColors;
 
@@ -43,7 +43,7 @@ import { threejsLessonUtils } from './threejs-lesson-utils.js';
 				const mergedGeometry = BufferGeometryUtils.mergeGeometries( geometries, false );
 				const material = new THREE.MeshBasicMaterial( {
 					color: colors.wire,
-					wireframe: true,
+					wireframe: true
 				} );
 				const mesh = new THREE.Mesh( mergedGeometry, material );
 				mesh.position.set(
@@ -55,7 +55,7 @@ import { threejsLessonUtils } from './threejs-lesson-utils.js';
 				base.scale.setScalar( 3.5 );
 				return base;
 
-			},
+			}
 		},
 		culledCubes: {
 			create() {
@@ -63,14 +63,14 @@ import { threejsLessonUtils } from './threejs-lesson-utils.js';
 				const geometry = new THREE.BoxGeometry( 3, 2, 2, 3, 2, 2 );
 				const material = new THREE.MeshBasicMaterial( {
 					color: colors.wire,
-					wireframe: true,
+					wireframe: true
 				} );
 				const mesh = new THREE.Mesh( geometry, material );
 				mesh.scale.setScalar( 3.5 );
 				return mesh;
 
-			},
-		},
+			}
+		}
 	} );
 
 }

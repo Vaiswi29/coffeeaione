@@ -171,7 +171,7 @@
 	const destBufferBitFieldToString = makeBitFieldToStringFunc( [
 		'COLOR_BUFFER_BIT',
 		'DEPTH_BUFFER_BIT',
-		'STENCIL_BUFFER_BIT',
+		'STENCIL_BUFFER_BIT'
 	] );
 
 	/**
@@ -226,20 +226,20 @@
 		'texImage2D': {
 			9: { 0: true, 2: true, 6: true, 7: true },
 			6: { 0: true, 2: true, 3: true, 4: true },
-			10: { 0: true, 2: true, 6: true, 7: true }, // WebGL2
+			10: { 0: true, 2: true, 6: true, 7: true } // WebGL2
 		},
 		'texImage3D': {
 			10: { 0: true, 2: true, 7: true, 8: true }, // WebGL2
-			11: { 0: true, 2: true, 7: true, 8: true }, // WebGL2
+			11: { 0: true, 2: true, 7: true, 8: true } // WebGL2
 		},
 		'texSubImage2D': {
 			9: { 0: true, 6: true, 7: true },
 			7: { 0: true, 4: true, 5: true },
-			10: { 0: true, 6: true, 7: true }, // WebGL2
+			10: { 0: true, 6: true, 7: true } // WebGL2
 		},
 		'texSubImage3D': {
 			11: { 0: true, 8: true, 9: true }, // WebGL2
-			12: { 0: true, 8: true, 9: true }, // WebGL2
+			12: { 0: true, 8: true, 9: true } // WebGL2
 		},
 		'texStorage2D': { 5: { 0: true, 2: true } }, // WebGL2
 		'texStorage3D': { 6: { 0: true, 2: true } }, // WebGL2
@@ -249,19 +249,19 @@
 		'generateMipmap': { 1: { 0: true } },
 		'compressedTexImage2D': {
 			7: { 0: true, 2: true },
-			8: { 0: true, 2: true }, // WebGL2
+			8: { 0: true, 2: true } // WebGL2
 		},
 		'compressedTexSubImage2D': {
 			8: { 0: true, 6: true },
-			9: { 0: true, 6: true }, // WebGL2
+			9: { 0: true, 6: true } // WebGL2
 		},
 		'compressedTexImage3D': {
-			8: { 0: true, 2: true, }, // WebGL2
-			9: { 0: true, 2: true, }, // WebGL2
+			8: { 0: true, 2: true }, // WebGL2
+			9: { 0: true, 2: true } // WebGL2
 		},
 		'compressedTexSubImage3D': {
-			9: { 0: true, 8: true, }, // WebGL2
-			10: { 0: true, 8: true, }, // WebGL2
+			9: { 0: true, 8: true }, // WebGL2
+			10: { 0: true, 8: true } // WebGL2
 		},
 
 		// Buffer objects
@@ -270,21 +270,21 @@
 		'bufferData': {
 			3: { 0: true, 2: true },
 			4: { 0: true, 2: true }, // WebGL2
-			5: { 0: true, 2: true }, // WebGL2
+			5: { 0: true, 2: true } // WebGL2
 		},
 		'bufferSubData': {
 			3: { 0: true },
 			4: { 0: true }, // WebGL2
-			5: { 0: true }, // WebGL2
+			5: { 0: true } // WebGL2
 		},
 		'copyBufferSubData': {
-			5: { 0: true }, // WeBGL2
+			5: { 0: true } // WeBGL2
 		},
 		'getBufferParameter': { 2: { 0: true, 1: true } },
 		'getBufferSubData': {
-			3: { 0: true, }, // WebGL2
-			4: { 0: true, }, // WebGL2
-			5: { 0: true, }, // WebGL2
+			3: { 0: true }, // WebGL2
+			4: { 0: true }, // WebGL2
+			5: { 0: true } // WebGL2
 		},
 
 		// Renderbuffers and framebuffers
@@ -292,7 +292,7 @@
 		'pixelStorei': { 2: { 0: true, 1: true } },
 		'readPixels': {
 			7: { 4: true, 5: true },
-			8: { 4: true, 5: true }, // WebGL2
+			8: { 4: true, 5: true } // WebGL2
 		},
 		'bindRenderbuffer': { 2: { 0: true } },
 		'bindFramebuffer': { 2: { 0: true } },
@@ -304,8 +304,8 @@
 		'getFramebufferAttachmentParameter': { 3: { 0: true, 1: true, 2: true } },
 		'getInternalformatParameter': { 3: { 0: true, 1: true, 2: true } }, // WebGL2
 		'getRenderbufferParameter': { 2: { 0: true, 1: true } },
-		'invalidateFramebuffer': { 2: { 0: true, 1: enumArrayToString, } }, // WebGL2
-		'invalidateSubFramebuffer': { 6: { 0: true, 1: enumArrayToString, } }, // WebGL2
+		'invalidateFramebuffer': { 2: { 0: true, 1: enumArrayToString } }, // WebGL2
+		'invalidateSubFramebuffer': { 6: { 0: true, 1: enumArrayToString } }, // WebGL2
 		'readBuffer': { 1: { 0: true } }, // WebGL2
 		'renderbufferStorage': { 4: { 0: true, 1: true } },
 		'renderbufferStorageMultisample': { 5: { 0: true, 2: true } }, // WebGL2
@@ -340,19 +340,19 @@
 
 		// Multiple Render Targets
 
-		'drawBuffersWebGL': { 1: { 0: enumArrayToString, } }, // WEBGL_draw_bufers
-		'drawBuffers': { 1: { 0: enumArrayToString, } }, // WebGL2
+		'drawBuffersWebGL': { 1: { 0: enumArrayToString } }, // WEBGL_draw_bufers
+		'drawBuffers': { 1: { 0: enumArrayToString } }, // WebGL2
 		'clearBufferfv': {
 			4: { 0: true }, // WebGL2
-			5: { 0: true }, // WebGL2
+			5: { 0: true } // WebGL2
 		},
 		'clearBufferiv': {
 			4: { 0: true }, // WebGL2
-			5: { 0: true }, // WebGL2
+			5: { 0: true } // WebGL2
 		},
 		'clearBufferuiv': {
 			4: { 0: true }, // WebGL2
-			5: { 0: true }, // WebGL2
+			5: { 0: true } // WebGL2
 		},
 		'clearBufferfi': { 4: { 0: true } }, // WebGL2
 
@@ -385,7 +385,7 @@
 		'bindBufferRange': { 5: { 0: true } }, // WebGL2
 		'getIndexedParameter': { 2: { 0: true } }, // WebGL2
 		'getActiveUniforms': { 3: { 2: true } }, // WebGL2
-		'getActiveUniformBlockParameter': { 3: { 2: true } }, // WebGL2
+		'getActiveUniformBlockParameter': { 3: { 2: true } } // WebGL2
 	};
 
 	/**
@@ -520,7 +520,7 @@
 		const onFunc = options.funcFunc;
 		const sharedState = options.sharedState || {
 			numDrawCallsRemaining: options.maxDrawCalls || - 1,
-			wrappers: {},
+			wrappers: {}
 		};
 		options.sharedState = sharedState;
 
@@ -687,7 +687,7 @@
 		makeDebugContext,
 		glFunctionArgsToString,
 		glFunctionArgToString,
-		glEnumToString,
+		glEnumToString
 	};
 
 } ) );

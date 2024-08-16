@@ -3,7 +3,7 @@ import {
 	ShaderMaterial,
 	UniformsLib,
 	UniformsUtils,
-	Vector2,
+	Vector2
 } from 'three';
 
 UniformsLib.line = {

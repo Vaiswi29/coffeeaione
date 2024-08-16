@@ -80,7 +80,7 @@
 	}
 
 	return {
-		resizeCanvasToDisplaySize: resizeCanvasToDisplaySize,
+		resizeCanvasToDisplaySize: resizeCanvasToDisplaySize
 	};
 
 } ) );

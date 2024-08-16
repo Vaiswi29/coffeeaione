@@ -286,42 +286,42 @@ class FBXTreeParser {
 
 		switch ( extension ) {
 
-			case 'bmp':
+		case 'bmp':
 
-				type = 'image/bmp';
-				break;
+			type = 'image/bmp';
+			break;
 
-			case 'jpg':
-			case 'jpeg':
+		case 'jpg':
+		case 'jpeg':
 
-				type = 'image/jpeg';
-				break;
+			type = 'image/jpeg';
+			break;
 
-			case 'png':
+		case 'png':
 
-				type = 'image/png';
-				break;
+			type = 'image/png';
+			break;
 
-			case 'tif':
+		case 'tif':
 
-				type = 'image/tiff';
-				break;
+			type = 'image/tiff';
+			break;
 
-			case 'tga':
+		case 'tga':
 
-				if ( this.manager.getHandler( '.tga' ) === null ) {
+			if ( this.manager.getHandler( '.tga' ) === null ) {
 
-					console.warn( 'FBXLoader: TGA loader not found, skipping ', fileName );
+				console.warn( 'FBXLoader: TGA loader not found, skipping ', fileName );
 
-				}
+			}
 
-				type = 'image/tga';
-				break;
+			type = 'image/tga';
+			break;
 
-			default:
+		default:
 
-				console.warn( 'FBXLoader: Image type "' + extension + '" is not supported.' );
-				return;
+			console.warn( 'FBXLoader: Image type "' + extension + '" is not supported.' );
+			return;
 
 		}
 
@@ -504,16 +504,16 @@ class FBXTreeParser {
 
 		switch ( type.toLowerCase() ) {
 
-			case 'phong':
-				material = new MeshPhongMaterial();
-				break;
-			case 'lambert':
-				material = new MeshLambertMaterial();
-				break;
-			default:
-				console.warn( 'THREE.FBXLoader: unknown material type "%s". Defaulting to MeshPhongMaterial.', type );
-				material = new MeshPhongMaterial();
-				break;
+		case 'phong':
+			material = new MeshPhongMaterial();
+			break;
+		case 'lambert':
+			material = new MeshLambertMaterial();
+			break;
+		default:
+			console.warn( 'THREE.FBXLoader: unknown material type "%s". Defaulting to MeshPhongMaterial.', type );
+			material = new MeshPhongMaterial();
+			break;
 
 		}
 
@@ -612,78 +612,78 @@ class FBXTreeParser {
 
 			switch ( type ) {
 
-				case 'Bump':
-					parameters.bumpMap = scope.getTexture( textureMap, child.ID );
-					break;
+			case 'Bump':
+				parameters.bumpMap = scope.getTexture( textureMap, child.ID );
+				break;
 
-				case 'Maya|TEX_ao_map':
-					parameters.aoMap = scope.getTexture( textureMap, child.ID );
-					break;
+			case 'Maya|TEX_ao_map':
+				parameters.aoMap = scope.getTexture( textureMap, child.ID );
+				break;
 
-				case 'DiffuseColor':
-				case 'Maya|TEX_color_map':
-					parameters.map = scope.getTexture( textureMap, child.ID );
-					if ( parameters.map !== undefined ) {
+			case 'DiffuseColor':
+			case 'Maya|TEX_color_map':
+				parameters.map = scope.getTexture( textureMap, child.ID );
+				if ( parameters.map !== undefined ) {
 
-						parameters.map.colorSpace = SRGBColorSpace;
+					parameters.map.colorSpace = SRGBColorSpace;
 
-					}
+				}
 
-					break;
+				break;
 
-				case 'DisplacementColor':
-					parameters.displacementMap = scope.getTexture( textureMap, child.ID );
-					break;
+			case 'DisplacementColor':
+				parameters.displacementMap = scope.getTexture( textureMap, child.ID );
+				break;
 
-				case 'EmissiveColor':
-					parameters.emissiveMap = scope.getTexture( textureMap, child.ID );
-					if ( parameters.emissiveMap !== undefined ) {
+			case 'EmissiveColor':
+				parameters.emissiveMap = scope.getTexture( textureMap, child.ID );
+				if ( parameters.emissiveMap !== undefined ) {
 
-						parameters.emissiveMap.colorSpace = SRGBColorSpace;
+					parameters.emissiveMap.colorSpace = SRGBColorSpace;
 
-					}
+				}
 
-					break;
+				break;
 
-				case 'NormalMap':
-				case 'Maya|TEX_normal_map':
-					parameters.normalMap = scope.getTexture( textureMap, child.ID );
-					break;
+			case 'NormalMap':
+			case 'Maya|TEX_normal_map':
+				parameters.normalMap = scope.getTexture( textureMap, child.ID );
+				break;
 
-				case 'ReflectionColor':
-					parameters.envMap = scope.getTexture( textureMap, child.ID );
-					if ( parameters.envMap !== undefined ) {
+			case 'ReflectionColor':
+				parameters.envMap = scope.getTexture( textureMap, child.ID );
+				if ( parameters.envMap !== undefined ) {
 
-						parameters.envMap.mapping = EquirectangularReflectionMapping;
-						parameters.envMap.colorSpace = SRGBColorSpace;
+					parameters.envMap.mapping = EquirectangularReflectionMapping;
+					parameters.envMap.colorSpace = SRGBColorSpace;
 
-					}
+				}
 
-					break;
+				break;
 
-				case 'SpecularColor':
-					parameters.specularMap = scope.getTexture( textureMap, child.ID );
-					if ( parameters.specularMap !== undefined ) {
+			case 'SpecularColor':
+				parameters.specularMap = scope.getTexture( textureMap, child.ID );
+				if ( parameters.specularMap !== undefined ) {
 
-						parameters.specularMap.colorSpace = SRGBColorSpace;
+					parameters.specularMap.colorSpace = SRGBColorSpace;
 
-					}
+				}
 
-					break;
+				break;
 
-				case 'TransparentColor':
-				case 'TransparencyFactor':
-					parameters.alphaMap = scope.getTexture( textureMap, child.ID );
-					parameters.transparent = true;
-					break;
+			case 'TransparentColor':
+			case 'TransparencyFactor':
+				parameters.alphaMap = scope.getTexture( textureMap, child.ID );
+				parameters.transparent = true;
+				break;
 
-				case 'AmbientColor':
-				case 'ShininessExponent': // AKA glossiness map
-				case 'SpecularFactor': // AKA specularLevel
-				case 'VectorDisplacementColor': // NOTE: Seems to be a copy of DisplacementColor
-				default:
-					console.warn( 'THREE.FBXLoader: %s map is not supported in three.js, skipping texture.', type );
-					break;
+			case 'AmbientColor':
+			case 'ShininessExponent': // AKA glossiness map
+			case 'SpecularFactor': // AKA specularLevel
+			case 'VectorDisplacementColor': // NOTE: Seems to be a copy of DisplacementColor
+			default:
+				console.warn( 'THREE.FBXLoader: %s map is not supported in three.js, skipping texture.', type );
+				break;
 
 			}
 
@@ -739,7 +739,7 @@ class FBXTreeParser {
 				} else if ( deformerNode.attrType === 'BlendShape' ) {
 
 					const morphTarget = {
-						id: nodeID,
+						id: nodeID
 					};
 
 					morphTarget.rawTargets = this.parseMorphTargets( relationships, DeformerNodes );
@@ -758,7 +758,7 @@ class FBXTreeParser {
 		return {
 
 			skeletons: skeletons,
-			morphTargets: morphTargets,
+			morphTargets: morphTargets
 
 		};
 
@@ -782,7 +782,7 @@ class FBXTreeParser {
 				ID: child.ID,
 				indices: [],
 				weights: [],
-				transformLink: new Matrix4().fromArray( boneNode.TransformLink.a ),
+				transformLink: new Matrix4().fromArray( boneNode.TransformLink.a )
 				// transform: new Matrix4().fromArray( boneNode.Transform.a ),
 				// linkMode: boneNode.Mode,
 
@@ -933,26 +933,26 @@ class FBXTreeParser {
 
 				switch ( node.attrType ) {
 
-					case 'Camera':
-						model = this.createCamera( relationships );
-						break;
-					case 'Light':
-						model = this.createLight( relationships );
-						break;
-					case 'Mesh':
-						model = this.createMesh( relationships, geometryMap, materialMap );
-						break;
-					case 'NurbsCurve':
-						model = this.createCurve( relationships, geometryMap );
-						break;
-					case 'LimbNode':
-					case 'Root':
-						model = new Bone();
-						break;
-					case 'Null':
-					default:
-						model = new Group();
-						break;
+				case 'Camera':
+					model = this.createCamera( relationships );
+					break;
+				case 'Light':
+					model = this.createLight( relationships );
+					break;
+				case 'Mesh':
+					model = this.createMesh( relationships, geometryMap, materialMap );
+					break;
+				case 'NurbsCurve':
+					model = this.createCurve( relationships, geometryMap );
+					break;
+				case 'LimbNode':
+				case 'Root':
+					model = new Bone();
+					break;
+				case 'Null':
+				default:
+					model = new Group();
+					break;
 
 				}
 
@@ -1088,19 +1088,19 @@ class FBXTreeParser {
 
 			switch ( type ) {
 
-				case 0: // Perspective
-					model = new PerspectiveCamera( fov, aspect, nearClippingPlane, farClippingPlane );
-					if ( focalLength !== null ) model.setFocalLength( focalLength );
-					break;
+			case 0: // Perspective
+				model = new PerspectiveCamera( fov, aspect, nearClippingPlane, farClippingPlane );
+				if ( focalLength !== null ) model.setFocalLength( focalLength );
+				break;
 
-				case 1: // Orthographic
-					model = new OrthographicCamera( - width / 2, width / 2, height / 2, - height / 2, nearClippingPlane, farClippingPlane );
-					break;
+			case 1: // Orthographic
+				model = new OrthographicCamera( - width / 2, width / 2, height / 2, - height / 2, nearClippingPlane, farClippingPlane );
+				break;
 
-				default:
-					console.warn( 'THREE.FBXLoader: Unknown camera type ' + type + '.' );
-					model = new Object3D();
-					break;
+			default:
+				console.warn( 'THREE.FBXLoader: Unknown camera type ' + type + '.' );
+				model = new Object3D();
+				break;
 
 			}
 
@@ -1184,41 +1184,41 @@ class FBXTreeParser {
 
 			switch ( type ) {
 
-				case 0: // Point
-					model = new PointLight( color, intensity, distance, decay );
-					break;
+			case 0: // Point
+				model = new PointLight( color, intensity, distance, decay );
+				break;
 
-				case 1: // Directional
-					model = new DirectionalLight( color, intensity );
-					break;
+			case 1: // Directional
+				model = new DirectionalLight( color, intensity );
+				break;
 
-				case 2: // Spot
-					let angle = Math.PI / 3;
+			case 2: // Spot
+				let angle = Math.PI / 3;
 
-					if ( lightAttribute.InnerAngle !== undefined ) {
+				if ( lightAttribute.InnerAngle !== undefined ) {
 
-						angle = MathUtils.degToRad( lightAttribute.InnerAngle.value );
+					angle = MathUtils.degToRad( lightAttribute.InnerAngle.value );
 
-					}
+				}
 
-					let penumbra = 0;
-					if ( lightAttribute.OuterAngle !== undefined ) {
+				let penumbra = 0;
+				if ( lightAttribute.OuterAngle !== undefined ) {
 
-						// TODO: this is not correct - FBX calculates outer and inner angle in degrees
-						// with OuterAngle > InnerAngle && OuterAngle <= Math.PI
-						// while three.js uses a penumbra between (0, 1) to attenuate the inner angle
-						penumbra = MathUtils.degToRad( lightAttribute.OuterAngle.value );
-						penumbra = Math.max( penumbra, 1 );
+					// TODO: this is not correct - FBX calculates outer and inner angle in degrees
+					// with OuterAngle > InnerAngle && OuterAngle <= Math.PI
+					// while three.js uses a penumbra between (0, 1) to attenuate the inner angle
+					penumbra = MathUtils.degToRad( lightAttribute.OuterAngle.value );
+					penumbra = Math.max( penumbra, 1 );
 
-					}
+				}
 
-					model = new SpotLight( color, intensity, distance, angle, penumbra, decay );
-					break;
+				model = new SpotLight( color, intensity, distance, angle, penumbra, decay );
+				break;
 
-				default:
-					console.warn( 'THREE.FBXLoader: Unknown light type ' + lightAttribute.LightType.value + ', defaulting to a PointLight.' );
-					model = new PointLight( color, intensity );
-					break;
+			default:
+				console.warn( 'THREE.FBXLoader: Unknown light type ' + lightAttribute.LightType.value + ', defaulting to a PointLight.' );
+				model = new PointLight( color, intensity );
+				break;
 
 			}
 
@@ -1542,13 +1542,13 @@ class GeometryParser {
 
 		switch ( geoNode.attrType ) {
 
-			case 'Mesh':
-				return this.parseMeshGeometry( relationships, geoNode, deformers );
-				break;
+		case 'Mesh':
+			return this.parseMeshGeometry( relationships, geoNode, deformers );
+			break;
 
-			case 'NurbsCurve':
-				return this.parseNurbsGeometry( geoNode );
-				break;
+		case 'NurbsCurve':
+			return this.parseNurbsGeometry( geoNode );
+			break;
 
 		}
 
@@ -1766,7 +1766,7 @@ class GeometryParser {
 					geoInfo.weightTable[ index ].push( {
 
 						id: i,
-						weight: rawBone.weights[ j ],
+						weight: rawBone.weights[ j ]
 
 					} );
 
@@ -1789,7 +1789,7 @@ class GeometryParser {
 			uvs: [],
 			materialIndex: [],
 			vertexWeights: [],
-			weightsIndices: [],
+			weightsIndices: []
 		};
 
 		let polygonIndex = 0;
@@ -2490,7 +2490,7 @@ class AnimationParser {
 
 					id: rawCurveNode.id,
 					attr: rawCurveNode.attrName,
-					curves: {},
+					curves: {}
 
 				};
 
@@ -2524,7 +2524,7 @@ class AnimationParser {
 
 				id: rawCurves[ nodeID ].id,
 				times: rawCurves[ nodeID ].KeyTime.a.map( convertFBXTimeToSeconds ),
-				values: rawCurves[ nodeID ].KeyValueFloat.a,
+				values: rawCurves[ nodeID ].KeyValueFloat.a
 
 			};
 
@@ -2613,7 +2613,7 @@ class AnimationParser {
 										ID: rawModel.id,
 										initialPosition: [ 0, 0, 0 ],
 										initialRotation: [ 0, 0, 0 ],
-										initialScale: [ 1, 1, 1 ],
+										initialScale: [ 1, 1, 1 ]
 
 									};
 
@@ -2665,7 +2665,7 @@ class AnimationParser {
 								const node = {
 
 									modelName: rawModel.attrName ? PropertyBinding.sanitizeNodeName( rawModel.attrName ) : '',
-									morphName: fbxTree.Objects.Deformer[ deformerID ].attrName,
+									morphName: fbxTree.Objects.Deformer[ deformerID ].attrName
 
 								};
 
@@ -2717,7 +2717,7 @@ class AnimationParser {
 			rawClips[ nodeID ] = {
 
 				name: rawStacks[ nodeID ].attrName,
-				layer: layer,
+				layer: layer
 
 			};
 
@@ -3006,7 +3006,7 @@ class AnimationParser {
 			const initialValue = [
 				curvex.values[ i - 1 ],
 				curvey.values[ i - 1 ],
-				curvez.values[ i - 1 ],
+				curvez.values[ i - 1 ]
 			];
 
 			if ( isNaN( initialValue[ 0 ] ) || isNaN( initialValue[ 1 ] ) || isNaN( initialValue[ 2 ] ) ) {
@@ -3020,7 +3020,7 @@ class AnimationParser {
 			const currentValue = [
 				curvex.values[ i ],
 				curvey.values[ i ],
-				curvez.values[ i ],
+				curvez.values[ i ]
 			];
 
 			if ( isNaN( currentValue[ 0 ] ) || isNaN( currentValue[ 1 ] ) || isNaN( currentValue[ 2 ] ) ) {
@@ -3034,13 +3034,13 @@ class AnimationParser {
 			const valuesSpan = [
 				currentValue[ 0 ] - initialValue[ 0 ],
 				currentValue[ 1 ] - initialValue[ 1 ],
-				currentValue[ 2 ] - initialValue[ 2 ],
+				currentValue[ 2 ] - initialValue[ 2 ]
 			];
 
 			const absoluteSpan = [
 				Math.abs( valuesSpan[ 0 ] ),
 				Math.abs( valuesSpan[ 1 ] ),
-				Math.abs( valuesSpan[ 2 ] ),
+				Math.abs( valuesSpan[ 2 ] )
 			];
 
 			if ( absoluteSpan[ 0 ] >= 180 || absoluteSpan[ 1 ] >= 180 || absoluteSpan[ 2 ] >= 180 ) {
@@ -3395,24 +3395,24 @@ class TextParser {
 		// cast values where needed, otherwise leave as strings
 		switch ( innerPropType1 ) {
 
-			case 'int':
-			case 'enum':
-			case 'bool':
-			case 'ULongLong':
-			case 'double':
-			case 'Number':
-			case 'FieldOfView':
-				innerPropValue = parseFloat( innerPropValue );
-				break;
+		case 'int':
+		case 'enum':
+		case 'bool':
+		case 'ULongLong':
+		case 'double':
+		case 'Number':
+		case 'FieldOfView':
+			innerPropValue = parseFloat( innerPropValue );
+			break;
 
-			case 'Color':
-			case 'ColorRGB':
-			case 'Vector3D':
-			case 'Lcl_Translation':
-			case 'Lcl_Rotation':
-			case 'Lcl_Scaling':
-				innerPropValue = parseNumberArray( innerPropValue );
-				break;
+		case 'Color':
+		case 'ColorRGB':
+		case 'Vector3D':
+		case 'Lcl_Translation':
+		case 'Lcl_Rotation':
+		case 'Lcl_Scaling':
+			innerPropValue = parseNumberArray( innerPropValue );
+			break;
 
 		}
 
@@ -3662,94 +3662,94 @@ class BinaryParser {
 
 		switch ( type ) {
 
-			case 'C':
-				return reader.getBoolean();
+		case 'C':
+			return reader.getBoolean();
 
-			case 'D':
-				return reader.getFloat64();
+		case 'D':
+			return reader.getFloat64();
 
-			case 'F':
-				return reader.getFloat32();
+		case 'F':
+			return reader.getFloat32();
 
-			case 'I':
-				return reader.getInt32();
+		case 'I':
+			return reader.getInt32();
 
-			case 'L':
-				return reader.getInt64();
+		case 'L':
+			return reader.getInt64();
 
-			case 'R':
-				length = reader.getUint32();
-				return reader.getArrayBuffer( length );
+		case 'R':
+			length = reader.getUint32();
+			return reader.getArrayBuffer( length );
 
-			case 'S':
-				length = reader.getUint32();
-				return reader.getString( length );
+		case 'S':
+			length = reader.getUint32();
+			return reader.getString( length );
 
-			case 'Y':
-				return reader.getInt16();
+		case 'Y':
+			return reader.getInt16();
 
-			case 'b':
-			case 'c':
-			case 'd':
-			case 'f':
-			case 'i':
-			case 'l':
+		case 'b':
+		case 'c':
+		case 'd':
+		case 'f':
+		case 'i':
+		case 'l':
 
-				const arrayLength = reader.getUint32();
-				const encoding = reader.getUint32(); // 0: non-compressed, 1: compressed
-				const compressedLength = reader.getUint32();
+			const arrayLength = reader.getUint32();
+			const encoding = reader.getUint32(); // 0: non-compressed, 1: compressed
+			const compressedLength = reader.getUint32();
 
-				if ( encoding === 0 ) {
-
-					switch ( type ) {
-
-						case 'b':
-						case 'c':
-							return reader.getBooleanArray( arrayLength );
-
-						case 'd':
-							return reader.getFloat64Array( arrayLength );
-
-						case 'f':
-							return reader.getFloat32Array( arrayLength );
-
-						case 'i':
-							return reader.getInt32Array( arrayLength );
-
-						case 'l':
-							return reader.getInt64Array( arrayLength );
-
-					}
-
-				}
-
-				const data = fflate.unzlibSync( new Uint8Array( reader.getArrayBuffer( compressedLength ) ) );
-				const reader2 = new BinaryReader( data.buffer );
+			if ( encoding === 0 ) {
 
 				switch ( type ) {
 
-					case 'b':
-					case 'c':
-						return reader2.getBooleanArray( arrayLength );
+				case 'b':
+				case 'c':
+					return reader.getBooleanArray( arrayLength );
 
-					case 'd':
-						return reader2.getFloat64Array( arrayLength );
+				case 'd':
+					return reader.getFloat64Array( arrayLength );
 
-					case 'f':
-						return reader2.getFloat32Array( arrayLength );
+				case 'f':
+					return reader.getFloat32Array( arrayLength );
 
-					case 'i':
-						return reader2.getInt32Array( arrayLength );
+				case 'i':
+					return reader.getInt32Array( arrayLength );
 
-					case 'l':
-						return reader2.getInt64Array( arrayLength );
+				case 'l':
+					return reader.getInt64Array( arrayLength );
 
 				}
 
-				break; // cannot happen but is required by the DeepScan
+			}
 
-			default:
-				throw new Error( 'THREE.FBXLoader: Unknown property type ' + type );
+			const data = fflate.unzlibSync( new Uint8Array( reader.getArrayBuffer( compressedLength ) ) );
+			const reader2 = new BinaryReader( data.buffer );
+
+			switch ( type ) {
+
+			case 'b':
+			case 'c':
+				return reader2.getBooleanArray( arrayLength );
+
+			case 'd':
+				return reader2.getFloat64Array( arrayLength );
+
+			case 'f':
+				return reader2.getFloat32Array( arrayLength );
+
+			case 'i':
+				return reader2.getInt32Array( arrayLength );
+
+			case 'l':
+				return reader2.getInt64Array( arrayLength );
+
+			}
+
+			break; // cannot happen but is required by the DeepScan
+
+		default:
+			throw new Error( 'THREE.FBXLoader: Unknown property type ' + type );
 
 		}
 
@@ -4081,20 +4081,20 @@ function getData( polygonVertexIndex, polygonIndex, vertexIndex, infoObject ) {
 
 	switch ( infoObject.mappingType ) {
 
-		case 'ByPolygonVertex' :
-			index = polygonVertexIndex;
-			break;
-		case 'ByPolygon' :
-			index = polygonIndex;
-			break;
-		case 'ByVertice' :
-			index = vertexIndex;
-			break;
-		case 'AllSame' :
-			index = infoObject.indices[ 0 ];
-			break;
-		default :
-			console.warn( 'THREE.FBXLoader: unknown attribute mapping type ' + infoObject.mappingType );
+	case 'ByPolygonVertex' :
+		index = polygonVertexIndex;
+		break;
+	case 'ByPolygon' :
+		index = polygonIndex;
+		break;
+	case 'ByVertice' :
+		index = vertexIndex;
+		break;
+	case 'AllSame' :
+		index = infoObject.indices[ 0 ];
+		break;
+	default :
+		console.warn( 'THREE.FBXLoader: unknown attribute mapping type ' + infoObject.mappingType );
 
 	}
 
@@ -4239,7 +4239,7 @@ function getEulerOrder( order ) {
 		'XZY', // -> YZX extrinsic
 		'ZXY', // -> YXZ extrinsic
 		'YXZ', // -> ZXY extrinsic
-		'XYZ', // -> ZYX extrinsic
+		'XYZ' // -> ZYX extrinsic
 		//'SphericXYZ', // not possible to support
 	];
 

@@ -103,7 +103,7 @@ export function getUniforms( splineTexture ) {
 		pathSegment: { type: 'f', value: 1 }, // fractional length of path
 		spineOffset: { type: 'f', value: 161 },
 		spineLength: { type: 'f', value: 400 },
-		flow: { type: 'i', value: 1 },
+		flow: { type: 'i', value: 1 }
 	};
 	return uniforms;
 

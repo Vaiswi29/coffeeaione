@@ -256,7 +256,7 @@ ReflectorForSSRPass.ReflectorShader = {
 
 	defines: {
 		DISTANCE_ATTENUATION: true,
-		FRESNEL: true,
+		FRESNEL: true
 	},
 
 	uniforms: {
@@ -273,7 +273,7 @@ ReflectorForSSRPass.ReflectorShader = {
 		virtualCameraProjectionMatrix: { value: new Matrix4() },
 		virtualCameraMatrixWorld: { value: new Matrix4() },
 		virtualCameraProjectionMatrixInverse: { value: new Matrix4() },
-		resolution: { value: new Vector2() },
+		resolution: { value: new Vector2() }
 
 	},
 
@@ -346,7 +346,7 @@ ReflectorForSSRPass.ReflectorShader = {
 				gl_FragColor = vec4( blendOverlay( base.rgb, color ), 1.0 );
 			#endif
 		}
-	`,
+	`
 };
 
 export { ReflectorForSSRPass };

@@ -53,7 +53,7 @@ class VRButton {
 					'bounded-floor',
 					'layers',
 					...( sessionInit.optionalFeatures || [] )
-				],
+				]
 			};
 
 			button.onmouseenter = function () {

@@ -37,7 +37,7 @@ export function init( data ) { /* eslint-disable-line no-unused-vars */
 	function makeInstance( geometry, color, x ) {
 
 		const material = new THREE.MeshPhongMaterial( {
-			color,
+			color
 		} );
 
 		const cube = new THREE.Mesh( geometry, material );
@@ -52,7 +52,7 @@ export function init( data ) { /* eslint-disable-line no-unused-vars */
 	const cubes = [
 		makeInstance( geometry, 0x44aa88, 0 ),
 		makeInstance( geometry, 0x8844aa, - 2 ),
-		makeInstance( geometry, 0xaa8844, 2 ),
+		makeInstance( geometry, 0xaa8844, 2 )
 	];
 
 	class PickHelper {
@@ -148,7 +148,7 @@ export function init( data ) { /* eslint-disable-line no-unused-vars */
 		const rect = inputElement.getBoundingClientRect();
 		return {
 			x: event.clientX - rect.left,
-			y: event.clientY - rect.top,
+			y: event.clientY - rect.top
 		};
 
 	}

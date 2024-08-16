@@ -497,7 +497,7 @@ class OutlinePass extends Pass {
 				'maskTexture': { value: null },
 				'texSize': { value: new Vector2( 0.5, 0.5 ) },
 				'visibleEdgeColor': { value: new Vector3( 1.0, 1.0, 1.0 ) },
-				'hiddenEdgeColor': { value: new Vector3( 1.0, 1.0, 1.0 ) },
+				'hiddenEdgeColor': { value: new Vector3( 1.0, 1.0, 1.0 ) }
 			},
 
 			vertexShader:
@@ -541,7 +541,7 @@ class OutlinePass extends Pass {
 		return new ShaderMaterial( {
 
 			defines: {
-				'MAX_RADIUS': maxRadius,
+				'MAX_RADIUS': maxRadius
 			},
 
 			uniforms: {

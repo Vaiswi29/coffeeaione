@@ -20,7 +20,7 @@ export default QUnit.module( 'Geometries', () => {
 				heightSegments: 30,
 				openEnded: true,
 				thetaStart: 0.1,
-				thetaLength: 2.0,
+				thetaLength: 2.0
 			};
 
 			geometries = [
@@ -32,7 +32,7 @@ export default QUnit.module( 'Geometries', () => {
 				new CylinderGeometry( parameters.radiusTop, parameters.radiusBottom, parameters.height, parameters.radialSegments, parameters.heightSegments ),
 				new CylinderGeometry( parameters.radiusTop, parameters.radiusBottom, parameters.height, parameters.radialSegments, parameters.heightSegments, parameters.openEnded ),
 				new CylinderGeometry( parameters.radiusTop, parameters.radiusBottom, parameters.height, parameters.radialSegments, parameters.heightSegments, parameters.openEnded, parameters.thetaStart ),
-				new CylinderGeometry( parameters.radiusTop, parameters.radiusBottom, parameters.height, parameters.radialSegments, parameters.heightSegments, parameters.openEnded, parameters.thetaStart, parameters.thetaLength ),
+				new CylinderGeometry( parameters.radiusTop, parameters.radiusBottom, parameters.height, parameters.radialSegments, parameters.heightSegments, parameters.openEnded, parameters.thetaStart, parameters.thetaLength )
 			];
 
 		} );

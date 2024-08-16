@@ -382,18 +382,18 @@ UTIF.toRGBA = function ( out, type ) {
 
 	switch ( type ) {
 
-		case HalfFloatType:
+	case HalfFloatType:
 
-			img = new Uint16Array( area * 4 );
-			break;
+		img = new Uint16Array( area * 4 );
+		break;
 
-		case FloatType:
+	case FloatType:
 
-			img = new Float32Array( area * 4 );
-			break;
+		img = new Float32Array( area * 4 );
+		break;
 
-		default:
-			throw new Error( 'THREE.LogLuvLoader: Unsupported texture data type: ' + type );
+	default:
+		throw new Error( 'THREE.LogLuvLoader: Unsupported texture data type: ' + type );
 
 	}
 

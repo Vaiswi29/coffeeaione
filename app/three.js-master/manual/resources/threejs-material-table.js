@@ -15,8 +15,8 @@ const materials = [
 			'reflectivity',
 			'refractionRatio',
 			'specularMap',
-			'wireframe',
-		],
+			'wireframe'
+		]
 	},
 	{
 		name: 'MeshLambertMaterial',
@@ -45,8 +45,8 @@ const materials = [
 			'reflectivity',
 			'refractionRatio',
 			'specularMap',
-			'wireframe',
-		],
+			'wireframe'
+		]
 	},
 	{
 		name: 'MeshPhongMaterial',
@@ -77,8 +77,8 @@ const materials = [
 			'shininess',
 			'specular',
 			'specularMap',
-			'wireframe',
-		],
+			'wireframe'
+		]
 	},
 	{
 		name: 'MeshStandardMaterial',
@@ -109,8 +109,8 @@ const materials = [
 			'refractionRatio',
 			'roughness',
 			'roughnessMap',
-			'wireframe',
-		],
+			'wireframe'
+		]
 	},
 	{
 		name: 'MeshPhysicalMaterial',
@@ -172,9 +172,9 @@ const materials = [
 			'specularColor',
 			'specularColorMap',
 			'wireframe',
-			'reflectivity',
-		],
-	},
+			'reflectivity'
+		]
+	}
 ];
 
 const allProperties = {};

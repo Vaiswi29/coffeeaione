@@ -9,11 +9,11 @@ const typedArraysToVertexFormatPrefix = new Map( [
 	[ Uint16Array, [ 'uint16', 'unorm16' ]],
 	[ Int32Array, [ 'sint32', 'snorm32' ]],
 	[ Uint32Array, [ 'uint32', 'unorm32' ]],
-	[ Float32Array, [ 'float32', ]],
+	[ Float32Array, [ 'float32' ]]
 ] );
 
 const typedAttributeToVertexFormatPrefix = new Map( [
-	[ Float16BufferAttribute, [ 'float16', ]],
+	[ Float16BufferAttribute, [ 'float16' ]]
 ] );
 
 const typeArraysToVertexFormatPrefixForItemSize1 = new Map( [

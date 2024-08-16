@@ -85,18 +85,18 @@ class XR {
 
 					switch ( event.type ) {
 
-						case 'selectstart':
-							controls.pointerDown( null );
-							break;
+					case 'selectstart':
+						controls.pointerDown( null );
+						break;
 
-						case 'selectend':
-							controls.pointerUp( null );
-							break;
+					case 'selectend':
+						controls.pointerUp( null );
+						break;
 
-						case 'move':
-							controls.pointerHover( null );
-							controls.pointerMove( null );
-							break;
+					case 'move':
+						controls.pointerHover( null );
+						controls.pointerMove( null );
+						break;
 
 					}
 

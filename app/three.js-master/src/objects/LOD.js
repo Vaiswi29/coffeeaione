@@ -20,7 +20,7 @@ class LOD extends Object3D {
 				value: []
 			},
 			isLOD: {
-				value: true,
+				value: true
 			}
 		} );
 

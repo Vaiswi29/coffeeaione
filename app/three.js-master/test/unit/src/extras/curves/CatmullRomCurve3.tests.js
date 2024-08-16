@@ -196,7 +196,7 @@ export default QUnit.module( 'Extras', () => {
 					new Vector3( 42.384384731047874, 48.35477686933143, - 42.384384731047874 ),
 					new Vector3( 65.25545512241153, - 1.646250966068339, - 65.25545512241153 ),
 					new Vector3( 63.94159134180865, - 50.234688224551256, - 63.94159134180865 ),
-					new Vector3( 59.99999999999999, - 100, - 59.99999999999999 ),
+					new Vector3( 59.99999999999999, - 100, - 59.99999999999999 )
 				];
 
 				const points = curve.getPoints( 10 );
@@ -230,7 +230,7 @@ export default QUnit.module( 'Extras', () => {
 					new Vector3( 75, - 46.25, - 75 ),
 					new Vector3( 60, - 100, - 60 ),
 					new Vector3( 0, - 115, 0 ),
-					new Vector3( - 60, - 100, 60 ),
+					new Vector3( - 60, - 100, 60 )
 				];
 
 				const points = curve.getPoints( 10 );

@@ -1338,7 +1338,7 @@ class Renderer {
 			baseRenderList.pushBundle( {
 				object,
 				camera,
-				renderList,
+				renderList
 			} );
 
 			renderList.finish();

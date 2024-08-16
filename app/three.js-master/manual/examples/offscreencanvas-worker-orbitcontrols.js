@@ -34,7 +34,7 @@ class ElementProxyReceiver extends EventDispatcher {
 			width: this.width,
 			height: this.height,
 			right: this.left + this.width,
-			bottom: this.top + this.height,
+			bottom: this.top + this.height
 		};
 
 	}
@@ -98,7 +98,7 @@ function start( data ) {
 	self.document = {}; // HACK!
 	init( {
 		canvas: data.canvas,
-		inputElement: proxy,
+		inputElement: proxy
 	} );
 
 }
@@ -112,7 +112,7 @@ function makeProxy( data ) {
 const handlers = {
 	start,
 	makeProxy,
-	event: proxyManager.handleEvent,
+	event: proxyManager.handleEvent
 };
 
 self.onmessage = function ( e ) {

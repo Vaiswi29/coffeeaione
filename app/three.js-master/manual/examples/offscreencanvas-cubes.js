@@ -2,7 +2,7 @@ import * as THREE from 'https://cdn.skypack.dev/three@0.136.0/build/three.module
 
 const state = {
 	width: 300, // canvas default
-	height: 150, // canvas default
+	height: 150 // canvas default
 };
 
 function main( data ) {
@@ -40,7 +40,7 @@ function main( data ) {
 	function makeInstance( geometry, color, x ) {
 
 		const material = new THREE.MeshPhongMaterial( {
-			color,
+			color
 		} );
 
 		const cube = new THREE.Mesh( geometry, material );
@@ -55,7 +55,7 @@ function main( data ) {
 	const cubes = [
 		makeInstance( geometry, 0x44aa88, 0 ),
 		makeInstance( geometry, 0x8844aa, - 2 ),
-		makeInstance( geometry, 0xaa8844, 2 ),
+		makeInstance( geometry, 0xaa8844, 2 )
 	];
 
 	function resizeRendererToDisplaySize( renderer ) {
@@ -113,7 +113,7 @@ function size( data ) {
 
 const handlers = {
 	main,
-	size,
+	size
 };
 
 self.onmessage = function ( e ) {

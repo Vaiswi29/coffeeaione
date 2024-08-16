@@ -10,7 +10,7 @@ const LUTShader = {
 		lutSize: { value: 0 },
 
 		tDiffuse: { value: null },
-		intensity: { value: 1.0 },
+		intensity: { value: 1.0 }
 	},
 
 	vertexShader: /* glsl */`
@@ -52,7 +52,7 @@ const LUTShader = {
 
 		}
 
-	`,
+	`
 
 };
 

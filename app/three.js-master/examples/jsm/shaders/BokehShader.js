@@ -10,7 +10,7 @@ const BokehShader = {
 
 	defines: {
 		'DEPTH_PACKING': 1,
-		'PERSPECTIVE_CAMERA': 1,
+		'PERSPECTIVE_CAMERA': 1
 	},
 
 	uniforms: {
@@ -22,7 +22,7 @@ const BokehShader = {
 		'aperture': { value: 0.025 },
 		'maxblur': { value: 0.01 },
 		'nearClip': { value: 1.0 },
-		'farClip': { value: 1000.0 },
+		'farClip': { value: 1000.0 }
 
 	},
 

@@ -540,17 +540,17 @@ class TrackballControls extends EventDispatcher {
 
 				switch ( event.button ) {
 
-					case scope.mouseButtons.LEFT:
-						_state = STATE.ROTATE;
-						break;
+				case scope.mouseButtons.LEFT:
+					_state = STATE.ROTATE;
+					break;
 
-					case scope.mouseButtons.MIDDLE:
-						_state = STATE.ZOOM;
-						break;
+				case scope.mouseButtons.MIDDLE:
+					_state = STATE.ZOOM;
+					break;
 
-					case scope.mouseButtons.RIGHT:
-						_state = STATE.PAN;
-						break;
+				case scope.mouseButtons.RIGHT:
+					_state = STATE.PAN;
+					break;
 
 				}
 
@@ -618,20 +618,20 @@ class TrackballControls extends EventDispatcher {
 
 			switch ( event.deltaMode ) {
 
-				case 2:
-					// Zoom in pages
-					_zoomStart.y -= event.deltaY * 0.025;
-					break;
+			case 2:
+				// Zoom in pages
+				_zoomStart.y -= event.deltaY * 0.025;
+				break;
 
-				case 1:
-					// Zoom in lines
-					_zoomStart.y -= event.deltaY * 0.01;
-					break;
+			case 1:
+				// Zoom in lines
+				_zoomStart.y -= event.deltaY * 0.01;
+				break;
 
-				default:
-					// undefined, 0, assume pixels
-					_zoomStart.y -= event.deltaY * 0.00025;
-					break;
+			default:
+				// undefined, 0, assume pixels
+				_zoomStart.y -= event.deltaY * 0.00025;
+				break;
 
 			}
 
@@ -646,23 +646,23 @@ class TrackballControls extends EventDispatcher {
 
 			switch ( _pointers.length ) {
 
-				case 1:
-					_state = STATE.TOUCH_ROTATE;
-					_moveCurr.copy( getMouseOnCircle( _pointers[ 0 ].pageX, _pointers[ 0 ].pageY ) );
-					_movePrev.copy( _moveCurr );
-					break;
+			case 1:
+				_state = STATE.TOUCH_ROTATE;
+				_moveCurr.copy( getMouseOnCircle( _pointers[ 0 ].pageX, _pointers[ 0 ].pageY ) );
+				_movePrev.copy( _moveCurr );
+				break;
 
-				default: // 2 or more
-					_state = STATE.TOUCH_ZOOM_PAN;
-					const dx = _pointers[ 0 ].pageX - _pointers[ 1 ].pageX;
-					const dy = _pointers[ 0 ].pageY - _pointers[ 1 ].pageY;
-					_touchZoomDistanceEnd = _touchZoomDistanceStart = Math.sqrt( dx * dx + dy * dy );
+			default: // 2 or more
+				_state = STATE.TOUCH_ZOOM_PAN;
+				const dx = _pointers[ 0 ].pageX - _pointers[ 1 ].pageX;
+				const dy = _pointers[ 0 ].pageY - _pointers[ 1 ].pageY;
+				_touchZoomDistanceEnd = _touchZoomDistanceStart = Math.sqrt( dx * dx + dy * dy );
 
-					const x = ( _pointers[ 0 ].pageX + _pointers[ 1 ].pageX ) / 2;
-					const y = ( _pointers[ 0 ].pageY + _pointers[ 1 ].pageY ) / 2;
-					_panStart.copy( getMouseOnScreen( x, y ) );
-					_panEnd.copy( _panStart );
-					break;
+				const x = ( _pointers[ 0 ].pageX + _pointers[ 1 ].pageX ) / 2;
+				const y = ( _pointers[ 0 ].pageY + _pointers[ 1 ].pageY ) / 2;
+				_panStart.copy( getMouseOnScreen( x, y ) );
+				_panEnd.copy( _panStart );
+				break;
 
 			}
 
@@ -676,23 +676,23 @@ class TrackballControls extends EventDispatcher {
 
 			switch ( _pointers.length ) {
 
-				case 1:
-					_movePrev.copy( _moveCurr );
-					_moveCurr.copy( getMouseOnCircle( event.pageX, event.pageY ) );
-					break;
+			case 1:
+				_movePrev.copy( _moveCurr );
+				_moveCurr.copy( getMouseOnCircle( event.pageX, event.pageY ) );
+				break;
 
-				default: // 2 or more
+			default: // 2 or more
 
-					const position = getSecondPointerPosition( event );
+				const position = getSecondPointerPosition( event );
 
-					const dx = event.pageX - position.x;
-					const dy = event.pageY - position.y;
-					_touchZoomDistanceEnd = Math.sqrt( dx * dx + dy * dy );
+				const dx = event.pageX - position.x;
+				const dy = event.pageY - position.y;
+				_touchZoomDistanceEnd = Math.sqrt( dx * dx + dy * dy );
 
-					const x = ( event.pageX + position.x ) / 2;
-					const y = ( event.pageY + position.y ) / 2;
-					_panEnd.copy( getMouseOnScreen( x, y ) );
-					break;
+				const x = ( event.pageX + position.x ) / 2;
+				const y = ( event.pageY + position.y ) / 2;
+				_panEnd.copy( getMouseOnScreen( x, y ) );
+				break;
 
 			}
 
@@ -702,33 +702,33 @@ class TrackballControls extends EventDispatcher {
 
 			switch ( _pointers.length ) {
 
-				case 0:
-					_state = STATE.NONE;
-					break;
+			case 0:
+				_state = STATE.NONE;
+				break;
 
-				case 1:
-					_state = STATE.TOUCH_ROTATE;
-					_moveCurr.copy( getMouseOnCircle( event.pageX, event.pageY ) );
-					_movePrev.copy( _moveCurr );
-					break;
+			case 1:
+				_state = STATE.TOUCH_ROTATE;
+				_moveCurr.copy( getMouseOnCircle( event.pageX, event.pageY ) );
+				_movePrev.copy( _moveCurr );
+				break;
 
-				case 2:
-					_state = STATE.TOUCH_ZOOM_PAN;
+			case 2:
+				_state = STATE.TOUCH_ZOOM_PAN;
 
-					for ( let i = 0; i < _pointers.length; i ++ ) {
+				for ( let i = 0; i < _pointers.length; i ++ ) {
 
-						if ( _pointers[ i ].pointerId !== event.pointerId ) {
+					if ( _pointers[ i ].pointerId !== event.pointerId ) {
 
-							const position = _pointerPositions[ _pointers[ i ].pointerId ];
-							_moveCurr.copy( getMouseOnCircle( position.x, position.y ) );
-							_movePrev.copy( _moveCurr );
-							break;
-
-						}
+						const position = _pointerPositions[ _pointers[ i ].pointerId ];
+						_moveCurr.copy( getMouseOnCircle( position.x, position.y ) );
+						_movePrev.copy( _moveCurr );
+						break;
 
 					}
 
-					break;
+				}
+
+				break;
 
 			}
 

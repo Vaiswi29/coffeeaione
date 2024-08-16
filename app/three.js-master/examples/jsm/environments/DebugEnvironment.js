@@ -5,7 +5,7 @@ import {
 	MeshLambertMaterial,
 	MeshStandardMaterial,
 	PointLight,
-	Scene,
+	Scene
 } from 'three';
 
 class DebugEnvironment extends Scene {

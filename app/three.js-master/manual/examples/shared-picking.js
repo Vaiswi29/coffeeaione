@@ -2,7 +2,7 @@ import * as THREE from 'https://cdn.skypack.dev/three@0.136.0/build/three.module
 
 export const state = {
 	width: 300, // canvas default
-	height: 150, // canvas default
+	height: 150 // canvas default
 };
 
 export const pickPosition = { x: 0, y: 0 };
@@ -42,7 +42,7 @@ export function init( data ) { // eslint-disable-line no-unused-vars
 	function makeInstance( geometry, color, x ) {
 
 		const material = new THREE.MeshPhongMaterial( {
-			color,
+			color
 		} );
 
 		const cube = new THREE.Mesh( geometry, material );
@@ -57,7 +57,7 @@ export function init( data ) { // eslint-disable-line no-unused-vars
 	const cubes = [
 		makeInstance( geometry, 0x44aa88, 0 ),
 		makeInstance( geometry, 0x8844aa, - 2 ),
-		makeInstance( geometry, 0xaa8844, 2 ),
+		makeInstance( geometry, 0xaa8844, 2 )
 	];
 
 	class PickHelper {

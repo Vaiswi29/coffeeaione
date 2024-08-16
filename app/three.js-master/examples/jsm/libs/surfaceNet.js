@@ -10,7 +10,7 @@
  * 
  */
 
-let surfaceNet = ( dims, potential, bounds ) => {
+const surfaceNet = ( dims, potential, bounds ) => {
 		
 	
 	//Precompute edge table, like Paul Bourke does.
@@ -91,111 +91,111 @@ let surfaceNet = ( dims, potential, bounds ) => {
 		var m = 1 + (dims[0]+1) * (1 + buf_no * (dims[1]+1));
 		
 		for(x[1]=0; x[1]<dims[1]-1; ++x[1], ++n, m+=2)
-		for(x[0]=0; x[0]<dims[0]-1; ++x[0], ++n, ++m) {
+			for(x[0]=0; x[0]<dims[0]-1; ++x[0], ++n, ++m) {
 		
-			//Read in 8 field values around this vertex and store them in an array
-			//Also calculate 8-bit mask, like in marching cubes, so we can speed up sign checks later
-			var mask = 0, g = 0;
-			for(var k=0; k<2; ++k)
-			for(var j=0; j<2; ++j)      
-			for(var i=0; i<2; ++i, ++g) {
-				var p = potential(
-					scale[0]*(x[0]+i)+shift[0],
-					scale[1]*(x[1]+j)+shift[1],
-					scale[2]*(x[2]+k)+shift[2]);
-				grid[g] = p;
-				mask |= (p < 0) ? (1<<g) : 0;
-			}
+				//Read in 8 field values around this vertex and store them in an array
+				//Also calculate 8-bit mask, like in marching cubes, so we can speed up sign checks later
+				var mask = 0, g = 0;
+				for(var k=0; k<2; ++k)
+					for(var j=0; j<2; ++j)      
+						for(var i=0; i<2; ++i, ++g) {
+							var p = potential(
+								scale[0]*(x[0]+i)+shift[0],
+								scale[1]*(x[1]+j)+shift[1],
+								scale[2]*(x[2]+k)+shift[2]);
+							grid[g] = p;
+							mask |= (p < 0) ? (1<<g) : 0;
+						}
 			
-			//Check for early termination if cell does not intersect boundary
-			if(mask === 0 || mask === 0xff) {
-				continue;
-			}
-			
-			//Sum up edge intersections
-			var edge_mask = edge_table[mask]
-				, v = [0.0,0.0,0.0]
-				, e_count = 0;
-				
-			//For every edge of the cube...
-			for(var i=0; i<12; ++i) {
-			
-				//Use edge mask to check if it is crossed
-				if(!(edge_mask & (1<<i))) {
+				//Check for early termination if cell does not intersect boundary
+				if(mask === 0 || mask === 0xff) {
 					continue;
 				}
+			
+				//Sum up edge intersections
+				var edge_mask = edge_table[mask]
+					, v = [0.0,0.0,0.0]
+					, e_count = 0;
 				
-				//If it did, increment number of edge crossings
-				++e_count;
+				//For every edge of the cube...
+				for(var i=0; i<12; ++i) {
+			
+					//Use edge mask to check if it is crossed
+					if(!(edge_mask & (1<<i))) {
+						continue;
+					}
 				
-				//Now find the point of intersection
-				var e0 = cube_edges[ i<<1 ]       //Unpack vertices
-					, e1 = cube_edges[(i<<1)+1]
-					, g0 = grid[e0]                 //Unpack grid values
-					, g1 = grid[e1]
-					, t  = g0 - g1;                 //Compute point of intersection
-				if(Math.abs(t) > 1e-6) {
-					t = g0 / t;
-				} else {
-					continue;
-				}
+					//If it did, increment number of edge crossings
+					++e_count;
 				
-				//Interpolate vertices and add up intersections (this can be done without multiplying)
-				for(var j=0, k=1; j<3; ++j, k<<=1) {
-					var a = e0 & k
-						, b = e1 & k;
-					if(a !== b) {
-						v[j] += a ? 1.0 - t : t;
+					//Now find the point of intersection
+					var e0 = cube_edges[ i<<1 ]       //Unpack vertices
+						, e1 = cube_edges[(i<<1)+1]
+						, g0 = grid[e0]                 //Unpack grid values
+						, g1 = grid[e1]
+						, t  = g0 - g1;                 //Compute point of intersection
+					if(Math.abs(t) > 1e-6) {
+						t = g0 / t;
 					} else {
-						v[j] += a ? 1.0 : 0;
+						continue;
+					}
+				
+					//Interpolate vertices and add up intersections (this can be done without multiplying)
+					for(var j=0, k=1; j<3; ++j, k<<=1) {
+						var a = e0 & k
+							, b = e1 & k;
+						if(a !== b) {
+							v[j] += a ? 1.0 - t : t;
+						} else {
+							v[j] += a ? 1.0 : 0;
+						}
+					}
+				}
+			
+				//Now we just average the edge intersections and add them to coordinate
+				var s = 1.0 / e_count;
+				for(var i=0; i<3; ++i) {
+					v[i] = scale[i] * (x[i] + s * v[i]) + shift[i];
+				}
+			
+				//Add vertex to buffer, store pointer to vertex index in buffer
+				buffer[m] = vertices.length;
+				vertices.push(v);
+			
+				//Now we need to add faces together, to do this we just loop over 3 basis components
+				for(var i=0; i<3; ++i) {
+				//The first three entries of the edge_mask count the crossings along the edge
+					if(!(edge_mask & (1<<i)) ) {
+						continue;
+					}
+				
+					// i = axes we are point along.  iu, iv = orthogonal axes
+					var iu = (i+1)%3
+						, iv = (i+2)%3;
+					
+					//If we are on a boundary, skip it
+					if(x[iu] === 0 || x[iv] === 0) {
+						continue;
+					}
+				
+					//Otherwise, look up adjacent edges in buffer
+					var du = R[iu]
+						, dv = R[iv];
+				
+					//Remember to flip orientation depending on the sign of the corner.
+					if(mask & 1) {
+						faces.push([buffer[m],    buffer[m-du],    buffer[m-dv]]);
+						faces.push([buffer[m-dv], buffer[m-du],    buffer[m-du-dv]]);
+					} else {
+						faces.push([buffer[m],    buffer[m-dv],    buffer[m-du]]);
+						faces.push([buffer[m-du], buffer[m-dv],    buffer[m-du-dv]]);
 					}
 				}
 			}
-			
-			//Now we just average the edge intersections and add them to coordinate
-			var s = 1.0 / e_count;
-			for(var i=0; i<3; ++i) {
-				v[i] = scale[i] * (x[i] + s * v[i]) + shift[i];
-			}
-			
-			//Add vertex to buffer, store pointer to vertex index in buffer
-			buffer[m] = vertices.length;
-			vertices.push(v);
-			
-			//Now we need to add faces together, to do this we just loop over 3 basis components
-			for(var i=0; i<3; ++i) {
-				//The first three entries of the edge_mask count the crossings along the edge
-				if(!(edge_mask & (1<<i)) ) {
-					continue;
-				}
-				
-				// i = axes we are point along.  iu, iv = orthogonal axes
-				var iu = (i+1)%3
-					, iv = (i+2)%3;
-					
-				//If we are on a boundary, skip it
-				if(x[iu] === 0 || x[iv] === 0) {
-					continue;
-				}
-				
-				//Otherwise, look up adjacent edges in buffer
-				var du = R[iu]
-					, dv = R[iv];
-				
-				//Remember to flip orientation depending on the sign of the corner.
-				if(mask & 1) {
-					faces.push([buffer[m],    buffer[m-du],    buffer[m-dv]]);
-					faces.push([buffer[m-dv], buffer[m-du],    buffer[m-du-dv]]);
-				} else {
-					faces.push([buffer[m],    buffer[m-dv],    buffer[m-du]]);
-					faces.push([buffer[m-du], buffer[m-dv],    buffer[m-du-dv]]);
-				}
-			}
-		}
 	}
 	
 	//All done!  Return the result
 	return { positions: vertices, cells: faces };
-}
+};
 
-export { surfaceNet }
+export { surfaceNet };

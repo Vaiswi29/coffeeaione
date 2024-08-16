@@ -10,7 +10,7 @@ import { Mesh } from '../../../../src/objects/Mesh.js';
 import { BufferAttribute } from '../../../../src/core/BufferAttribute.js';
 import { BoxGeometry } from '../../../../src/geometries/BoxGeometry.js';
 import {
-	SphereGeometry,
+	SphereGeometry
 } from '../../../../src/geometries/SphereGeometry.js';
 import {
 	negInf3,

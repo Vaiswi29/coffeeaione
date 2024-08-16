@@ -89,23 +89,23 @@ class KeyframeTrack {
 
 		switch ( interpolation ) {
 
-			case InterpolateDiscrete:
+		case InterpolateDiscrete:
 
-				factoryMethod = this.InterpolantFactoryMethodDiscrete;
+			factoryMethod = this.InterpolantFactoryMethodDiscrete;
 
-				break;
+			break;
 
-			case InterpolateLinear:
+		case InterpolateLinear:
 
-				factoryMethod = this.InterpolantFactoryMethodLinear;
+			factoryMethod = this.InterpolantFactoryMethodLinear;
 
-				break;
+			break;
 
-			case InterpolateSmooth:
+		case InterpolateSmooth:
 
-				factoryMethod = this.InterpolantFactoryMethodSmooth;
+			factoryMethod = this.InterpolantFactoryMethodSmooth;
 
-				break;
+			break;
 
 		}
 
@@ -144,17 +144,17 @@ class KeyframeTrack {
 
 		switch ( this.createInterpolant ) {
 
-			case this.InterpolantFactoryMethodDiscrete:
+		case this.InterpolantFactoryMethodDiscrete:
 
-				return InterpolateDiscrete;
+			return InterpolateDiscrete;
 
-			case this.InterpolantFactoryMethodLinear:
+		case this.InterpolantFactoryMethodLinear:
 
-				return InterpolateLinear;
+			return InterpolateLinear;
 
-			case this.InterpolantFactoryMethodSmooth:
+		case this.InterpolantFactoryMethodSmooth:
 
-				return InterpolateSmooth;
+			return InterpolateSmooth;
 
 		}
 

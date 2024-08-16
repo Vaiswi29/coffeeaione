@@ -99,7 +99,7 @@ export function parseCSP( str ) {
 		size: 0,
 		data,
 		min: [ 0, 0, 0 ],
-		max: [ 1, 1, 1 ],
+		max: [ 1, 1, 1 ]
 	};
 
 	const lines = str.split( '\n' ).map( s => s.trim() ).filter( s => s.length > 0 && ! startWhitespaceRE.test( s ) );
@@ -185,7 +185,7 @@ export function parseCUBE( str ) {
 		size: 0,
 		data,
 		min: [ 0, 0, 0 ],
-		max: [ 1, 1, 1 ],
+		max: [ 1, 1, 1 ]
 	};
 
 	const lines = str.split( '\n' );
@@ -196,31 +196,31 @@ export function parseCUBE( str ) {
 		const parts = splitOnSpaceHandleQuotesWithEscapes( line );
 		switch ( parts[ 0 ].toUpperCase() ) {
 
-			case 'TITLE':
-				lut.name = parts[ 1 ];
-				break;
-			case 'LUT_1D_SIZE':
-				lut.size = parseInt( parts[ 1 ] );
-				lut.type = '1D';
-				break;
-			case 'LUT_3D_SIZE':
-				lut.size = parseInt( parts[ 1 ] );
-				lut.type = '3D';
-				break;
-			case 'DOMAIN_MIN':
-				lut.min = parts.slice( 1 ).map( parseFloat );
-				break;
-			case 'DOMAIN_MAX':
-				lut.max = parts.slice( 1 ).map( parseFloat );
-				break;
-			default:
-				if ( parts.length === 3 ) {
+		case 'TITLE':
+			lut.name = parts[ 1 ];
+			break;
+		case 'LUT_1D_SIZE':
+			lut.size = parseInt( parts[ 1 ] );
+			lut.type = '1D';
+			break;
+		case 'LUT_3D_SIZE':
+			lut.size = parseInt( parts[ 1 ] );
+			lut.type = '3D';
+			break;
+		case 'DOMAIN_MIN':
+			lut.min = parts.slice( 1 ).map( parseFloat );
+			break;
+		case 'DOMAIN_MAX':
+			lut.max = parts.slice( 1 ).map( parseFloat );
+			break;
+		default:
+			if ( parts.length === 3 ) {
 
-					data.push( ...parts.map( parseFloat ) );
+				data.push( ...parts.map( parseFloat ) );
 
-				}
+			}
 
-				break;
+			break;
 
 		}
 
@@ -259,7 +259,7 @@ function lut1Dto3D( lut ) {
 			src.push(
 				lerp( lut.data[ i0 + 0 ], lut.data[ i1 + 0 ], t ),
 				lerp( lut.data[ i0 + 0 ], lut.data[ i1 + 1 ], t ),
-				lerp( lut.data[ i0 + 0 ], lut.data[ i1 + 2 ], t ),
+				lerp( lut.data[ i0 + 0 ], lut.data[ i1 + 2 ], t )
 			);
 
 		}
@@ -279,7 +279,7 @@ function lut1Dto3D( lut ) {
 
 const parsers = {
 	'cube': parseCUBE,
-	'csp': parseCSP,
+	'csp': parseCSP
 };
 
 // for backward compatibility

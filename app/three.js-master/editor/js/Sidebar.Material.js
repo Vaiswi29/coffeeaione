@@ -711,7 +711,7 @@ const materialClasses = {
 const vertexShaderVariables = [
 	'uniform mat4 projectionMatrix;',
 	'uniform mat4 modelViewMatrix;\n',
-	'attribute vec3 position;\n\n',
+	'attribute vec3 position;\n\n'
 ].join( '\n' );
 
 const meshMaterialOptions = {

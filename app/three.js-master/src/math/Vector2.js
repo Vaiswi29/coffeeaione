@@ -73,9 +73,9 @@ class Vector2 {
 
 		switch ( index ) {
 
-			case 0: this.x = value; break;
-			case 1: this.y = value; break;
-			default: throw new Error( 'index is out of range: ' + index );
+		case 0: this.x = value; break;
+		case 1: this.y = value; break;
+		default: throw new Error( 'index is out of range: ' + index );
 
 		}
 
@@ -87,9 +87,9 @@ class Vector2 {
 
 		switch ( index ) {
 
-			case 0: return this.x;
-			case 1: return this.y;
-			default: throw new Error( 'index is out of range: ' + index );
+		case 0: return this.x;
+		case 1: return this.y;
+		default: throw new Error( 'index is out of range: ' + index );
 
 		}
 

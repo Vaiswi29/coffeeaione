@@ -195,7 +195,7 @@
 	}
 
 	return {
-		wrap: wrap,
+		wrap: wrap
 	};
 
 } ) );

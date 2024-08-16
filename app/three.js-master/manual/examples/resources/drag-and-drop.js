@@ -1,5 +1,5 @@
 const handlers = {
-	onDropFile: () => {},
+	onDropFile: () => {}
 };
 
 export function setup( options ) {

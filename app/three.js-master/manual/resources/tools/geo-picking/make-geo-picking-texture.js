@@ -47,7 +47,7 @@ async function main() {
 
 	const geoHandlers = {
 		'MultiPolygon': multiPolygonArea,
-		'Polygon': polygonArea,
+		'Polygon': polygonArea
 	};
 
 	function multiPolygonArea( ctx, geo, drawFn ) {
@@ -127,7 +127,7 @@ async function main() {
 
 			countryData[ name ] = {
 				color: [ r, g, b ],
-				id: id ++,
+				id: id ++
 			};
 			countriesById.push( { name } );
 
@@ -161,7 +161,7 @@ async function main() {
 		countryInfo.lat = properties.LAT;
 		countryInfo.lon = properties.LON;
 		countryInfo.population = {
-			'2005': properties.POP2005,
+			'2005': properties.POP2005
 		};
 
 		//

@@ -45,7 +45,7 @@ function main() {
 	const cubes = [
 		makeInstance( geometry, 0x44aa88, 0 ),
 		makeInstance( geometry, 0x8844aa, - 2 ),
-		makeInstance( geometry, 0xaa8844, 2 ),
+		makeInstance( geometry, 0xaa8844, 2 )
 	];
 
 	function resizeRendererToDisplaySize( renderer ) {

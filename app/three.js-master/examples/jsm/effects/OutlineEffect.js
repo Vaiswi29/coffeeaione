@@ -143,7 +143,7 @@ class OutlineEffect {
 			'	#include <clipping_planes_vertex>',
 			'	#include <fog_vertex>',
 
-			'}',
+			'}'
 
 		].join( '\n' );
 

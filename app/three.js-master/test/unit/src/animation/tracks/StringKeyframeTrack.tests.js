@@ -13,7 +13,7 @@ export default QUnit.module( 'Animation', () => {
 			const parameters = {
 				name: '.name',
 				times: [ 0, 1 ],
-				values: [ 'foo', 'bar' ],
+				values: [ 'foo', 'bar' ]
 			};
 
 			// INHERITANCE

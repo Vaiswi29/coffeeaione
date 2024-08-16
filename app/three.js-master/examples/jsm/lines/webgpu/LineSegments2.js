@@ -82,7 +82,7 @@ function raycastWorldUnits( lineSegments, intersects ) {
 				face: null,
 				faceIndex: i,
 				uv: null,
-				uv1: null,
+				uv1: null
 			} );
 
 		}
@@ -215,7 +215,7 @@ function raycastScreenSpace( lineSegments, camera, intersects ) {
 				face: null,
 				faceIndex: i,
 				uv: null,
-				uv1: null,
+				uv1: null
 			} );
 
 		}

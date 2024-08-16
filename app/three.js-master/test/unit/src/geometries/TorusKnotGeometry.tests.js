@@ -27,7 +27,7 @@ export default QUnit.module( 'Geometries', () => {
 				new TorusKnotGeometry( parameters.radius, parameters.tube ),
 				new TorusKnotGeometry( parameters.radius, parameters.tube, parameters.tubularSegments ),
 				new TorusKnotGeometry( parameters.radius, parameters.tube, parameters.tubularSegments, parameters.radialSegments ),
-				new TorusKnotGeometry( parameters.radius, parameters.tube, parameters.tubularSegments, parameters.radialSegments, parameters.p, parameters.q ),
+				new TorusKnotGeometry( parameters.radius, parameters.tube, parameters.tubularSegments, parameters.radialSegments, parameters.p, parameters.q )
 			];
 
 		} );

@@ -105,7 +105,7 @@ class EdgesGeometry extends BufferGeometry {
 
 							index0: indexArr[ j ],
 							index1: indexArr[ jNext ],
-							normal: _normal.clone(),
+							normal: _normal.clone()
 
 						};
 

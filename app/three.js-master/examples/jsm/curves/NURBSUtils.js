@@ -538,5 +538,5 @@ export {
 	calcRationalCurveDerivatives,
 	calcNURBSDerivatives,
 	calcSurfacePoint,
-	calcVolumePoint,
+	calcVolumePoint
 };

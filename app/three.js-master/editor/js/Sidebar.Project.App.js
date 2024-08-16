@@ -125,7 +125,7 @@ function SidebarProjectApp( editor ) {
 					'			button.style.cssText = \'position: absolute; bottom: 20px; right: 20px; padding: 10px 16px; color: #fff; border: 1px solid #fff; border-radius: 20px; text-decoration: none;\';',
 					'			button.target = \'_blank\';',
 					'			button.textContent = \'EDIT\';',
-					'			document.body.appendChild( button );',
+					'			document.body.appendChild( button );'
 				].join( '\n' );
 
 			}

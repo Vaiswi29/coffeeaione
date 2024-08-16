@@ -24,7 +24,7 @@ function createText( message, height ) {
 		color: 0xffffff,
 		side: THREE.DoubleSide,
 		map: texture,
-		transparent: true,
+		transparent: true
 	} );
 	const geometry = new THREE.PlaneGeometry(
 		( height * textWidth ) / textHeight,

@@ -33,7 +33,7 @@ import { GUI } from '../../examples/jsm/libs/lil-gui.module.min.js';
 		const geometry = new THREE.BoxGeometry( size, size, size );
 		geometry.applyMatrix4( new THREE.Matrix4().makeTranslation( 0, 0, zOffset * size ) );
 		const material = new THREE.MeshBasicMaterial( {
-			color: 'red',
+			color: 'red'
 		} );
 		const cube = new THREE.Mesh( geometry, material );
 		root.add( cube );
@@ -59,7 +59,7 @@ import { GUI } from '../../examples/jsm/libs/lil-gui.module.min.js';
 				const s = THREE.MathUtils.lerp( 0.5, 2, Math.sin( time ) * .5 + .5 );
 				cube.scale.set( s, s, s );
 
-			},
+			}
 		};
 
 	}
@@ -70,14 +70,14 @@ import { GUI } from '../../examples/jsm/libs/lil-gui.module.min.js';
 
 				return scaleCube( 0 );
 
-			},
+			}
 		},
 		scalePositiveZ: {
 			create() {
 
 				return scaleCube( .5 );
 
-			},
+			}
 		},
 		lonLatPos: {
 			create( info ) {
@@ -131,11 +131,11 @@ import { GUI } from '../../examples/jsm/libs/lil-gui.module.min.js';
 				gui.add( new DegRadHelper( latHelper.rotation, 'x' ), 'value', - 90, 90 ).name( 'latHelper y rotation' );
 
 				return {
-					trackball: false,
+					trackball: false
 				};
 
-			},
-		},
+			}
+		}
 	} );
 
 }

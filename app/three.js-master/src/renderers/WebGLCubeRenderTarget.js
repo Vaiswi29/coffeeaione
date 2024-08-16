@@ -47,7 +47,7 @@ class WebGLCubeRenderTarget extends WebGLRenderTarget {
 		const shader = {
 
 			uniforms: {
-				tEquirect: { value: null },
+				tEquirect: { value: null }
 			},
 
 			vertexShader: /* glsl */`

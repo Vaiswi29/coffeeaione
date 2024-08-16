@@ -3,7 +3,7 @@ import {
 	Matrix4,
 	RepeatWrapping,
 	Vector2,
-	Vector3,
+	Vector3
 } from 'three';
 
 /**
@@ -47,7 +47,7 @@ const GTAOShader = {
 		DEPTH_SWIZZLING: 'x',
 		SCREEN_SPACE_RADIUS: 0,
 		SCREEN_SPACE_RADIUS_SCALE: 100.0,
-		SCENE_CLIP_BOX: 0,
+		SCENE_CLIP_BOX: 0
 	},
 
 	uniforms: {
@@ -66,7 +66,7 @@ const GTAOShader = {
 		distanceFallOff: { value: 1. },
 		scale: { value: 1. },
 		sceneBoxMin: { value: new Vector3( - 1, - 1, - 1 ) },
-		sceneBoxMax: { value: new Vector3( 1, 1, 1 ) },
+		sceneBoxMax: { value: new Vector3( 1, 1, 1 ) }
 	},
 
 	vertexShader: /* glsl */`
@@ -269,7 +269,7 @@ const GTAODepthShader = {
 	uniforms: {
 		tDepth: { value: null },
 		cameraNear: { value: null },
-		cameraFar: { value: null },
+		cameraFar: { value: null }
 	},
 
 	vertexShader: /* glsl */`

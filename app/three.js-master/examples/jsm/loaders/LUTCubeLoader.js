@@ -8,7 +8,7 @@ import {
 	LinearFilter,
 	Loader,
 	UnsignedByteType,
-	Vector3,
+	Vector3
 } from 'three';
 
 export class LUTCubeLoader extends Loader {
@@ -145,7 +145,7 @@ export class LUTCubeLoader extends Loader {
 			size,
 			domainMin,
 			domainMax,
-			texture3D,
+			texture3D
 		};
 
 	}

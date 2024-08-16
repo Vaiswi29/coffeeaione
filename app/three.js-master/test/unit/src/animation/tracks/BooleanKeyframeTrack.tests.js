@@ -13,7 +13,7 @@ export default QUnit.module( 'Animation', () => {
 			const parameters = {
 				name: '.visible',
 				times: [ 0, 1 ],
-				values: [ true, false ],
+				values: [ true, false ]
 			};
 
 			// INHERITANCE

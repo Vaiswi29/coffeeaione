@@ -41,7 +41,7 @@ import {
 	RGBAFormat,
 	RGFormat,
 	SRGBColorSpace,
-	UnsignedByteType,
+	UnsignedByteType
 } from 'three';
 import { WorkerPool } from '../utils/WorkerPool.js';
 import {
@@ -351,7 +351,7 @@ class KTX2Loader extends Loader {
 
 KTX2Loader.BasisFormat = {
 	ETC1S: 0,
-	UASTC_4x4: 1,
+	UASTC_4x4: 1
 };
 
 KTX2Loader.TranscoderFormat = {
@@ -371,7 +371,7 @@ KTX2Loader.TranscoderFormat = {
 	RGBA32: 13,
 	RGB565: 14,
 	BGR565: 15,
-	RGBA4444: 16,
+	RGBA4444: 16
 };
 
 KTX2Loader.EngineFormat = {
@@ -384,7 +384,7 @@ KTX2Loader.EngineFormat = {
 	RGB_ETC1_Format: RGB_ETC1_Format,
 	RGB_ETC2_Format: RGB_ETC2_Format,
 	RGB_PVRTC_4BPPV1_Format: RGB_PVRTC_4BPPV1_Format,
-	RGBA_S3TC_DXT1_Format: RGBA_S3TC_DXT1_Format,
+	RGBA_S3TC_DXT1_Format: RGBA_S3TC_DXT1_Format
 };
 
 
@@ -406,30 +406,30 @@ KTX2Loader.BasisWorker = function () {
 
 		switch ( message.type ) {
 
-			case 'init':
-				config = message.config;
-				init( message.transcoderBinary );
-				break;
+		case 'init':
+			config = message.config;
+			init( message.transcoderBinary );
+			break;
 
-			case 'transcode':
-				transcoderPending.then( () => {
+		case 'transcode':
+			transcoderPending.then( () => {
 
-					try {
+				try {
 
-						const { faces, buffers, width, height, hasAlpha, format, dfdFlags } = transcode( message.buffer );
+					const { faces, buffers, width, height, hasAlpha, format, dfdFlags } = transcode( message.buffer );
 
-						self.postMessage( { type: 'transcode', id: message.id, faces, width, height, hasAlpha, format, dfdFlags }, buffers );
+					self.postMessage( { type: 'transcode', id: message.id, faces, width, height, hasAlpha, format, dfdFlags }, buffers );
 
-					} catch ( error ) {
+				} catch ( error ) {
 
-						console.error( error );
+					console.error( error );
 
-						self.postMessage( { type: 'error', id: message.id, error: error.message } );
+					self.postMessage( { type: 'error', id: message.id, error: error.message } );
 
-					}
+				}
 
-				} );
-				break;
+			} );
+			break;
 
 		}
 
@@ -585,7 +585,7 @@ KTX2Loader.BasisWorker = function () {
 			engineFormat: [ EngineFormat.RGBA_ASTC_4x4_Format, EngineFormat.RGBA_ASTC_4x4_Format ],
 			priorityETC1S: Infinity,
 			priorityUASTC: 1,
-			needsPowerOfTwo: false,
+			needsPowerOfTwo: false
 		},
 		{
 			if: 'bptcSupported',
@@ -594,7 +594,7 @@ KTX2Loader.BasisWorker = function () {
 			engineFormat: [ EngineFormat.RGBA_BPTC_Format, EngineFormat.RGBA_BPTC_Format ],
 			priorityETC1S: 3,
 			priorityUASTC: 2,
-			needsPowerOfTwo: false,
+			needsPowerOfTwo: false
 		},
 		{
 			if: 'dxtSupported',
@@ -603,7 +603,7 @@ KTX2Loader.BasisWorker = function () {
 			engineFormat: [ EngineFormat.RGBA_S3TC_DXT1_Format, EngineFormat.RGBA_S3TC_DXT5_Format ],
 			priorityETC1S: 4,
 			priorityUASTC: 5,
-			needsPowerOfTwo: false,
+			needsPowerOfTwo: false
 		},
 		{
 			if: 'etc2Supported',
@@ -612,7 +612,7 @@ KTX2Loader.BasisWorker = function () {
 			engineFormat: [ EngineFormat.RGB_ETC2_Format, EngineFormat.RGBA_ETC2_EAC_Format ],
 			priorityETC1S: 1,
 			priorityUASTC: 3,
-			needsPowerOfTwo: false,
+			needsPowerOfTwo: false
 		},
 		{
 			if: 'etc1Supported',
@@ -621,7 +621,7 @@ KTX2Loader.BasisWorker = function () {
 			engineFormat: [ EngineFormat.RGB_ETC1_Format ],
 			priorityETC1S: 2,
 			priorityUASTC: 4,
-			needsPowerOfTwo: false,
+			needsPowerOfTwo: false
 		},
 		{
 			if: 'pvrtcSupported',
@@ -630,8 +630,8 @@ KTX2Loader.BasisWorker = function () {
 			engineFormat: [ EngineFormat.RGB_PVRTC_4BPPV1_Format, EngineFormat.RGBA_PVRTC_4BPPV1_Format ],
 			priorityETC1S: 5,
 			priorityUASTC: 6,
-			needsPowerOfTwo: true,
-		},
+			needsPowerOfTwo: true
+		}
 	];
 
 	const ETC1S_OPTIONS = FORMAT_OPTIONS.sort( function ( a, b ) {
@@ -742,7 +742,7 @@ const FORMAT_MAP = {
 	[ VK_FORMAT_R8_UNORM ]: RedFormat,
 
 	[ VK_FORMAT_ASTC_6x6_SRGB_BLOCK ]: RGBA_ASTC_6x6_Format,
-	[ VK_FORMAT_ASTC_6x6_UNORM_BLOCK ]: RGBA_ASTC_6x6_Format,
+	[ VK_FORMAT_ASTC_6x6_UNORM_BLOCK ]: RGBA_ASTC_6x6_Format
 
 };
 
@@ -764,7 +764,7 @@ const TYPE_MAP = {
 	[ VK_FORMAT_R8_UNORM ]: UnsignedByteType,
 
 	[ VK_FORMAT_ASTC_6x6_SRGB_BLOCK ]: UnsignedByteType,
-	[ VK_FORMAT_ASTC_6x6_UNORM_BLOCK ]: UnsignedByteType,
+	[ VK_FORMAT_ASTC_6x6_UNORM_BLOCK ]: UnsignedByteType
 
 };
 
@@ -862,7 +862,7 @@ async function createRawTexture( container ) {
 			data: data,
 			width: levelWidth,
 			height: levelHeight,
-			depth: levelDepth,
+			depth: levelDepth
 
 		} );
 

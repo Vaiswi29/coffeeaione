@@ -5,10 +5,10 @@ import { threejsLessonUtils } from './threejs-lesson-utils.js';
 {
 
 	const darkColors = {
-		background: '#333',
+		background: '#333'
 	};
 	const lightColors = {
-		background: '#FFF',
+		background: '#FFF'
 	};
 	const darkMatcher = window.matchMedia( '(prefers-color-scheme: dark)' );
 
@@ -22,7 +22,7 @@ import { threejsLessonUtils } from './threejs-lesson-utils.js';
 		const material = new THREE.MeshPhongMaterial( { color: 'hsl(130,50%,50%)' } );
 		return {
 			obj3D: new THREE.Mesh( geometry, material ),
-			update,
+			update
 		};
 
 	}
@@ -36,7 +36,7 @@ import { threejsLessonUtils } from './threejs-lesson-utils.js';
 		const settings = {
 			shininess: 0,
 			roughness: 1,
-			metalness: 0,
+			metalness: 0
 		};
 		loader.load( '/manual/examples/resources/models/simple_house_scene/scene.gltf', ( gltf ) => {
 
@@ -121,7 +121,7 @@ import { threejsLessonUtils } from './threejs-lesson-utils.js';
 
 				camera.lookAt( target[ 0 ] + Math.sin( time * .25 ) * .5, target[ 1 ], target[ 2 ] );
 
-			},
+			}
 		};
 
 	}
@@ -149,7 +149,7 @@ import { threejsLessonUtils } from './threejs-lesson-utils.js';
 				const fog = new THREE.Fog( color, near, far );
 				return fogExample( scene, fog, createLightDarkFogUpdater( fog ) );
 
-			},
+			}
 		},
 		fogExp2: {
 			create( props ) {
@@ -160,7 +160,7 @@ import { threejsLessonUtils } from './threejs-lesson-utils.js';
 				const fog = new THREE.FogExp2( color, density );
 				return fogExample( scene, fog, createLightDarkFogUpdater( fog ) );
 
-			},
+			}
 		},
 		fogBlueBackgroundRed: {
 			create( props ) {
@@ -172,7 +172,7 @@ import { threejsLessonUtils } from './threejs-lesson-utils.js';
 				const far = 18;
 				return fogExample( scene, new THREE.Fog( color, near, far ) );
 
-			},
+			}
 		},
 		fogBlueBackgroundBlue: {
 			create( props ) {
@@ -184,22 +184,22 @@ import { threejsLessonUtils } from './threejs-lesson-utils.js';
 				const far = 18;
 				return fogExample( scene, new THREE.Fog( color, near, far ) );
 
-			},
+			}
 		},
 		fogHouseAll: {
 			create( props ) {
 
 				return houseScene( props, true );
 
-			},
+			}
 		},
 		fogHouseInsideNoFog: {
 			create( props ) {
 
 				return houseScene( props, false );
 
-			},
-		},
+			}
+		}
 	} );
 
 }

@@ -122,7 +122,7 @@ const MXElements = [
 	new MXElement( 'safepower', mx_safepower, [ 'in1', 'in2' ] ),
 	new MXElement( 'contrast', mx_contrast, [ 'in', 'amount', 'pivot' ] ),
 	//new MtlXElement( 'hsvadjust', ... ),
-	new MXElement( 'saturate', saturation, [ 'in', 'amount' ] ),
+	new MXElement( 'saturate', saturation, [ 'in', 'amount' ] )
 	//new MtlXElement( 'extract', ... ),
 	//new MtlXElement( 'separate2', ... ),
 	//new MtlXElement( 'separate3', ... ),

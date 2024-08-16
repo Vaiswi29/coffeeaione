@@ -5,7 +5,7 @@ import {
 	Mesh,
 	PlaneGeometry,
 	ShaderMaterial,
-	Vector3,
+	Vector3
 } from 'three';
 import { mergeGeometries } from '../utils/BufferGeometryUtils.js';
 
@@ -23,7 +23,7 @@ class TextureHelper extends Mesh {
 			uniforms: {
 
 				map: { value: texture },
-				alpha: { value: getAlpha( texture ) },
+				alpha: { value: getAlpha( texture ) }
 
 			},
 
@@ -39,7 +39,7 @@ class TextureHelper extends Mesh {
 
 				'	gl_Position = projectionMatrix * modelViewMatrix * vec4( position, 1.0 );',
 
-				'}',
+				'}'
 
 			].join( '\n' ),
 

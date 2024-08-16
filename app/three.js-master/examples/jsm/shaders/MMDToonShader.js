@@ -76,13 +76,13 @@ const MMDToonShader = {
 	defines: {
 		TOON: true,
 		MATCAP: true,
-		MATCAP_BLENDING_ADD: true,
+		MATCAP_BLENDING_ADD: true
 	},
 
 	uniforms: UniformsUtils.merge( [
 		ShaderLib.toon.uniforms,
 		ShaderLib.phong.uniforms,
-		ShaderLib.matcap.uniforms,
+		ShaderLib.matcap.uniforms
 	] ),
 
 	vertexShader:

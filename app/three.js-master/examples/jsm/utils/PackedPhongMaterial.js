@@ -8,7 +8,7 @@ import {
 	MeshPhongMaterial,
 	ShaderChunk,
 	ShaderLib,
-	UniformsUtils,
+	UniformsUtils
 } from 'three';
 
 class PackedPhongMaterial extends MeshPhongMaterial {
@@ -163,7 +163,7 @@ class PackedPhongMaterial extends MeshPhongMaterial {
 			ShaderChunk.shadowmap_vertex,
 			ShaderChunk.fog_vertex,
 
-			'}',
+			'}'
 		].join( '\n' );
 
 		// Use the original MeshPhongMaterial's fragmentShader.

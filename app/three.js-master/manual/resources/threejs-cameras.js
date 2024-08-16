@@ -19,7 +19,7 @@ import { threejsLessonUtils } from './threejs-lesson-utils.js';
 				const depth = 8;
 				return addShape( 'hsl(150,100%,40%)', new THREE.BoxGeometry( width, height, depth ) );
 
-			},
+			}
 		},
 		shapeCone: {
 			create() {
@@ -29,7 +29,7 @@ import { threejsLessonUtils } from './threejs-lesson-utils.js';
 				const segments = 24;
 				return addShape( 'hsl(160,100%,40%)', new THREE.ConeGeometry( radius, height, segments ) );
 
-			},
+			}
 		},
 		shapeCylinder: {
 			create() {
@@ -40,7 +40,7 @@ import { threejsLessonUtils } from './threejs-lesson-utils.js';
 				const radialSegments = 24;
 				return addShape( 'hsl(170,100%,40%)', new THREE.CylinderGeometry( radiusTop, radiusBottom, height, radialSegments ) );
 
-			},
+			}
 		},
 		shapeSphere: {
 			create() {
@@ -50,7 +50,7 @@ import { threejsLessonUtils } from './threejs-lesson-utils.js';
 				const heightSegments = 16;
 				return addShape( 'hsl(180,100%,40%)', new THREE.SphereGeometry( radius, widthSegments, heightSegments ) );
 
-			},
+			}
 		},
 		shapeFrustum: {
 			create() {
@@ -77,8 +77,8 @@ import { threejsLessonUtils } from './threejs-lesson-utils.js';
 
 				return addShape( 'hsl(190,100%,40%)', geometry );
 
-			},
-		},
+			}
+		}
 	} );
 
 }

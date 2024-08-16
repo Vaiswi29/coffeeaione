@@ -420,5 +420,5 @@ function parallelTraverse( a, b, callback ) {
 export {
 	retarget,
 	retargetClip,
-	clone,
+	clone
 };

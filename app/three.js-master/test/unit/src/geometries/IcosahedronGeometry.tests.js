@@ -20,7 +20,7 @@ export default QUnit.module( 'Geometries', () => {
 			geometries = [
 				new IcosahedronGeometry(),
 				new IcosahedronGeometry( parameters.radius ),
-				new IcosahedronGeometry( parameters.radius, parameters.detail ),
+				new IcosahedronGeometry( parameters.radius, parameters.detail )
 			];
 
 		} );

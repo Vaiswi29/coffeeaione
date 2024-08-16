@@ -22,7 +22,7 @@ export default QUnit.module( 'Lights', () => {
 				new HemisphereLight(),
 				new HemisphereLight( parameters.skyColor ),
 				new HemisphereLight( parameters.skyColor, parameters.groundColor ),
-				new HemisphereLight( parameters.skyColor, parameters.groundColor, parameters.intensity ),
+				new HemisphereLight( parameters.skyColor, parameters.groundColor, parameters.intensity )
 			];
 
 		} );

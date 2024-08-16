@@ -27,7 +27,7 @@ export default [
 	{
 		input: 'test/treeshake/index.js',
 		plugins: [
-			resolve(),
+			resolve()
 		],
 		output: [
 			{
@@ -42,8 +42,8 @@ export default [
 			resolve(),
 			terser(),
 			filesize( {
-				showMinifiedSize: false,
-			} ),
+				showMinifiedSize: false
+			} )
 		],
 		output: [
 			{
@@ -58,9 +58,9 @@ export default [
 			glsl(),
 			terser(),
 			visualizer( {
-				filename: statsFile,
+				filename: statsFile
 			} ),
-			logStatsFile(),
+			logStatsFile()
 		],
 		output: [
 			{
@@ -68,5 +68,5 @@ export default [
 				file: 'test/treeshake/index-src.bundle.min.js'
 			}
 		]
-	},
+	}
 ];

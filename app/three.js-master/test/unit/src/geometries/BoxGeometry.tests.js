@@ -24,7 +24,7 @@ export default QUnit.module( 'Geometries', () => {
 			geometries = [
 				new BoxGeometry(),
 				new BoxGeometry( parameters.width, parameters.height, parameters.depth ),
-				new BoxGeometry( parameters.width, parameters.height, parameters.depth, parameters.widthSegments, parameters.heightSegments, parameters.depthSegments ),
+				new BoxGeometry( parameters.width, parameters.height, parameters.depth, parameters.widthSegments, parameters.heightSegments, parameters.depthSegments )
 			];
 
 		} );

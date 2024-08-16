@@ -20,7 +20,7 @@ export default QUnit.module( 'Geometries', () => {
 			geometries = [
 				new TetrahedronGeometry(),
 				new TetrahedronGeometry( parameters.radius ),
-				new TetrahedronGeometry( parameters.radius, parameters.detail ),
+				new TetrahedronGeometry( parameters.radius, parameters.detail )
 			];
 
 		} );

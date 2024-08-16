@@ -139,7 +139,7 @@ ${ flowData.code }
 				Int8Array: ByteType,
 				Int16Array: ShortType,
 				Int32Array: IntType,
-				Uint8ClampedArray: UnsignedByteType,
+				Uint8ClampedArray: UnsignedByteType
 			};
 
 			const width = Math.pow( 2, Math.ceil( Math.log2( Math.sqrt( numElements / itemSize ) ) ) );

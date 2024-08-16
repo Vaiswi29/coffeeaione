@@ -884,17 +884,17 @@ class RigidBody {
 
 			switch ( p.shapeType ) {
 
-				case 0:
-					return new Ammo.btSphereShape( p.width );
+			case 0:
+				return new Ammo.btSphereShape( p.width );
 
-				case 1:
-					return new Ammo.btBoxShape( new Ammo.btVector3( p.width, p.height, p.depth ) );
+			case 1:
+				return new Ammo.btBoxShape( new Ammo.btVector3( p.width, p.height, p.depth ) );
 
-				case 2:
-					return new Ammo.btCapsuleShape( p.width, p.height );
+			case 2:
+				return new Ammo.btCapsuleShape( p.width, p.height );
 
-				default:
-					throw new Error( 'unknown shape type ' + p.shapeType );
+			default:
+				throw new Error( 'unknown shape type ' + p.shapeType );
 
 			}
 
@@ -1376,17 +1376,17 @@ class MMDPhysicsHelper extends Object3D {
 
 			switch ( param.shapeType ) {
 
-				case 0:
-					return new SphereGeometry( param.width, 16, 8 );
+			case 0:
+				return new SphereGeometry( param.width, 16, 8 );
 
-				case 1:
-					return new BoxGeometry( param.width * 2, param.height * 2, param.depth * 2, 8, 8, 8 );
+			case 1:
+				return new BoxGeometry( param.width * 2, param.height * 2, param.depth * 2, 8, 8, 8 );
 
-				case 2:
-					return new CapsuleGeometry( param.width, param.height, 8, 16 );
+			case 2:
+				return new CapsuleGeometry( param.width, param.height, 8, 16 );
 
-				default:
-					return null;
+			default:
+				return null;
 
 			}
 

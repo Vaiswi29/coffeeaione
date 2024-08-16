@@ -1,7 +1,7 @@
 import {
 	Matrix4,
 	Vector2,
-	Vector3,
+	Vector3
 } from 'three';
 
 /**
@@ -18,7 +18,7 @@ const PoissonDenoiseShader = {
 		'SAMPLES': 16,
 		'SAMPLE_VECTORS': generatePdSamplePointInitializer( 16, 2, 1 ),
 		'NORMAL_VECTOR_TYPE': 1,
-		'DEPTH_VALUE_SOURCE': 0,
+		'DEPTH_VALUE_SOURCE': 0
 	},
 
 	uniforms: {
@@ -191,7 +191,7 @@ function generatePdSamplePointInitializer( samples, rings, radiusExponent ) {
 	const poissonDisk = generateDenoiseSamples(
 		samples,
 		rings,
-		radiusExponent,
+		radiusExponent
 	);
 
 	let glslCode = 'vec3[SAMPLES](';

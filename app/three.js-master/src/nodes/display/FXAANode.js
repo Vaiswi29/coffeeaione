@@ -299,7 +299,7 @@ class FXAANode extends TempNode {
 				{ name: 'uv', type: 'vec2' },
 				{ name: 'fxaaQualityRcpFrame', type: 'vec2' },
 				{ name: 'fxaaQualityEdgeThreshold', type: 'float' },
-				{ name: 'fxaaQualityinvEdgeThreshold', type: 'float' },
+				{ name: 'fxaaQualityinvEdgeThreshold', type: 'float' }
 			]
 		} );
 

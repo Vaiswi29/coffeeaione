@@ -7,10 +7,10 @@ import { TextGeometry } from '../../examples/jsm/geometries/TextGeometry.js';
 {
 
 	const darkColors = {
-		lines: '#DDD',
+		lines: '#DDD'
 	};
 	const lightColors = {
-		lines: '#000',
+		lines: '#000'
 	};
 
 	const darkMatcher = window.matchMedia( '(prefers-color-scheme: dark)' );
@@ -27,12 +27,12 @@ import { TextGeometry } from '../../examples/jsm/geometries/TextGeometry.js';
 	const diagrams = {
 		BoxGeometry: {
 			ui: {
-				width: { type: 'range', min: 1, max: 10, precision: 1, },
-				height: { type: 'range', min: 1, max: 10, precision: 1, },
-				depth: { type: 'range', min: 1, max: 10, precision: 1, },
-				widthSegments: { type: 'range', min: 1, max: 10, },
-				heightSegments: { type: 'range', min: 1, max: 10, },
-				depthSegments: { type: 'range', min: 1, max: 10, },
+				width: { type: 'range', min: 1, max: 10, precision: 1 },
+				height: { type: 'range', min: 1, max: 10, precision: 1 },
+				depth: { type: 'range', min: 1, max: 10, precision: 1 },
+				widthSegments: { type: 'range', min: 1, max: 10 },
+				heightSegments: { type: 'range', min: 1, max: 10 },
+				depthSegments: { type: 'range', min: 1, max: 10 }
 			},
 			create( width = 8, height = 8, depth = 8 ) {
 
@@ -45,14 +45,14 @@ import { TextGeometry } from '../../examples/jsm/geometries/TextGeometry.js';
 					width, height, depth,
 					widthSegments, heightSegments, depthSegments );
 
-			},
+			}
 		},
 		CircleGeometry: {
 			ui: {
-				radius: { type: 'range', min: 1, max: 10, precision: 1, },
-				segments: { type: 'range', min: 1, max: 50, },
+				radius: { type: 'range', min: 1, max: 10, precision: 1 },
+				segments: { type: 'range', min: 1, max: 50 },
 				thetaStart: { type: 'range', min: 0, max: 2, mult: Math.PI },
-				thetaLength: { type: 'range', min: 0, max: 2, mult: Math.PI },
+				thetaLength: { type: 'range', min: 0, max: 2, mult: Math.PI }
 			},
 			create( radius = 7, segments = 24 ) {
 
@@ -64,17 +64,17 @@ import { TextGeometry } from '../../examples/jsm/geometries/TextGeometry.js';
 				return new THREE.CircleGeometry(
 					radius, segments, thetaStart, thetaLength );
 
-			},
+			}
 		},
 		ConeGeometry: {
 			ui: {
-				radius: { type: 'range', min: 1, max: 10, precision: 1, },
-				height: { type: 'range', min: 1, max: 10, precision: 1, },
-				radialSegments: { type: 'range', min: 1, max: 50, },
-				heightSegments: { type: 'range', min: 1, max: 10, },
-				openEnded: { type: 'bool', },
+				radius: { type: 'range', min: 1, max: 10, precision: 1 },
+				height: { type: 'range', min: 1, max: 10, precision: 1 },
+				radialSegments: { type: 'range', min: 1, max: 50 },
+				heightSegments: { type: 'range', min: 1, max: 10 },
+				openEnded: { type: 'bool' },
 				thetaStart: { type: 'range', min: 0, max: 2, mult: Math.PI },
-				thetaLength: { type: 'range', min: 0, max: 2, mult: Math.PI },
+				thetaLength: { type: 'range', min: 0, max: 2, mult: Math.PI }
 			},
 			create( radius = 6, height = 8, radialSegments = 16 ) {
 
@@ -89,18 +89,18 @@ import { TextGeometry } from '../../examples/jsm/geometries/TextGeometry.js';
 					openEnded,
 					thetaStart, thetaLength );
 
-			},
+			}
 		},
 		CylinderGeometry: {
 			ui: {
-				radiusTop: { type: 'range', min: 0, max: 10, precision: 1, },
-				radiusBottom: { type: 'range', min: 0, max: 10, precision: 1, },
-				height: { type: 'range', min: 1, max: 10, precision: 1, },
-				radialSegments: { type: 'range', min: 1, max: 50, },
-				heightSegments: { type: 'range', min: 1, max: 10, },
-				openEnded: { type: 'bool', },
+				radiusTop: { type: 'range', min: 0, max: 10, precision: 1 },
+				radiusBottom: { type: 'range', min: 0, max: 10, precision: 1 },
+				height: { type: 'range', min: 1, max: 10, precision: 1 },
+				radialSegments: { type: 'range', min: 1, max: 50 },
+				heightSegments: { type: 'range', min: 1, max: 10 },
+				openEnded: { type: 'bool' },
 				thetaStart: { type: 'range', min: 0, max: 2, mult: Math.PI },
-				thetaLength: { type: 'range', min: 0, max: 2, mult: Math.PI },
+				thetaLength: { type: 'range', min: 0, max: 2, mult: Math.PI }
 			},
 			create( radiusTop = 4, radiusBottom = 4, height = 8, radialSegments = 12 ) {
 
@@ -116,12 +116,12 @@ import { TextGeometry } from '../../examples/jsm/geometries/TextGeometry.js';
 					openEnded,
 					thetaStart, thetaLength );
 
-			},
+			}
 		},
 		DodecahedronGeometry: {
 			ui: {
-				radius: { type: 'range', min: 1, max: 10, precision: 1, },
-				detail: { type: 'range', min: 0, max: 5, precision: 0, },
+				radius: { type: 'range', min: 1, max: 10, precision: 1 },
+				detail: { type: 'range', min: 0, max: 5, precision: 0 }
 			},
 			create( radius = 7 ) {
 
@@ -132,16 +132,16 @@ import { TextGeometry } from '../../examples/jsm/geometries/TextGeometry.js';
 
 				return new THREE.DodecahedronGeometry( radius, detail );
 
-			},
+			}
 		},
 		ExtrudeGeometry: {
 			ui: {
-				steps: { type: 'range', min: 1, max: 100, },
-				depth: { type: 'range', min: 1, max: 20, precision: 1, },
-				bevelEnabled: { type: 'bool', },
-				bevelThickness: { type: 'range', min: 0.1, max: 3, },
-				bevelSize: { type: 'range', min: 0.1, max: 3, },
-				bevelSegments: { type: 'range', min: 0, max: 8, },
+				steps: { type: 'range', min: 1, max: 100 },
+				depth: { type: 'range', min: 1, max: 20, precision: 1 },
+				bevelEnabled: { type: 'bool' },
+				bevelThickness: { type: 'range', min: 0.1, max: 3 },
+				bevelSize: { type: 'range', min: 0.1, max: 3 },
+				bevelSegments: { type: 'range', min: 0, max: 8 }
 			},
 			addConstCode: false,
 			create( steps = 2, depth = 2, bevelEnabled = true, bevelThickness = 1, bevelSize = 1, bevelSegments = 2 ) {
@@ -163,7 +163,7 @@ import { TextGeometry } from '../../examples/jsm/geometries/TextGeometry.js';
 					bevelEnabled,
 					bevelThickness,
 					bevelSize,
-					bevelSegments,
+					bevelSegments
 				};
 
 				const geometry = new THREE.ExtrudeGeometry( shape, extrudeSettings );
@@ -197,7 +197,7 @@ const geometry = THREE.ExtrudeGeometry(shape, extrudeSettings);
 
 				const outline = new THREE.Shape( [
 					[ - 2, - 0.1 ], [ 2, - 0.1 ], [ 2, 0.6 ],
-					[ 1.6, 0.6 ], [ 1.6, 0.1 ], [ - 2, 0.1 ],
+					[ 1.6, 0.6 ], [ 1.6, 0.1 ], [ - 2, 0.1 ]
 				].map( p => new THREE.Vector2( ...p ) ) );
 
 				const x = - 2.5;
@@ -210,7 +210,7 @@ const geometry = THREE.ExtrudeGeometry(shape, extrudeSettings);
 					[ x - 3, y + 5.5 ], [ x - 1.5, y + 7.7 ], [ x + 2.5, y + 9.5 ],
 					[ x + 6, y + 7.7 ], [ x + 8, y + 4.5 ], [ x + 8, y + 3.5 ],
 					[ x + 8, y + 3.5 ], [ x + 8, y ], [ x + 5, y ],
-					[ x + 3.5, y ], [ x + 2.5, y + 2.5 ], [ x + 2.5, y + 2.5 ],
+					[ x + 3.5, y ], [ x + 2.5, y + 2.5 ], [ x + 2.5, y + 2.5 ]
 				].map( p => new THREE.Vector3( ...p, 0 ) );
 				for ( let i = 0; i < points.length; i += 3 ) {
 
@@ -221,7 +221,7 @@ const geometry = THREE.ExtrudeGeometry(shape, extrudeSettings);
 				const extrudeSettings = {
 					steps,
 					bevelEnabled: false,
-					extrudePath: shape,
+					extrudePath: shape
 				};
 
 				const geometry = new THREE.ExtrudeGeometry( outline, extrudeSettings );
@@ -258,12 +258,12 @@ const extrudeSettings = {
 
 const geometry =  new THREE.ExtrudeGeometry(outline, extrudeSettings);
 return geometry;
-      `,
+      `
 		},
 		IcosahedronGeometry: {
 			ui: {
-				radius: { type: 'range', min: 1, max: 10, precision: 1, },
-				detail: { type: 'range', min: 0, max: 5, precision: 0, },
+				radius: { type: 'range', min: 1, max: 10, precision: 1 },
+				detail: { type: 'range', min: 0, max: 5, precision: 0 }
 			},
 			create( radius = 7 ) {
 
@@ -274,13 +274,13 @@ return geometry;
 
 				return new THREE.IcosahedronGeometry( radius, detail );
 
-			},
+			}
 		},
 		LatheGeometry: {
 			ui: {
-				segments: { type: 'range', min: 1, max: 50, },
+				segments: { type: 'range', min: 1, max: 50 },
 				phiStart: { type: 'range', min: 0, max: 2, mult: Math.PI },
-				phiLength: { type: 'range', min: 0, max: 2, mult: Math.PI },
+				phiLength: { type: 'range', min: 0, max: 2, mult: Math.PI }
 			},
 			create() {
 
@@ -306,12 +306,12 @@ return geometry;
 				return new THREE.LatheGeometry(
 					points, segments, phiStart, phiLength );
 
-			},
+			}
 		},
 		OctahedronGeometry: {
 			ui: {
-				radius: { type: 'range', min: 1, max: 10, precision: 1, },
-				detail: { type: 'range', min: 0, max: 5, precision: 0, },
+				radius: { type: 'range', min: 1, max: 10, precision: 1 },
+				detail: { type: 'range', min: 0, max: 5, precision: 0 }
 			},
 			create( radius = 7 ) {
 
@@ -322,12 +322,12 @@ return geometry;
 
 				return new THREE.OctahedronGeometry( radius, detail );
 
-			},
+			}
 		},
 		ParametricGeometry: {
 			ui: {
-				stacks: { type: 'range', min: 1, max: 50, },
-				slices: { type: 'range', min: 1, max: 50, },
+				stacks: { type: 'range', min: 1, max: 50 },
+				slices: { type: 'range', min: 1, max: 50 }
 			},
 			/*
       from: https://github.com/mrdoob/three.js/blob/b8d8a8625465bd634aa68e5846354d69f34d2ff5/examples/js/ParametricGeometries.js
@@ -388,14 +388,14 @@ return geometry;
 				return new ParametricGeometry(
 					klein, slices, stacks );
 
-			},
+			}
 		},
 		PlaneGeometry: {
 			ui: {
-				width: { type: 'range', min: 1, max: 10, precision: 1, },
-				height: { type: 'range', min: 1, max: 10, precision: 1, },
-				widthSegments: { type: 'range', min: 1, max: 10, },
-				heightSegments: { type: 'range', min: 1, max: 10, },
+				width: { type: 'range', min: 1, max: 10, precision: 1 },
+				height: { type: 'range', min: 1, max: 10, precision: 1 },
+				widthSegments: { type: 'range', min: 1, max: 10 },
+				heightSegments: { type: 'range', min: 1, max: 10 }
 			},
 			create( width = 9, height = 9 ) {
 
@@ -408,18 +408,18 @@ return geometry;
 					width, height,
 					widthSegments, heightSegments );
 
-			},
+			}
 		},
 		PolyhedronGeometry: {
 			ui: {
-				radius: { type: 'range', min: 1, max: 10, precision: 1, },
-				detail: { type: 'range', min: 0, max: 5, precision: 0, },
+				radius: { type: 'range', min: 1, max: 10, precision: 1 },
+				detail: { type: 'range', min: 0, max: 5, precision: 0 }
 			},
 			create( radius = 7, detail = 2 ) {
 
 				const verticesOfCube = [
 					- 1, - 1, - 1, 1, - 1, - 1, 1, 1, - 1, - 1, 1, - 1,
-					- 1, - 1, 1, 1, - 1, 1, 1, 1, 1, - 1, 1, 1,
+					- 1, - 1, 1, 1, - 1, 1, 1, 1, 1, - 1, 1, 1
 				];
 				const indicesOfFaces = [
 					2, 1, 0, 0, 3, 2,
@@ -427,21 +427,21 @@ return geometry;
 					0, 1, 5, 5, 4, 0,
 					1, 2, 6, 6, 5, 1,
 					2, 3, 7, 7, 6, 2,
-					4, 5, 6, 6, 7, 4,
+					4, 5, 6, 6, 7, 4
 				];
 				return new THREE.PolyhedronGeometry(
 					verticesOfCube, indicesOfFaces, radius, detail );
 
-			},
+			}
 		},
 		RingGeometry: {
 			ui: {
-				innerRadius: { type: 'range', min: 1, max: 10, precision: 1, },
-				outerRadius: { type: 'range', min: 1, max: 10, precision: 1, },
-				thetaSegments: { type: 'range', min: 1, max: 30, },
-				phiSegments: { type: 'range', min: 1, max: 10, },
+				innerRadius: { type: 'range', min: 1, max: 10, precision: 1 },
+				outerRadius: { type: 'range', min: 1, max: 10, precision: 1 },
+				thetaSegments: { type: 'range', min: 1, max: 30 },
+				phiSegments: { type: 'range', min: 1, max: 10 },
 				thetaStart: { type: 'range', min: 0, max: 2, mult: Math.PI },
-				thetaLength: { type: 'range', min: 0, max: 2, mult: Math.PI },
+				thetaLength: { type: 'range', min: 0, max: 2, mult: Math.PI }
 			},
 			create( innerRadius = 2, outerRadius = 7, thetaSegments = 18 ) {
 
@@ -456,11 +456,11 @@ return geometry;
 					thetaSegments, phiSegments,
 					thetaStart, thetaLength );
 
-			},
+			}
 		},
 		ShapeGeometry: {
 			ui: {
-				curveSegments: { type: 'range', min: 1, max: 30, },
+				curveSegments: { type: 'range', min: 1, max: 30 }
 			},
 			create() {
 
@@ -491,17 +491,17 @@ return geometry;
 				shape.bezierCurveTo( x + 3.5, y, x + 2.5, y + 2.5, x + 2.5, y + 2.5 );
 				return new THREE.ShapeGeometry( shape, curveSegments );
 
-			},
+			}
 		},
 		SphereGeometry: {
 			ui: {
-				radius: { type: 'range', min: 1, max: 10, precision: 1, },
-				widthSegments: { type: 'range', min: 1, max: 30, },
-				heightSegments: { type: 'range', min: 1, max: 30, },
+				radius: { type: 'range', min: 1, max: 10, precision: 1 },
+				widthSegments: { type: 'range', min: 1, max: 30 },
+				heightSegments: { type: 'range', min: 1, max: 30 },
 				phiStart: { type: 'range', min: 0, max: 2, mult: Math.PI },
 				phiLength: { type: 'range', min: 0, max: 2, mult: Math.PI },
 				thetaStart: { type: 'range', min: 0, max: 1, mult: Math.PI },
-				thetaLength: { type: 'range', min: 0, max: 1, mult: Math.PI },
+				thetaLength: { type: 'range', min: 0, max: 1, mult: Math.PI }
 			},
 			create( radius = 7, widthSegments = 12, heightSegments = 8 ) {
 
@@ -516,12 +516,12 @@ return geometry;
 					phiStart, phiLength,
 					thetaStart, thetaLength );
 
-			},
+			}
 		},
 		TetrahedronGeometry: {
 			ui: {
-				radius: { type: 'range', min: 1, max: 10, precision: 1, },
-				detail: { type: 'range', min: 0, max: 5, precision: 0, },
+				radius: { type: 'range', min: 1, max: 10, precision: 1 },
+				detail: { type: 'range', min: 0, max: 5, precision: 0 }
 			},
 			create( radius = 7 ) {
 
@@ -532,20 +532,20 @@ return geometry;
 
 				return new THREE.TetrahedronGeometry( radius, detail );
 
-			},
+			}
 		},
 		TextGeometry: {
 			ui: {
-				text: { type: 'text', maxLength: 30, },
-				size: { type: 'range', min: 1, max: 10, precision: 1, },
-				depth: { type: 'range', min: 1, max: 10, precision: 1, },
-				curveSegments: { type: 'range', min: 1, max: 20, },
+				text: { type: 'text', maxLength: 30 },
+				size: { type: 'range', min: 1, max: 10, precision: 1 },
+				depth: { type: 'range', min: 1, max: 10, precision: 1 },
+				curveSegments: { type: 'range', min: 1, max: 20 },
 				// font', fonts ).onChange( generateGeometry );
 				// weight', weights ).onChange( generateGeometry );
-				bevelEnabled: { type: 'bool', },
-				bevelThickness: { type: 'range', min: 0.1, max: 3, },
-				bevelSize: { type: 'range', min: 0.1, max: 3, },
-				bevelSegments: { type: 'range', min: 0, max: 8, },
+				bevelEnabled: { type: 'bool' },
+				bevelThickness: { type: 'range', min: 0.1, max: 3 },
+				bevelSize: { type: 'range', min: 0.1, max: 3 },
+				bevelSegments: { type: 'range', min: 0, max: 8 }
 			},
 			addConstCode: false,
 			create( text = 'three.js', size = 3, depth = 0.2, curveSegments = 12, bevelEnabled = true, bevelThickness = 0.15, bevelSize = 0.3, bevelSegments = 5 ) {
@@ -562,7 +562,7 @@ return geometry;
 							bevelEnabled,
 							bevelThickness,
 							bevelSize,
-							bevelSegments,
+							bevelSegments
 						} ) );
 
 					} );
@@ -587,14 +587,14 @@ loader.load('../resources/threejs/fonts/helvetiker_regular.typeface.json', (font
   });
   ...
 });
-      `,
+      `
 		},
 		TorusGeometry: {
 			ui: {
-				radius: { type: 'range', min: 1, max: 10, precision: 1, },
-				tubeRadius: { type: 'range', min: 1, max: 10, precision: 1, },
-				radialSegments: { type: 'range', min: 1, max: 30, },
-				tubularSegments: { type: 'range', min: 1, max: 100, },
+				radius: { type: 'range', min: 1, max: 10, precision: 1 },
+				tubeRadius: { type: 'range', min: 1, max: 10, precision: 1 },
+				radialSegments: { type: 'range', min: 1, max: 30 },
+				tubularSegments: { type: 'range', min: 1, max: 100 }
 			},
 			create( radius = 5, tubeRadius = 2, radialSegments = 8, tubularSegments = 24 ) {
 
@@ -602,30 +602,30 @@ loader.load('../resources/threejs/fonts/helvetiker_regular.typeface.json', (font
 					radius, tubeRadius,
 					radialSegments, tubularSegments );
 
-			},
+			}
 		},
 		TorusKnotGeometry: {
 			ui: {
-				radius: { type: 'range', min: 1, max: 10, precision: 1, },
-				tubeRadius: { type: 'range', min: 1, max: 10, precision: 1, },
-				radialSegments: { type: 'range', min: 1, max: 30, },
-				tubularSegments: { type: 'range', min: 1, max: 100, },
-				p: { type: 'range', min: 1, max: 20, },
-				q: { type: 'range', min: 1, max: 20, },
+				radius: { type: 'range', min: 1, max: 10, precision: 1 },
+				tubeRadius: { type: 'range', min: 1, max: 10, precision: 1 },
+				radialSegments: { type: 'range', min: 1, max: 30 },
+				tubularSegments: { type: 'range', min: 1, max: 100 },
+				p: { type: 'range', min: 1, max: 20 },
+				q: { type: 'range', min: 1, max: 20 }
 			},
 			create( radius = 3.5, tubeRadius = 1.5, radialSegments = 8, tubularSegments = 64, p = 2, q = 3 ) {
 
 				return new THREE.TorusKnotGeometry(
 					radius, tubeRadius, tubularSegments, radialSegments, p, q );
 
-			},
+			}
 		},
 		TubeGeometry: {
 			ui: {
-				tubularSegments: { type: 'range', min: 1, max: 100, },
-				radius: { type: 'range', min: 1, max: 10, precision: 1, },
-				radialSegments: { type: 'range', min: 1, max: 30, },
-				closed: { type: 'bool', },
+				tubularSegments: { type: 'range', min: 1, max: 100 },
+				radius: { type: 'range', min: 1, max: 10, precision: 1 },
+				radialSegments: { type: 'range', min: 1, max: 30 },
+				closed: { type: 'bool' }
 			},
 			create( tubularSegments = 20, radius = 1, radialSegments = 8, closed = false ) {
 
@@ -652,17 +652,17 @@ loader.load('../resources/threejs/fonts/helvetiker_regular.typeface.json', (font
 				return new THREE.TubeGeometry(
 					path, tubularSegments, radius, radialSegments, closed );
 
-			},
+			}
 		},
 		EdgesGeometry: {
 			ui: {
-				thresholdAngle: { type: 'range', min: 1, max: 180, },
+				thresholdAngle: { type: 'range', min: 1, max: 180 }
 			},
 			create() {
 
 				return {
 					lineGeometry: new THREE.EdgesGeometry(
-						new THREE.BoxGeometry( 8, 8, 8 ) ),
+						new THREE.BoxGeometry( 8, 8, 8 ) )
 				};
 
 			},
@@ -670,7 +670,7 @@ loader.load('../resources/threejs/fonts/helvetiker_regular.typeface.json', (font
 
 				return {
 					lineGeometry: new THREE.EdgesGeometry(
-						new THREE.SphereGeometry( 7, 6, 3 ), thresholdAngle ),
+						new THREE.SphereGeometry( 7, 6, 3 ), thresholdAngle )
 				};
 
 			},
@@ -693,13 +693,13 @@ const sphereGeometry = new THREE.SphereGeometry(
     radius, widthSegments, heightSegments);
 const thresholdAngle = 1;  // ui: thresholdAngle
 const geometry = new THREE.EdgesGeometry(sphereGeometry, thresholdAngle);
-`,
+`
 		},
 		WireframeGeometry: {
 			ui: {
-				widthSegments: { type: 'range', min: 1, max: 10, },
-				heightSegments: { type: 'range', min: 1, max: 10, },
-				depthSegments: { type: 'range', min: 1, max: 10, },
+				widthSegments: { type: 'range', min: 1, max: 10 },
+				heightSegments: { type: 'range', min: 1, max: 10 },
+				depthSegments: { type: 'range', min: 1, max: 10 }
 			},
 			create( widthSegments = 2, heightSegments = 2, depthSegments = 2 ) {
 
@@ -707,7 +707,7 @@ const geometry = new THREE.EdgesGeometry(sphereGeometry, thresholdAngle);
 				return {
 					lineGeometry: new THREE.WireframeGeometry( new THREE.BoxGeometry(
 						size, size, size,
-						widthSegments, heightSegments, depthSegments ) ),
+						widthSegments, heightSegments, depthSegments ) )
 				};
 
 			},
@@ -721,7 +721,7 @@ const geometry = new THREE.WireframeGeometry(
     new THREE.BoxGeometry(
       size, size, size,
       widthSegments, heightSegments, depthSegments));
-`,
+`
 		},
 		Points: {
 			create() {
@@ -732,15 +732,15 @@ const geometry = new THREE.WireframeGeometry(
 				const geometry = new THREE.SphereGeometry( radius, widthSegments, heightSegments );
 				const material = new THREE.PointsMaterial( {
 					color: 'red',
-					size: 0.2,
+					size: 0.2
 				} );
 				const points = new THREE.Points( geometry, material );
 				return {
 					showLines: false,
-					mesh: points,
+					mesh: points
 				};
 
-			},
+			}
 		},
 		PointsUniformSize: {
 			create() {
@@ -752,36 +752,36 @@ const geometry = new THREE.WireframeGeometry(
 				const material = new THREE.PointsMaterial( {
 					color: 'red',
 					size: 3 * window.devicePixelRatio,
-					sizeAttenuation: false,
+					sizeAttenuation: false
 				} );
 				const points = new THREE.Points( geometry, material );
 				return {
 					showLines: false,
-					mesh: points,
+					mesh: points
 				};
 
-			},
+			}
 		},
 		SphereGeometryLow: {
 			create( radius = 7, widthSegments = 5, heightSegments = 3 ) {
 
 				return new THREE.SphereGeometry( radius, widthSegments, heightSegments );
 
-			},
+			}
 		},
 		SphereGeometryMedium: {
 			create( radius = 7, widthSegments = 24, heightSegments = 10 ) {
 
 				return new THREE.SphereGeometry( radius, widthSegments, heightSegments );
 
-			},
+			}
 		},
 		SphereGeometryHigh: {
 			create( radius = 7, widthSegments = 50, heightSegments = 50 ) {
 
 				return new THREE.SphereGeometry( radius, widthSegments, heightSegments );
 
-			},
+			}
 		},
 		SphereGeometryLowSmooth: {
 			create( radius = 7, widthSegments = 5, heightSegments = 3 ) {
@@ -790,7 +790,7 @@ const geometry = new THREE.WireframeGeometry(
 
 			},
 			showLines: false,
-			flatShading: false,
+			flatShading: false
 		},
 		SphereGeometryMediumSmooth: {
 			create( radius = 7, widthSegments = 24, heightSegments = 10 ) {
@@ -799,7 +799,7 @@ const geometry = new THREE.WireframeGeometry(
 
 			},
 			showLines: false,
-			flatShading: false,
+			flatShading: false
 		},
 		SphereGeometryHighSmooth: {
 			create( radius = 7, widthSegments = 50, heightSegments = 50 ) {
@@ -808,22 +808,22 @@ const geometry = new THREE.WireframeGeometry(
 
 			},
 			showLines: false,
-			flatShading: false,
+			flatShading: false
 		},
 		PlaneGeometryLow: {
 			create( width = 9, height = 9, widthSegments = 1, heightSegments = 1 ) {
 
 				return new THREE.PlaneGeometry( width, height, widthSegments, heightSegments );
 
-			},
+			}
 		},
 		PlaneGeometryHigh: {
 			create( width = 9, height = 9, widthSegments = 10, heightSegments = 10 ) {
 
 				return new THREE.PlaneGeometry( width, height, widthSegments, heightSegments );
 
-			},
-		},
+			}
+		}
 	};
 
 	function addLink( parent, name, href ) {
@@ -975,7 +975,7 @@ const geometry = new THREE.WireframeGeometry(
 
 			const geometry = diagramInfo;
 			diagramInfo = {
-				geometry,
+				geometry
 			};
 
 		}
@@ -992,7 +992,7 @@ const geometry = new THREE.WireframeGeometry(
 
 				const material = new THREE.MeshPhongMaterial( {
 					flatShading: info.flatShading === false ? false : true,
-					side: THREE.DoubleSide,
+					side: THREE.DoubleSide
 				} );
 				material.color.setHSL( Math.random(), .5, .5 );
 				info.material = material;
@@ -1017,7 +1017,7 @@ const geometry = new THREE.WireframeGeometry(
 				new THREE.LineBasicMaterial( {
 					color: diagramInfo.geometry ? 0xffffff : colors.lines,
 					transparent: true,
-					opacity: 0.5,
+					opacity: 0.5
 				} ) );
 			lineMesh.position.copy( centerOffset );
 			root.add( lineMesh );
@@ -1048,7 +1048,7 @@ const geometry = new THREE.WireframeGeometry(
 		primitives[ name ] = primitives[ name ] || [];
 		primitives[ name ].push( {
 			root,
-			info,
+			info
 		} );
 
 		await addGeometry( root, info );
@@ -1111,77 +1111,77 @@ const geometry = new THREE.WireframeGeometry(
 						inputHolderHolder.appendChild( inputHolder );
 						switch ( ui.type ) {
 
-							case 'range': {
+						case 'range': {
 
-								const valueRange = ui.max - ui.min;
-								const input = document.createElement( 'input' );
-								const inputMax = 100;
-								input.type = 'range';
-								input.min = 0;
-								input.max = inputMax;
-								const value = parseFloat( valueElem.textContent );
-								params[ name ] = value * ( ui.mult || 1 );
-								input.value = ( value - ui.min ) / valueRange * inputMax;
-								inputHolder.appendChild( input );
-								const precision = ui.precision === undefined ? ( valueRange > 4 ? 0 : 2 ) : ui.precision;
-								const padding = ui.max.toFixed( precision ).length;
-								input.addEventListener( 'input', () => {
+							const valueRange = ui.max - ui.min;
+							const input = document.createElement( 'input' );
+							const inputMax = 100;
+							input.type = 'range';
+							input.min = 0;
+							input.max = inputMax;
+							const value = parseFloat( valueElem.textContent );
+							params[ name ] = value * ( ui.mult || 1 );
+							input.value = ( value - ui.min ) / valueRange * inputMax;
+							inputHolder.appendChild( input );
+							const precision = ui.precision === undefined ? ( valueRange > 4 ? 0 : 2 ) : ui.precision;
+							const padding = ui.max.toFixed( precision ).length;
+							input.addEventListener( 'input', () => {
 
-									let newValue = input.value * valueRange / inputMax + ui.min;
-									if ( precision === 0 ) {
+								let newValue = input.value * valueRange / inputMax + ui.min;
+								if ( precision === 0 ) {
 
-										newValue = Math.round( newValue );
+									newValue = Math.round( newValue );
 
-									}
+								}
 
-									params[ name ] = newValue * ( ui.mult || 1 );
-									valueElem.textContent = newValue.toFixed( precision ).padStart( padding, ' ' );
-									updateGeometry( root, info, params );
+								params[ name ] = newValue * ( ui.mult || 1 );
+								valueElem.textContent = newValue.toFixed( precision ).padStart( padding, ' ' );
+								updateGeometry( root, info, params );
 
-								} );
-								break;
+							} );
+							break;
 
-							}
+						}
 
-							case 'bool': {
+						case 'bool': {
 
-								const input = document.createElement( 'input' );
-								input.type = 'checkbox';
-								params[ name ] = valueElem.textContent === 'true';
-								input.checked = params[ name ];
-								inputHolder.appendChild( input );
-								input.addEventListener( 'change', () => {
+							const input = document.createElement( 'input' );
+							input.type = 'checkbox';
+							params[ name ] = valueElem.textContent === 'true';
+							input.checked = params[ name ];
+							inputHolder.appendChild( input );
+							input.addEventListener( 'change', () => {
 
-									params[ name ] = input.checked;
-									valueElem.textContent = params[ name ] ? 'true' : 'false';
-									updateGeometry( root, info, params );
+								params[ name ] = input.checked;
+								valueElem.textContent = params[ name ] ? 'true' : 'false';
+								updateGeometry( root, info, params );
 
-								} );
-								break;
+							} );
+							break;
 
-							}
+						}
 
-							case 'text': {
+						case 'text': {
 
-								const input = document.createElement( 'input' );
-								input.type = 'text';
-								params[ name ] = valueElem.textContent.slice( 1, - 1 );
-								input.value = params[ name ];
-								input.maxlength = ui.maxLength || 50;
-								inputHolder.appendChild( input );
-								input.addEventListener( 'input', () => {
+							const input = document.createElement( 'input' );
+							input.type = 'text';
+							params[ name ] = valueElem.textContent.slice( 1, - 1 );
+							input.value = params[ name ];
+							input.maxlength = ui.maxLength || 50;
+							inputHolder.appendChild( input );
+							input.addEventListener( 'input', () => {
 
-									params[ name ] = input.value;
-									valueElem.textContent = `'${input.value}'`;
-									updateGeometry( root, info, params );
+								params[ name ] = input.value;
+								valueElem.textContent = `'${input.value}'`;
+								updateGeometry( root, info, params );
 
-								} );
-								break;
+							} );
+							break;
 
-							}
+						}
 
-							default:
-								throw new Error( `unknown type for ${primitiveName}:${ndx} param: ${name}` );
+						default:
+							throw new Error( `unknown type for ${primitiveName}:${ndx} param: ${name}` );
 
 						}
 

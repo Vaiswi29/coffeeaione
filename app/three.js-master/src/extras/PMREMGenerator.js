@@ -326,7 +326,7 @@ class PMREMGenerator {
 			name: 'PMREM.Background',
 			side: BackSide,
 			depthWrite: false,
-			depthTest: false,
+			depthTest: false
 		} );
 
 		const backgroundBox = new Mesh( new BoxGeometry(), backgroundMaterial );
@@ -687,7 +687,7 @@ function _getBlurShader( lodMax, width, height ) {
 			'n': MAX_SAMPLES,
 			'CUBEUV_TEXEL_WIDTH': 1.0 / width,
 			'CUBEUV_TEXEL_HEIGHT': 1.0 / height,
-			'CUBEUV_MAX_MIP': `${lodMax}.0`,
+			'CUBEUV_MAX_MIP': `${lodMax}.0`
 		},
 
 		uniforms: {

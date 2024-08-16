@@ -231,11 +231,11 @@
 		fixJSForCodeSite,
 		runOnResize: false,
 		lessonSettings: {
-			glDebug: false,
+			glDebug: false
 		},
 		tags: [ 'three.js' ],
 		name: 'three.js',
-		icon: '/files/icon.svg',
+		icon: '/files/icon.svg'
 	};
 
 }() );

@@ -24,7 +24,7 @@ import {
 	MeshMatcapMaterial,
 	LineDashedMaterial,
 	LineBasicMaterial,
-	Material,
+	Material
 } from '../materials/Materials.js';
 
 class MaterialLoader extends Loader {
@@ -198,36 +198,36 @@ class MaterialLoader extends Loader {
 
 				switch ( uniform.type ) {
 
-					case 't':
-						material.uniforms[ name ].value = getTexture( uniform.value );
-						break;
+				case 't':
+					material.uniforms[ name ].value = getTexture( uniform.value );
+					break;
 
-					case 'c':
-						material.uniforms[ name ].value = new Color().setHex( uniform.value );
-						break;
+				case 'c':
+					material.uniforms[ name ].value = new Color().setHex( uniform.value );
+					break;
 
-					case 'v2':
-						material.uniforms[ name ].value = new Vector2().fromArray( uniform.value );
-						break;
+				case 'v2':
+					material.uniforms[ name ].value = new Vector2().fromArray( uniform.value );
+					break;
 
-					case 'v3':
-						material.uniforms[ name ].value = new Vector3().fromArray( uniform.value );
-						break;
+				case 'v3':
+					material.uniforms[ name ].value = new Vector3().fromArray( uniform.value );
+					break;
 
-					case 'v4':
-						material.uniforms[ name ].value = new Vector4().fromArray( uniform.value );
-						break;
+				case 'v4':
+					material.uniforms[ name ].value = new Vector4().fromArray( uniform.value );
+					break;
 
-					case 'm3':
-						material.uniforms[ name ].value = new Matrix3().fromArray( uniform.value );
-						break;
+				case 'm3':
+					material.uniforms[ name ].value = new Matrix3().fromArray( uniform.value );
+					break;
 
-					case 'm4':
-						material.uniforms[ name ].value = new Matrix4().fromArray( uniform.value );
-						break;
+				case 'm4':
+					material.uniforms[ name ].value = new Matrix4().fromArray( uniform.value );
+					break;
 
-					default:
-						material.uniforms[ name ].value = uniform.value;
+				default:
+					material.uniforms[ name ].value = uniform.value;
 
 				}
 

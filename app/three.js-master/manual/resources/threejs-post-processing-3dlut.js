@@ -35,7 +35,7 @@
 				[
 					'[id$=-Input]',
 					'[id$=-Output]',
-					'[id$=-Result]',
+					'[id$=-Result]'
 				].forEach( ( selector ) => {
 
 					[ ...svg.querySelectorAll( '[id^=Effect]' ) ].forEach( ( elem ) => {
@@ -65,60 +65,60 @@
 					const part = parts[ ndx ];
 					switch ( step ) {
 
-						case 0:
-							part.Input.style.visibility = '';
-							++ step;
-							break;
-						case 1:
-							part.Output.style.visibility = '';
-							++ step;
-							break;
-						case 2:
-							part.Result.style.visibility = '';
-							++ step;
-							break;
-						case 3:
-							part.Input.style.visibility = 'hidden';
-							part.Output.style.visibility = 'hidden';
-							ndx = ( ndx + 1 ) % parts.length;
-							if ( ndx === 0 ) {
+					case 0:
+						part.Input.style.visibility = '';
+						++ step;
+						break;
+					case 1:
+						part.Output.style.visibility = '';
+						++ step;
+						break;
+					case 2:
+						part.Result.style.visibility = '';
+						++ step;
+						break;
+					case 3:
+						part.Input.style.visibility = 'hidden';
+						part.Output.style.visibility = 'hidden';
+						ndx = ( ndx + 1 ) % parts.length;
+						if ( ndx === 0 ) {
 
-								step = 4;
-								delay = 4;
+							step = 4;
+							delay = 4;
 
-							} else {
+						} else {
 
-								step = 0;
+							step = 0;
 
-							}
+						}
 
-							break;
-						case 4:
-							-- delay;
-							if ( delay <= 0 ) {
+						break;
+					case 4:
+						-- delay;
+						if ( delay <= 0 ) {
 
-								for ( const part of parts ) {
+							for ( const part of parts ) {
 
-									for ( const elem of Object.values( part ) ) {
+								for ( const elem of Object.values( part ) ) {
 
-										elem.style.visibility = 'hidden';
-
-									}
+									elem.style.visibility = 'hidden';
 
 								}
 
-								step = 0;
-
 							}
 
-							break;
+							step = 0;
+
+						}
+
+						break;
 
 					}
 
 				}, 500 );
 
-			},
-		},
+			}
+		}
 	};
 
 	[ ...document.querySelectorAll( '[data-diagram]' ) ].forEach( createDiagram );

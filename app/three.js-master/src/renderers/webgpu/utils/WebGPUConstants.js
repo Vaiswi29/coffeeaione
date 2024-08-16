@@ -3,7 +3,7 @@ export const GPUPrimitiveTopology = {
 	LineList: 'line-list',
 	LineStrip: 'line-strip',
 	TriangleList: 'triangle-list',
-	TriangleStrip: 'triangle-strip',
+	TriangleStrip: 'triangle-strip'
 };
 
 export const GPUCompareFunction = {
@@ -204,7 +204,7 @@ export const GPUTextureFormat = {
 	ASTC12x10Unorm: 'astc-12x10-unorm',
 	ASTC12x10UnormSRGB: 'astc-12x10-unorm-srgb',
 	ASTC12x12Unorm: 'astc-12x12-unorm',
-	ASTC12x12UnormSRGB: 'astc-12x12-unorm-srgb',
+	ASTC12x12UnormSRGB: 'astc-12x12-unorm-srgb'
 
 };
 
@@ -272,7 +272,7 @@ export const GPUBufferBindingType = {
 export const GPUStorageTextureAccess = {
 	WriteOnly: 'write-only',
 	ReadOnly: 'read-only',
-	ReadWrite: 'read-write',
+	ReadWrite: 'read-write'
 };
 
 export const GPUSamplerBindingType = {

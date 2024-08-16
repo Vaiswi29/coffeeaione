@@ -24,7 +24,7 @@ const DepthLimitedBlurShader = {
 		'tDepth': { value: null },
 		'cameraNear': { value: 10 },
 		'cameraFar': { value: 1000 },
-		'depthCutoff': { value: 10 },
+		'depthCutoff': { value: 10 }
 	},
 
 	vertexShader: /* glsl */`

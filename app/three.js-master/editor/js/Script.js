@@ -164,102 +164,102 @@ function Script( editor ) {
 
 			switch ( currentMode ) {
 
-				case 'javascript':
+			case 'javascript':
 
-					try {
+				try {
 
-						const syntax = esprima.parse( string, { tolerant: true } );
-						errors = syntax.errors;
+					const syntax = esprima.parse( string, { tolerant: true } );
+					errors = syntax.errors;
 
-					} catch ( error ) {
+				} catch ( error ) {
 
-						errors.push( {
+					errors.push( {
 
-							lineNumber: error.lineNumber - 1,
-							message: error.message
+						lineNumber: error.lineNumber - 1,
+						message: error.message
 
-						} );
+					} );
 
-					}
+				}
 
-					for ( let i = 0; i < errors.length; i ++ ) {
+				for ( let i = 0; i < errors.length; i ++ ) {
 
-						const error = errors[ i ];
-						error.message = error.message.replace( /Line [0-9]+: /, '' );
+					const error = errors[ i ];
+					error.message = error.message.replace( /Line [0-9]+: /, '' );
 
-					}
+				}
 
-					break;
+				break;
 
-				case 'json':
+			case 'json':
 
-					errors = [];
+				errors = [];
 
-					jsonlint.parseError = function ( message, info ) {
+				jsonlint.parseError = function ( message, info ) {
 
-						message = message.split( '\n' )[ 3 ];
+					message = message.split( '\n' )[ 3 ];
 
-						errors.push( {
+					errors.push( {
 
-							lineNumber: info.loc.first_line - 1,
-							message: message
+						lineNumber: info.loc.first_line - 1,
+						message: message
 
-						} );
+					} );
 
-					};
+				};
 
-					try {
+				try {
 
-						jsonlint.parse( string );
+					jsonlint.parse( string );
 
-					} catch ( error ) {
+				} catch ( error ) {
 
-						// ignore failed error recovery
+					// ignore failed error recovery
 
-					}
+				}
 
-					break;
+				break;
 
-				case 'glsl':
+			case 'glsl':
 
-					currentObject.material[ currentScript ] = string;
-					currentObject.material.needsUpdate = true;
-					signals.materialChanged.dispatch( currentObject, 0 ); // TODO: Add multi-material support
+				currentObject.material[ currentScript ] = string;
+				currentObject.material.needsUpdate = true;
+				signals.materialChanged.dispatch( currentObject, 0 ); // TODO: Add multi-material support
 
-					const programs = renderer.info.programs;
+				const programs = renderer.info.programs;
 
-					valid = true;
-					const parseMessage = /^(?:ERROR|WARNING): \d+:(\d+): (.*)/g;
+				valid = true;
+				const parseMessage = /^(?:ERROR|WARNING): \d+:(\d+): (.*)/g;
 
-					for ( let i = 0, n = programs.length; i !== n; ++ i ) {
+				for ( let i = 0, n = programs.length; i !== n; ++ i ) {
 
-						const diagnostics = programs[ i ].diagnostics;
+					const diagnostics = programs[ i ].diagnostics;
 
-						if ( diagnostics === undefined ||
+					if ( diagnostics === undefined ||
 								diagnostics.material !== currentObject.material ) continue;
 
-						if ( ! diagnostics.runnable ) valid = false;
+					if ( ! diagnostics.runnable ) valid = false;
 
-						const shaderInfo = diagnostics[ currentScript ];
-						const lineOffset = shaderInfo.prefix.split( /\r\n|\r|\n/ ).length;
+					const shaderInfo = diagnostics[ currentScript ];
+					const lineOffset = shaderInfo.prefix.split( /\r\n|\r|\n/ ).length;
 
-						while ( true ) {
+					while ( true ) {
 
-							const parseResult = parseMessage.exec( shaderInfo.log );
-							if ( parseResult === null ) break;
+						const parseResult = parseMessage.exec( shaderInfo.log );
+						if ( parseResult === null ) break;
 
-							errors.push( {
+						errors.push( {
 
-								lineNumber: parseResult[ 1 ] - lineOffset,
-								message: parseResult[ 2 ]
+							lineNumber: parseResult[ 1 ] - lineOffset,
+							message: parseResult[ 2 ]
 
-							} );
+						} );
 
-						} // messages
+					} // messages
 
-						break;
+					break;
 
-					} // programs
+				} // programs
 
 			} // mode switch
 
@@ -370,24 +370,24 @@ function Script( editor ) {
 
 			switch ( script ) {
 
-				case 'vertexShader':
+			case 'vertexShader':
 
-					title.setValue( object.material.name + ' / ' + strings.getKey( 'script/title/vertexShader' ) );
-					break;
+				title.setValue( object.material.name + ' / ' + strings.getKey( 'script/title/vertexShader' ) );
+				break;
 
-				case 'fragmentShader':
+			case 'fragmentShader':
 
-					title.setValue( object.material.name + ' / ' + strings.getKey( 'script/title/fragmentShader' ) );
-					break;
+				title.setValue( object.material.name + ' / ' + strings.getKey( 'script/title/fragmentShader' ) );
+				break;
 
-				case 'programInfo':
+			case 'programInfo':
 
-					title.setValue( object.material.name + ' / ' + strings.getKey( 'script/title/programInfo' ) );
-					break;
+				title.setValue( object.material.name + ' / ' + strings.getKey( 'script/title/programInfo' ) );
+				break;
 
-				default:
+			default:
 
-					throw new Error( 'setTitle: Unknown script' );
+				throw new Error( 'setTitle: Unknown script' );
 
 			}
 
@@ -408,35 +408,35 @@ function Script( editor ) {
 
 			switch ( script ) {
 
-				case 'vertexShader':
+			case 'vertexShader':
 
-					mode = 'glsl';
-					source = object.material.vertexShader || '';
+				mode = 'glsl';
+				source = object.material.vertexShader || '';
 
-					break;
+				break;
 
-				case 'fragmentShader':
+			case 'fragmentShader':
 
-					mode = 'glsl';
-					source = object.material.fragmentShader || '';
+				mode = 'glsl';
+				source = object.material.fragmentShader || '';
 
-					break;
+				break;
 
-				case 'programInfo':
+			case 'programInfo':
 
-					mode = 'json';
-					const json = {
-						defines: object.material.defines,
-						uniforms: object.material.uniforms,
-						attributes: object.material.attributes
-					};
-					source = JSON.stringify( json, null, '\t' );
+				mode = 'json';
+				const json = {
+					defines: object.material.defines,
+					uniforms: object.material.uniforms,
+					attributes: object.material.attributes
+				};
+				source = JSON.stringify( json, null, '\t' );
 
-					break;
+				break;
 
-				default:
+			default:
 
-					throw new Error( 'editScript: Unknown script' );
+				throw new Error( 'editScript: Unknown script' );
 
 			}
 

@@ -20,7 +20,7 @@ export default QUnit.module( 'Geometries', () => {
 			geometries = [
 				new DodecahedronGeometry(),
 				new DodecahedronGeometry( parameters.radius ),
-				new DodecahedronGeometry( parameters.radius, parameters.detail ),
+				new DodecahedronGeometry( parameters.radius, parameters.detail )
 			];
 
 		} );

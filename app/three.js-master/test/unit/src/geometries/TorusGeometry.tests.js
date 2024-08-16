@@ -17,7 +17,7 @@ export default QUnit.module( 'Geometries', () => {
 				tube: 20,
 				radialSegments: 30,
 				tubularSegments: 10,
-				arc: 2.0,
+				arc: 2.0
 			};
 
 			geometries = [
@@ -26,7 +26,7 @@ export default QUnit.module( 'Geometries', () => {
 				new TorusGeometry( parameters.radius, parameters.tube ),
 				new TorusGeometry( parameters.radius, parameters.tube, parameters.radialSegments ),
 				new TorusGeometry( parameters.radius, parameters.tube, parameters.radialSegments, parameters.tubularSegments ),
-				new TorusGeometry( parameters.radius, parameters.tube, parameters.radialSegments, parameters.tubularSegments, parameters.arc ),
+				new TorusGeometry( parameters.radius, parameters.tube, parameters.radialSegments, parameters.tubularSegments, parameters.arc )
 			];
 
 		} );

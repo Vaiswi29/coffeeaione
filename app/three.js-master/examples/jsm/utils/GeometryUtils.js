@@ -217,5 +217,5 @@ function gosper( size = 1 ) {
 export {
 	hilbert2D,
 	hilbert3D,
-	gosper,
+	gosper
 };

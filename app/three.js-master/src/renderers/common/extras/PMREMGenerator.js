@@ -289,7 +289,7 @@ class PMREMGenerator {
 			generateMipmaps: false,
 			type: HalfFloatType,
 			format: RGBAFormat,
-			colorSpace: LinearSRGBColorSpace,
+			colorSpace: LinearSRGBColorSpace
 			//depthBuffer: false
 		};
 

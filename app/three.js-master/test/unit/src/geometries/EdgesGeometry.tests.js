@@ -210,7 +210,7 @@ export default QUnit.module( 'Geometries', () => {
 			new Vector3( 1, 0, 0 ),
 			new Vector3( 1, 1, 0 ),
 			new Vector3( 0, 1, 0 ),
-			new Vector3( 1, 1, 1 ),
+			new Vector3( 1, 1, 1 )
 		];
 
 		// INHERITANCE
@@ -276,7 +276,7 @@ export default QUnit.module( 'Geometries', () => {
 				new Vector3( 1, 1, 0 ),
 				new Vector3( 0, 0, 1 ),
 				new Vector3( 1, 0, 1 ),
-				new Vector3( 1, 1, 1 ),
+				new Vector3( 1, 1, 1 )
 			];
 
 			testEdges( vertList, [ 0, 1, 2, 3, 4, 5 ], 6, assert );

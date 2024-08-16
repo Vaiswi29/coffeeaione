@@ -77,8 +77,8 @@ import { GUI } from '../../examples/jsm/libs/lil-gui.module.min.js';
 
 				return deg * Math.PI / 180;
 
-			},
-		},
+			}
+		}
 	};
 
 	class DegRadHelper {
@@ -161,7 +161,7 @@ import { GUI } from '../../examples/jsm/libs/lil-gui.module.min.js';
 				const ctx = document.createElement( 'canvas' ).getContext( '2d' );
 				div.appendChild( ctx.canvas );
 				const settings = {
-					rotation: 0.3,
+					rotation: 0.3
 				};
 
 				const gui = new GUI( { autoPlace: false } );
@@ -175,13 +175,13 @@ import { GUI } from '../../examples/jsm/libs/lil-gui.module.min.js';
 					globe: 'green',
 					camera: '#AAA',
 					base: '#DDD',
-					label: '#0FF',
+					label: '#0FF'
 				};
 				const lightColors = {
 					globe: '#0C0',
 					camera: 'black',
 					base: '#000',
-					label: 'blue',
+					label: 'blue'
 				};
 
 				const darkMatcher = window.matchMedia( '(prefers-color-scheme: dark)' );
@@ -336,8 +336,8 @@ import { GUI } from '../../examples/jsm/libs/lil-gui.module.min.js';
 				render();
 				window.addEventListener( 'resize', render );
 
-			},
-		},
+			}
+		}
 	};
 
 	function advanceText( ctx, color, str ) {

@@ -1,11 +1,11 @@
 import {
 	NoColorSpace,
-	DoubleSide,
+	DoubleSide
 } from 'three';
 
 import {
 	strToU8,
-	zipSync,
+	zipSync
 } from '../libs/fflate.module.js';
 
 import { decompress } from './../utils/TextureUtils.js';
@@ -27,7 +27,7 @@ class USDZExporter {
 			},
 			includeAnchoringProperties: true,
 			quickLookCompatible: false,
-			maxTextureSize: 1024,
+			maxTextureSize: 1024
 		}, options );
 
 		const files = {};

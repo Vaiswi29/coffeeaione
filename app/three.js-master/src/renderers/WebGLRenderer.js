@@ -71,7 +71,7 @@ class WebGLRenderer {
 			premultipliedAlpha = true,
 			preserveDrawingBuffer = false,
 			powerPreference = 'default',
-			failIfMajorPerformanceCaveat = false,
+			failIfMajorPerformanceCaveat = false
 		} = parameters;
 
 		this.isWebGLRenderer = true;
@@ -232,7 +232,7 @@ class WebGLRenderer {
 				premultipliedAlpha,
 				preserveDrawingBuffer,
 				powerPreference,
-				failIfMajorPerformanceCaveat,
+				failIfMajorPerformanceCaveat
 			};
 
 			// OffscreenCanvas does not have setAttribute, see #22811
@@ -1461,7 +1461,7 @@ class WebGLRenderer {
 					stencilBuffer: stencil,
 					resolveDepthBuffer: false,
 					resolveStencilBuffer: false,
-					colorSpace: ColorManagement.workingColorSpace,
+					colorSpace: ColorManagement.workingColorSpace
 				} );
 
 				// debug

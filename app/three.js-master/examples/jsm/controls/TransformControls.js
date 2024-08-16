@@ -693,10 +693,10 @@ function onPointerHover( event ) {
 
 	switch ( event.pointerType ) {
 
-		case 'mouse':
-		case 'pen':
-			this.pointerHover( this._getPointer( event ) );
-			break;
+	case 'mouse':
+	case 'pen':
+		this.pointerHover( this._getPointer( event ) );
+		break;
 
 	}
 
@@ -992,13 +992,13 @@ class TransformControlsGizmo extends Object3D {
 				[ new Mesh( new SphereGeometry( 0.25, 10, 8 ), matInvisible ) ]
 			],
 			X: [
-				[ new Mesh( new TorusGeometry( 0.5, 0.1, 4, 24 ), matInvisible ), [ 0, 0, 0 ], [ 0, - Math.PI / 2, - Math.PI / 2 ]],
+				[ new Mesh( new TorusGeometry( 0.5, 0.1, 4, 24 ), matInvisible ), [ 0, 0, 0 ], [ 0, - Math.PI / 2, - Math.PI / 2 ]]
 			],
 			Y: [
-				[ new Mesh( new TorusGeometry( 0.5, 0.1, 4, 24 ), matInvisible ), [ 0, 0, 0 ], [ Math.PI / 2, 0, 0 ]],
+				[ new Mesh( new TorusGeometry( 0.5, 0.1, 4, 24 ), matInvisible ), [ 0, 0, 0 ], [ Math.PI / 2, 0, 0 ]]
 			],
 			Z: [
-				[ new Mesh( new TorusGeometry( 0.5, 0.1, 4, 24 ), matInvisible ), [ 0, 0, 0 ], [ 0, 0, - Math.PI / 2 ]],
+				[ new Mesh( new TorusGeometry( 0.5, 0.1, 4, 24 ), matInvisible ), [ 0, 0, 0 ], [ 0, 0, - Math.PI / 2 ]]
 			],
 			E: [
 				[ new Mesh( new TorusGeometry( 0.75, 0.1, 2, 24 ), matInvisible ) ]
@@ -1009,12 +1009,12 @@ class TransformControlsGizmo extends Object3D {
 			X: [
 				[ new Mesh( scaleHandleGeometry, matRed ), [ 0.5, 0, 0 ], [ 0, 0, - Math.PI / 2 ]],
 				[ new Mesh( lineGeometry2, matRed ), [ 0, 0, 0 ], [ 0, 0, - Math.PI / 2 ]],
-				[ new Mesh( scaleHandleGeometry, matRed ), [ - 0.5, 0, 0 ], [ 0, 0, Math.PI / 2 ]],
+				[ new Mesh( scaleHandleGeometry, matRed ), [ - 0.5, 0, 0 ], [ 0, 0, Math.PI / 2 ]]
 			],
 			Y: [
 				[ new Mesh( scaleHandleGeometry, matGreen ), [ 0, 0.5, 0 ]],
 				[ new Mesh( lineGeometry2, matGreen ) ],
-				[ new Mesh( scaleHandleGeometry, matGreen ), [ 0, - 0.5, 0 ], [ 0, 0, Math.PI ]],
+				[ new Mesh( scaleHandleGeometry, matGreen ), [ 0, - 0.5, 0 ], [ 0, 0, Math.PI ]]
 			],
 			Z: [
 				[ new Mesh( scaleHandleGeometry, matBlue ), [ 0, 0, 0.5 ], [ Math.PI / 2, 0, 0 ]],
@@ -1031,7 +1031,7 @@ class TransformControlsGizmo extends Object3D {
 				[ new Mesh( new BoxGeometry( 0.15, 0.15, 0.01 ), matGreenTransparent ), [ 0.15, 0, 0.15 ], [ - Math.PI / 2, 0, 0 ]]
 			],
 			XYZ: [
-				[ new Mesh( new BoxGeometry( 0.1, 0.1, 0.1 ), matWhiteTransparent.clone() ) ],
+				[ new Mesh( new BoxGeometry( 0.1, 0.1, 0.1 ), matWhiteTransparent.clone() ) ]
 			]
 		};
 
@@ -1049,16 +1049,16 @@ class TransformControlsGizmo extends Object3D {
 				[ new Mesh( new CylinderGeometry( 0.2, 0, 0.6, 4 ), matInvisible ), [ 0, 0, - 0.3 ], [ - Math.PI / 2, 0, 0 ]]
 			],
 			XY: [
-				[ new Mesh( new BoxGeometry( 0.2, 0.2, 0.01 ), matInvisible ), [ 0.15, 0.15, 0 ]],
+				[ new Mesh( new BoxGeometry( 0.2, 0.2, 0.01 ), matInvisible ), [ 0.15, 0.15, 0 ]]
 			],
 			YZ: [
-				[ new Mesh( new BoxGeometry( 0.2, 0.2, 0.01 ), matInvisible ), [ 0, 0.15, 0.15 ], [ 0, Math.PI / 2, 0 ]],
+				[ new Mesh( new BoxGeometry( 0.2, 0.2, 0.01 ), matInvisible ), [ 0, 0.15, 0.15 ], [ 0, Math.PI / 2, 0 ]]
 			],
 			XZ: [
-				[ new Mesh( new BoxGeometry( 0.2, 0.2, 0.01 ), matInvisible ), [ 0.15, 0, 0.15 ], [ - Math.PI / 2, 0, 0 ]],
+				[ new Mesh( new BoxGeometry( 0.2, 0.2, 0.01 ), matInvisible ), [ 0.15, 0, 0.15 ], [ - Math.PI / 2, 0, 0 ]]
 			],
 			XYZ: [
-				[ new Mesh( new BoxGeometry( 0.2, 0.2, 0.2 ), matInvisible ), [ 0, 0, 0 ]],
+				[ new Mesh( new BoxGeometry( 0.2, 0.2, 0.2 ), matInvisible ), [ 0, 0, 0 ]]
 			]
 		};
 
@@ -1510,44 +1510,44 @@ class TransformControlsPlane extends Mesh {
 
 		switch ( this.mode ) {
 
-			case 'translate':
-			case 'scale':
-				switch ( this.axis ) {
+		case 'translate':
+		case 'scale':
+			switch ( this.axis ) {
 
-					case 'X':
-						_alignVector.copy( this.eye ).cross( _v1 );
-						_dirVector.copy( _v1 ).cross( _alignVector );
-						break;
-					case 'Y':
-						_alignVector.copy( this.eye ).cross( _v2 );
-						_dirVector.copy( _v2 ).cross( _alignVector );
-						break;
-					case 'Z':
-						_alignVector.copy( this.eye ).cross( _v3 );
-						_dirVector.copy( _v3 ).cross( _alignVector );
-						break;
-					case 'XY':
-						_dirVector.copy( _v3 );
-						break;
-					case 'YZ':
-						_dirVector.copy( _v1 );
-						break;
-					case 'XZ':
-						_alignVector.copy( _v3 );
-						_dirVector.copy( _v2 );
-						break;
-					case 'XYZ':
-					case 'E':
-						_dirVector.set( 0, 0, 0 );
-						break;
-
-				}
-
+			case 'X':
+				_alignVector.copy( this.eye ).cross( _v1 );
+				_dirVector.copy( _v1 ).cross( _alignVector );
 				break;
-			case 'rotate':
-			default:
-				// special case for rotate
+			case 'Y':
+				_alignVector.copy( this.eye ).cross( _v2 );
+				_dirVector.copy( _v2 ).cross( _alignVector );
+				break;
+			case 'Z':
+				_alignVector.copy( this.eye ).cross( _v3 );
+				_dirVector.copy( _v3 ).cross( _alignVector );
+				break;
+			case 'XY':
+				_dirVector.copy( _v3 );
+				break;
+			case 'YZ':
+				_dirVector.copy( _v1 );
+				break;
+			case 'XZ':
+				_alignVector.copy( _v3 );
+				_dirVector.copy( _v2 );
+				break;
+			case 'XYZ':
+			case 'E':
 				_dirVector.set( 0, 0, 0 );
+				break;
+
+			}
+
+			break;
+		case 'rotate':
+		default:
+			// special case for rotate
+			_dirVector.set( 0, 0, 0 );
 
 		}
 

@@ -68,7 +68,7 @@ export default QUnit.module( 'Maths', () => {
 				new Vector3( 1.8660253882408142, - 0.5, 0 ), new Vector3( 0, - 0.5, - 0.8660253882408142 ),
 				new Vector3( 0.8660253882408142, - 0.5, - 0 ), new Vector3( - 0, - 1, 0 ),
 				new Vector3( - 0, - 1, 0 ), new Vector3( 0, - 1, 0 ),
-				new Vector3( 0, - 1, - 0 ), new Vector3( - 0, - 1, - 0 ),
+				new Vector3( 0, - 1, - 0 ), new Vector3( - 0, - 1, - 0 )
 			];
 
 			a.setFromPoints( points );

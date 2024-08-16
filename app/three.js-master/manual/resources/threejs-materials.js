@@ -33,7 +33,7 @@ import { threejsLessonUtils } from './threejs-lesson-utils.js';
 		const geometry = new THREE.SphereGeometry( radius, widthDivisions, heightDivisions );
 		const material = new THREE.MeshPhongMaterial( {
 			flatShading,
-			color: 'hsl(300,50%,50%)',
+			color: 'hsl(300,50%,50%)'
 		} );
 		return new THREE.Mesh( geometry, material );
 
@@ -44,11 +44,11 @@ import { threejsLessonUtils } from './threejs-lesson-utils.js';
 		const geometry = lowPoly ? lowPolySphereGeometry : highPolySphereGeometry;
 		const material = new MaterialCtor( {
 			color: 'hsl(210,50%,50%)',
-			...params,
+			...params
 		} );
 		return {
 			obj3D: new THREE.Mesh( geometry, material ),
-			trackball: lowPoly,
+			trackball: lowPoly
 		};
 
 	}
@@ -59,12 +59,12 @@ import { threejsLessonUtils } from './threejs-lesson-utils.js';
 		const size = 6;
 		const geometry = new THREE.PlaneGeometry( size, size );
 		[
-			{ position: [ - 1, 0, 0 ], up: [ 0, 1, 0 ], },
-			{ position: [ 1, 0, 0 ], up: [ 0, - 1, 0 ], },
-			{ position: [ 0, - 1, 0 ], up: [ 0, 0, - 1 ], },
-			{ position: [ 0, 1, 0 ], up: [ 0, 0, 1 ], },
-			{ position: [ 0, 0, - 1 ], up: [ 1, 0, 0 ], },
-			{ position: [ 0, 0, 1 ], up: [ - 1, 0, 0 ], },
+			{ position: [ - 1, 0, 0 ], up: [ 0, 1, 0 ] },
+			{ position: [ 1, 0, 0 ], up: [ 0, - 1, 0 ] },
+			{ position: [ 0, - 1, 0 ], up: [ 0, 0, - 1 ] },
+			{ position: [ 0, 1, 0 ], up: [ 0, 0, 1 ] },
+			{ position: [ 0, 0, - 1 ], up: [ 1, 0, 0 ] },
+			{ position: [ 0, 0, 1 ], up: [ - 1, 0, 0 ] }
 		].forEach( ( settings, ndx ) => {
 
 			const material = new THREE.MeshBasicMaterial( { side } );
@@ -95,7 +95,7 @@ import { threejsLessonUtils } from './threejs-lesson-utils.js';
 				const material = new MatCtor( {
 					color,
 					roughness: r / ( numRough - 1 ),
-					metalness: 1 - m / ( numMetal - 1 ),
+					metalness: 1 - m / ( numMetal - 1 )
 				} );
 				const mesh = new THREE.Mesh( highPolySphereGeometry, material );
 				row.push( mesh );
@@ -149,7 +149,7 @@ import { threejsLessonUtils } from './threejs-lesson-utils.js';
 
 				}
 
-			},
+			}
 		};
 
 	}
@@ -160,105 +160,105 @@ import { threejsLessonUtils } from './threejs-lesson-utils.js';
 
 				return smoothOrFlat( false );
 
-			},
+			}
 		},
 		flatShading: {
 			create() {
 
 				return smoothOrFlat( true );
 
-			},
+			}
 		},
 		MeshBasicMaterial: {
 			create() {
 
 				return basicLambertPhongExample( THREE.MeshBasicMaterial );
 
-			},
+			}
 		},
 		MeshLambertMaterial: {
 			create() {
 
 				return basicLambertPhongExample( THREE.MeshLambertMaterial );
 
-			},
+			}
 		},
 		MeshPhongMaterial: {
 			create() {
 
 				return basicLambertPhongExample( THREE.MeshPhongMaterial );
 
-			},
+			}
 		},
 		MeshBasicMaterialLowPoly: {
 			create() {
 
 				return basicLambertPhongExample( THREE.MeshBasicMaterial, true );
 
-			},
+			}
 		},
 		MeshLambertMaterialLowPoly: {
 			create() {
 
 				return basicLambertPhongExample( THREE.MeshLambertMaterial, true );
 
-			},
+			}
 		},
 		MeshPhongMaterialLowPoly: {
 			create() {
 
 				return basicLambertPhongExample( THREE.MeshPhongMaterial, true );
 
-			},
+			}
 		},
 		MeshPhongMaterialShininess0: {
 			create() {
 
 				return basicLambertPhongExample( THREE.MeshPhongMaterial, false, {
 					color: 'red',
-					shininess: 0,
+					shininess: 0
 				} );
 
-			},
+			}
 		},
 		MeshPhongMaterialShininess30: {
 			create() {
 
 				return basicLambertPhongExample( THREE.MeshPhongMaterial, false, {
 					color: 'red',
-					shininess: 30,
+					shininess: 30
 				} );
 
-			},
+			}
 		},
 		MeshPhongMaterialShininess150: {
 			create() {
 
 				return basicLambertPhongExample( THREE.MeshPhongMaterial, false, {
 					color: 'red',
-					shininess: 150,
+					shininess: 150
 				} );
 
-			},
+			}
 		},
 		MeshBasicMaterialCompare: {
 			create() {
 
 				return basicLambertPhongExample( THREE.MeshBasicMaterial, false, {
-					color: 'purple',
+					color: 'purple'
 				} );
 
-			},
+			}
 		},
 		MeshLambertMaterialCompare: {
 			create() {
 
 				return basicLambertPhongExample( THREE.MeshLambertMaterial, false, {
 					color: 'black',
-					emissive: 'purple',
+					emissive: 'purple'
 				} );
 
-			},
+			}
 		},
 		MeshPhongMaterialCompare: {
 			create() {
@@ -266,31 +266,31 @@ import { threejsLessonUtils } from './threejs-lesson-utils.js';
 				return basicLambertPhongExample( THREE.MeshPhongMaterial, false, {
 					color: 'black',
 					emissive: 'purple',
-					shininess: 0,
+					shininess: 0
 				} );
 
-			},
+			}
 		},
 		MeshToonMaterial: {
 			create() {
 
 				return basicLambertPhongExample( THREE.MeshToonMaterial );
 
-			},
+			}
 		},
 		MeshStandardMaterial: {
 			create( props ) {
 
 				return makeStandardPhysicalMaterialGrid( props.renderInfo.elem, false );
 
-			},
+			}
 		},
 		MeshPhysicalMaterial: {
 			create( props ) {
 
 				const settings = {
 					clearcoat: .5,
-					clearcoatRoughness: 0,
+					clearcoatRoughness: 0
 				};
 
 				function addElem( parent, type, style = {} ) {
@@ -307,23 +307,23 @@ import { threejsLessonUtils } from './threejs-lesson-utils.js';
 					const outer = addElem( elem, 'div', {
 						width: '100%',
 						textAlign: 'center',
-						'font-family': 'monospace',
+						'font-family': 'monospace'
 					} );
 
 					const div = addElem( outer, 'div', {
 						textAlign: 'left',
-						display: 'inline-block',
+						display: 'inline-block'
 					} );
 
 					const label = addElem( div, 'label', {
 						display: 'inline-block',
-						width: '12em',
+						width: '12em'
 					} );
 					label.textContent = prop;
 
 					const num = addElem( div, 'div', {
 						display: 'inline-block',
-						width: '3em',
+						width: '3em'
 					} );
 
 					function updateNum() {
@@ -340,7 +340,7 @@ import { threejsLessonUtils } from './threejs-lesson-utils.js';
 						type: 'range',
 						min: 0,
 						max: 100,
-						value: ( obj[ prop ] - min ) / ( max - min ) * 100,
+						value: ( obj[ prop ] - min ) / ( max - min ) * 100
 					} );
 					input.addEventListener( 'input', () => {
 
@@ -356,7 +356,7 @@ import { threejsLessonUtils } from './threejs-lesson-utils.js';
 				addRange( elem, settings, 'clearcoatRoughness', 0, 1 );
 				const area = addElem( elem, 'div', {
 					width: '100%',
-					height: '400px',
+					height: '400px'
 				} );
 
 				return makeStandardPhysicalMaterialGrid( area, true, ( meshes ) => {
@@ -370,7 +370,7 @@ import { threejsLessonUtils } from './threejs-lesson-utils.js';
 
 				} );
 
-			},
+			}
 		},
 		MeshDepthMaterial: {
 			create( props ) {
@@ -388,7 +388,7 @@ import { threejsLessonUtils } from './threejs-lesson-utils.js';
 				camera.far = 20;
 				return new THREE.Mesh( geometry, material );
 
-			},
+			}
 		},
 		MeshNormalMaterial: {
 			create() {
@@ -403,22 +403,22 @@ import { threejsLessonUtils } from './threejs-lesson-utils.js';
 				const material = new THREE.MeshNormalMaterial();
 				return new THREE.Mesh( geometry, material );
 
-			},
+			}
 		},
 		sideDefault: {
 			create() {
 
 				return sideExample( THREE.FrontSide );
 
-			},
+			}
 		},
 		sideDouble: {
 			create() {
 
 				return sideExample( THREE.DoubleSide );
 
-			},
-		},
+			}
+		}
 	} );
 
 }

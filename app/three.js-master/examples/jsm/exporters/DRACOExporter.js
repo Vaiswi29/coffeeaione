@@ -28,7 +28,7 @@ class DRACOExporter {
 			quantization: [ 16, 8, 8, 8, 8 ],
 			exportUvs: true,
 			exportNormals: true,
-			exportColor: false,
+			exportColor: false
 		}, options );
 
 		if ( DracoEncoderModule === undefined ) {

@@ -5,7 +5,7 @@ import {
 	nodeProxy,
 	vec4,
 	mat2,
-	mat4,
+	mat4
 } from '../shadernode/ShaderNode.js';
 import { cos, sin } from '../math/MathNode.js';
 

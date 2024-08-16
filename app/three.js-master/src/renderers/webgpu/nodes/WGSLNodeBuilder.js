@@ -427,17 +427,17 @@ class WGSLNodeBuilder extends NodeBuilder {
 
 			switch ( node.access ) {
 
-				case GPUStorageTextureAccess.ReadOnly:
+			case GPUStorageTextureAccess.ReadOnly:
 
-					return 'read';
+				return 'read';
 
-				case GPUStorageTextureAccess.WriteOnly:
+			case GPUStorageTextureAccess.WriteOnly:
 
-					return 'write';
+				return 'write';
 
-				default:
+			default:
 
-					return 'read_write';
+				return 'read_write';
 
 			}
 
@@ -445,18 +445,18 @@ class WGSLNodeBuilder extends NodeBuilder {
 
 			switch ( node.access ) {
 
-				case GPUBufferBindingType.Storage:
+			case GPUBufferBindingType.Storage:
 
-					return 'read_write';
+				return 'read_write';
 
 
-				case GPUBufferBindingType.ReadOnlyStorage:
+			case GPUBufferBindingType.ReadOnlyStorage:
 
-					return 'read';
+				return 'read';
 
-				default:
+			default:
 
-					return 'write';
+				return 'write';
 
 			}
 

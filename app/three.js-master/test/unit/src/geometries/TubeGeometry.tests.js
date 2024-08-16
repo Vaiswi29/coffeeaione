@@ -18,7 +18,7 @@ export default QUnit.module( 'Geometries', () => {
 			const path = new LineCurve3( new Vector3( 0, 0, 0 ), new Vector3( 0, 1, 0 ) );
 
 			geometries = [
-				new TubeGeometry( path ),
+				new TubeGeometry( path )
 			];
 
 		} );

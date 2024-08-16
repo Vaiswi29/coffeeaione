@@ -104,35 +104,35 @@ function Viewport( editor ) {
 
 			switch ( transformControls.getMode() ) {
 
-				case 'translate':
+			case 'translate':
 
-					if ( ! objectPositionOnDown.equals( object.position ) ) {
+				if ( ! objectPositionOnDown.equals( object.position ) ) {
 
-						editor.execute( new SetPositionCommand( editor, object, object.position, objectPositionOnDown ) );
+					editor.execute( new SetPositionCommand( editor, object, object.position, objectPositionOnDown ) );
 
-					}
+				}
 
-					break;
+				break;
 
-				case 'rotate':
+			case 'rotate':
 
-					if ( ! objectRotationOnDown.equals( object.rotation ) ) {
+				if ( ! objectRotationOnDown.equals( object.rotation ) ) {
 
-						editor.execute( new SetRotationCommand( editor, object, object.rotation, objectRotationOnDown ) );
+					editor.execute( new SetRotationCommand( editor, object, object.rotation, objectRotationOnDown ) );
 
-					}
+				}
 
-					break;
+				break;
 
-				case 'scale':
+			case 'scale':
 
-					if ( ! objectScaleOnDown.equals( object.scale ) ) {
+				if ( ! objectScaleOnDown.equals( object.scale ) ) {
 
-						editor.execute( new SetScaleCommand( editor, object, object.scale, objectScaleOnDown ) );
+					editor.execute( new SetScaleCommand( editor, object, object.scale, objectScaleOnDown ) );
 
-					}
+				}
 
-					break;
+				break;
 
 			}
 
@@ -498,44 +498,44 @@ function Viewport( editor ) {
 
 		switch ( backgroundType ) {
 
-			case 'Color':
+		case 'Color':
 
-				scene.background = new THREE.Color( backgroundColor );
+			scene.background = new THREE.Color( backgroundColor );
 
-				break;
+			break;
 
-			case 'Texture':
+		case 'Texture':
 
-				if ( backgroundTexture ) {
+			if ( backgroundTexture ) {
 
-					scene.background = backgroundTexture;
+				scene.background = backgroundTexture;
 
-				}
+			}
 
-				break;
+			break;
 
-			case 'Equirectangular':
+		case 'Equirectangular':
 
-				if ( backgroundEquirectangularTexture ) {
+			if ( backgroundEquirectangularTexture ) {
 
-					backgroundEquirectangularTexture.mapping = THREE.EquirectangularReflectionMapping;
+				backgroundEquirectangularTexture.mapping = THREE.EquirectangularReflectionMapping;
 
-					scene.background = backgroundEquirectangularTexture;
-					scene.backgroundBlurriness = backgroundBlurriness;
-					scene.backgroundIntensity = backgroundIntensity;
-					scene.backgroundRotation.y = backgroundRotation * THREE.MathUtils.DEG2RAD;
+				scene.background = backgroundEquirectangularTexture;
+				scene.backgroundBlurriness = backgroundBlurriness;
+				scene.backgroundIntensity = backgroundIntensity;
+				scene.backgroundRotation.y = backgroundRotation * THREE.MathUtils.DEG2RAD;
 
-					if ( useBackgroundAsEnvironment ) {
+				if ( useBackgroundAsEnvironment ) {
 
-						scene.environment = scene.background;
-						scene.environmentRotation.y = backgroundRotation * THREE.MathUtils.DEG2RAD;
-
-					}
-
+					scene.environment = scene.background;
+					scene.environmentRotation.y = backgroundRotation * THREE.MathUtils.DEG2RAD;
 
 				}
 
-				break;
+
+			}
+
+			break;
 
 		}
 
@@ -557,36 +557,36 @@ function Viewport( editor ) {
 		switch ( environmentType ) {
 
 
-			case 'Background':
+		case 'Background':
 
-				useBackgroundAsEnvironment = true;
+			useBackgroundAsEnvironment = true;
 
-				if ( scene.background !== null && scene.background.isTexture ) {
+			if ( scene.background !== null && scene.background.isTexture ) {
 
-					scene.environment = scene.background;
-					scene.environment.mapping = THREE.EquirectangularReflectionMapping;
-					scene.environmentRotation.y = scene.backgroundRotation.y;
+				scene.environment = scene.background;
+				scene.environment.mapping = THREE.EquirectangularReflectionMapping;
+				scene.environmentRotation.y = scene.backgroundRotation.y;
 
-				}
+			}
 
-				break;
+			break;
 
-			case 'Equirectangular':
+		case 'Equirectangular':
 
-				if ( environmentEquirectangularTexture ) {
+			if ( environmentEquirectangularTexture ) {
 
-					scene.environment = environmentEquirectangularTexture;
-					scene.environment.mapping = THREE.EquirectangularReflectionMapping;
+				scene.environment = environmentEquirectangularTexture;
+				scene.environment.mapping = THREE.EquirectangularReflectionMapping;
 
-				}
+			}
 
-				break;
+			break;
 
-			case 'ModelViewer':
+		case 'ModelViewer':
 
-				scene.environment = pmremGenerator.fromScene( new RoomEnvironment(), 0.04 ).texture;
+			scene.environment = pmremGenerator.fromScene( new RoomEnvironment(), 0.04 ).texture;
 
-				break;
+			break;
 
 		}
 
@@ -601,15 +601,15 @@ function Viewport( editor ) {
 
 		switch ( fogType ) {
 
-			case 'None':
-				scene.fog = null;
-				break;
-			case 'Fog':
-				scene.fog = new THREE.Fog( fogColor, fogNear, fogFar );
-				break;
-			case 'FogExp2':
-				scene.fog = new THREE.FogExp2( fogColor, fogDensity );
-				break;
+		case 'None':
+			scene.fog = null;
+			break;
+		case 'Fog':
+			scene.fog = new THREE.Fog( fogColor, fogNear, fogFar );
+			break;
+		case 'FogExp2':
+			scene.fog = new THREE.FogExp2( fogColor, fogDensity );
+			break;
 
 		}
 
@@ -621,15 +621,15 @@ function Viewport( editor ) {
 
 		switch ( fogType ) {
 
-			case 'Fog':
-				scene.fog.color.setHex( fogColor );
-				scene.fog.near = fogNear;
-				scene.fog.far = fogFar;
-				break;
-			case 'FogExp2':
-				scene.fog.color.setHex( fogColor );
-				scene.fog.density = fogDensity;
-				break;
+		case 'Fog':
+			scene.fog.color.setHex( fogColor );
+			scene.fog.near = fogNear;
+			scene.fog.far = fogFar;
+			break;
+		case 'FogExp2':
+			scene.fog.color.setHex( fogColor );
+			scene.fog.density = fogDensity;
+			break;
 
 		}
 
@@ -662,21 +662,21 @@ function Viewport( editor ) {
 
 		switch ( viewportShading ) {
 
-			case 'realistic':
-				pathtracer.init( scene, editor.viewportCamera );
-				break;
+		case 'realistic':
+			pathtracer.init( scene, editor.viewportCamera );
+			break;
 
-			case 'solid':
-				scene.overrideMaterial = null;
-				break;
+		case 'solid':
+			scene.overrideMaterial = null;
+			break;
 
-			case 'normals':
-				scene.overrideMaterial = new THREE.MeshNormalMaterial();
-				break;
+		case 'normals':
+			scene.overrideMaterial = new THREE.MeshNormalMaterial();
+			break;
 
-			case 'wireframe':
-				scene.overrideMaterial = new THREE.MeshBasicMaterial( { color: 0x000000, wireframe: true } );
-				break;
+		case 'wireframe':
+			scene.overrideMaterial = new THREE.MeshBasicMaterial( { color: 0x000000, wireframe: true } );
+			break;
 
 		}
 
@@ -705,43 +705,43 @@ function Viewport( editor ) {
 
 			switch ( object.type ) {
 
-				case 'CameraHelper':
+			case 'CameraHelper':
 
-				{
+			{
 
-					object.visible = appearanceStates.cameraHelpers;
-					break;
+				object.visible = appearanceStates.cameraHelpers;
+				break;
 
-				}
+			}
 
-				case 'PointLightHelper':
-				case 'DirectionalLightHelper':
-				case 'SpotLightHelper':
-				case 'HemisphereLightHelper':
+			case 'PointLightHelper':
+			case 'DirectionalLightHelper':
+			case 'SpotLightHelper':
+			case 'HemisphereLightHelper':
 
-				{
+			{
 
-					object.visible = appearanceStates.lightHelpers;
-					break;
+				object.visible = appearanceStates.lightHelpers;
+				break;
 
-				}
+			}
 
-				case 'SkeletonHelper':
+			case 'SkeletonHelper':
 
-				{
+			{
 
-					object.visible = appearanceStates.skeletonHelpers;
-					break;
+				object.visible = appearanceStates.skeletonHelpers;
+				break;
 
-				}
+			}
 
-				default:
+			default:
 
-				{
+			{
 
-					// not a helper, skip.
+				// not a helper, skip.
 
-				}
+			}
 
 			}
 

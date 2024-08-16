@@ -157,59 +157,59 @@ function SidebarProjectImage( editor ) {
 
 		switch ( shadingTypeSelect.getValue() ) {
 
-			case 'solid':
+		case 'solid':
 
-				renderer.render( scene, camera );
-				renderer.dispose();
+			renderer.render( scene, camera );
+			renderer.dispose();
 
-				break;
+			break;
 
-			case 'realistic':
+		case 'realistic':
 
-				const status = document.createElement( 'div' );
-				status.style.position = 'absolute';
-				status.style.top = '10px';
-				status.style.left = '10px';
-				status.style.color = 'white';
-				status.style.fontFamily = 'system-ui';
-				status.style.fontSize = '12px';
-				output.document.body.appendChild( status );
+			const status = document.createElement( 'div' );
+			status.style.position = 'absolute';
+			status.style.top = '10px';
+			status.style.left = '10px';
+			status.style.color = 'white';
+			status.style.fontFamily = 'system-ui';
+			status.style.fontSize = '12px';
+			output.document.body.appendChild( status );
 
-				const pathTracer = new ViewportPathtracer( renderer );
-				pathTracer.init( scene, camera );
-				pathTracer.setSize( imageWidth.getValue(), imageHeight.getValue() );
+			const pathTracer = new ViewportPathtracer( renderer );
+			pathTracer.init( scene, camera );
+			pathTracer.setSize( imageWidth.getValue(), imageHeight.getValue() );
 
-				const maxSamples = Math.max( pathTracerMinSamples, Math.min( pathTracerMaxSamples, samplesNumber.getValue() ) );
+			const maxSamples = Math.max( pathTracerMinSamples, Math.min( pathTracerMaxSamples, samplesNumber.getValue() ) );
 
-				function animate() {
+			function animate() {
 
-					if ( output.closed === true ) return;
+				if ( output.closed === true ) return;
 
-					const samples = Math.floor( pathTracer.getSamples() ) + 1;
+				const samples = Math.floor( pathTracer.getSamples() ) + 1;
 
-					if ( samples < maxSamples ) {
+				if ( samples < maxSamples ) {
 
-						requestAnimationFrame( animate );
-
-					}
-
-					pathTracer.update();
-
-					const progress = Math.floor( samples / maxSamples * 100 );
-
-					status.textContent = `${ samples } / ${ maxSamples } ( ${ progress }% )`;
-
-					if ( progress === 100 ) {
-
-						status.textContent += ' ✓';
-
-					}
+					requestAnimationFrame( animate );
 
 				}
 
-				animate();
+				pathTracer.update();
 
-				break;
+				const progress = Math.floor( samples / maxSamples * 100 );
+
+				status.textContent = `${ samples } / ${ maxSamples } ( ${ progress }% )`;
+
+				if ( progress === 100 ) {
+
+					status.textContent += ' ✓';
+
+				}
+
+			}
+
+			animate();
+
+			break;
 
 		}
 

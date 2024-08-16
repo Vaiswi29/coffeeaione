@@ -69,9 +69,9 @@ function Toolbar( editor ) {
 
 		switch ( mode ) {
 
-			case 'translate': translate.dom.classList.add( 'selected' ); break;
-			case 'rotate': rotate.dom.classList.add( 'selected' ); break;
-			case 'scale': scale.dom.classList.add( 'selected' ); break;
+		case 'translate': translate.dom.classList.add( 'selected' ); break;
+		case 'rotate': rotate.dom.classList.add( 'selected' ); break;
+		case 'scale': scale.dom.classList.add( 'selected' ); break;
 
 		}
 

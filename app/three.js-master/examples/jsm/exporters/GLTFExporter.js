@@ -43,15 +43,15 @@ const KHR_mesh_quantization_ExtraAttrTypes = {
 		'short',
 		'short normalized',
 		'unsigned short',
-		'unsigned short normalized',
+		'unsigned short normalized'
 	],
 	NORMAL: [
 		'byte normalized',
-		'short normalized',
+		'short normalized'
 	],
 	TANGENT: [
 		'byte normalized',
-		'short normalized',
+		'short normalized'
 	],
 	TEXCOORD: [
 		'byte',
@@ -59,8 +59,8 @@ const KHR_mesh_quantization_ExtraAttrTypes = {
 		'unsigned byte',
 		'short',
 		'short normalized',
-		'unsigned short',
-	],
+		'unsigned short'
+	]
 };
 
 
@@ -872,7 +872,7 @@ class GLTFWriter {
 		canvas.height = height;
 
 		const context = canvas.getContext( '2d', {
-			willReadFrequently: true,
+			willReadFrequently: true
 		} );
 		context.fillStyle = '#00ffff';
 		context.fillRect( 0, 0, width, height );
@@ -971,23 +971,23 @@ class GLTFWriter {
 
 		switch ( componentType ) {
 
-			case WEBGL_CONSTANTS.BYTE:
-			case WEBGL_CONSTANTS.UNSIGNED_BYTE:
+		case WEBGL_CONSTANTS.BYTE:
+		case WEBGL_CONSTANTS.UNSIGNED_BYTE:
 
-				componentSize = 1;
+			componentSize = 1;
 
-				break;
+			break;
 
-			case WEBGL_CONSTANTS.SHORT:
-			case WEBGL_CONSTANTS.UNSIGNED_SHORT:
+		case WEBGL_CONSTANTS.SHORT:
+		case WEBGL_CONSTANTS.UNSIGNED_SHORT:
 
-				componentSize = 2;
+			componentSize = 2;
 
-				break;
+			break;
 
-			default:
+		default:
 
-				componentSize = 4;
+			componentSize = 4;
 
 		}
 
@@ -1276,7 +1276,7 @@ class GLTFWriter {
 			canvas.height = Math.min( image.height, options.maxTextureSize );
 
 			const ctx = canvas.getContext( '2d', {
-				willReadFrequently: true,
+				willReadFrequently: true
 			} );
 
 			if ( flipY === true ) {
@@ -1898,7 +1898,7 @@ class GLTFWriter {
 
 			const primitive = {
 				mode: mode,
-				attributes: attributes,
+				attributes: attributes
 			};
 
 			this.serializeUserData( geometry, primitive );
@@ -1979,33 +1979,33 @@ class GLTFWriter {
 
 		switch ( attribute.array.constructor ) {
 
-			case Int8Array:
+		case Int8Array:
 
-				attrType = 'byte';
+			attrType = 'byte';
 
-				break;
+			break;
 
-			case Uint8Array:
+		case Uint8Array:
 
-				attrType = 'unsigned byte';
+			attrType = 'unsigned byte';
 
-				break;
+			break;
 
-			case Int16Array:
+		case Int16Array:
 
-				attrType = 'short';
+			attrType = 'short';
 
-				break;
+			break;
 
-			case Uint16Array:
+		case Uint16Array:
 
-				attrType = 'unsigned short';
+			attrType = 'unsigned short';
 
-				break;
+			break;
 
-			default:
+		default:
 
-				return;
+			return;
 
 		}
 
@@ -3169,7 +3169,7 @@ class GLTFMeshGpuInstancing {
 		const attributes = {
 			TRANSLATION: writer.processAccessor( new BufferAttribute( translationAttr, 3 ) ),
 			ROTATION: writer.processAccessor( new BufferAttribute( rotationAttr, 4 ) ),
-			SCALE: writer.processAccessor( new BufferAttribute( scaleAttr, 3 ) ),
+			SCALE: writer.processAccessor( new BufferAttribute( scaleAttr, 3 ) )
 		};
 
 		if ( mesh.instanceColor )

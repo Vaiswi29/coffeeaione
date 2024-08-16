@@ -6,7 +6,7 @@ export class Matrix2 {
 
 		this.elements = [
 			1, 0,
-			0, 1,
+			0, 1
 		];
 
 		if ( n11 !== undefined ) {
@@ -21,7 +21,7 @@ export class Matrix2 {
 
 		this.set(
 			1, 0,
-			0, 1,
+			0, 1
 		);
 
 		return this;

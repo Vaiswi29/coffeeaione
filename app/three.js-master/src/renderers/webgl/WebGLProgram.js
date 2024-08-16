@@ -52,17 +52,17 @@ function getEncodingComponents( colorSpace ) {
 
 	switch ( colorSpace ) {
 
-		case LinearSRGBColorSpace:
-		case LinearDisplayP3ColorSpace:
-			return [ gamutMapping, 'LinearTransferOETF' ];
+	case LinearSRGBColorSpace:
+	case LinearDisplayP3ColorSpace:
+		return [ gamutMapping, 'LinearTransferOETF' ];
 
-		case SRGBColorSpace:
-		case DisplayP3ColorSpace:
-			return [ gamutMapping, 'sRGBTransferOETF' ];
+	case SRGBColorSpace:
+	case DisplayP3ColorSpace:
+		return [ gamutMapping, 'sRGBTransferOETF' ];
 
-		default:
-			console.warn( 'THREE.WebGLProgram: Unsupported color space:', colorSpace );
-			return [ gamutMapping, 'LinearTransferOETF' ];
+	default:
+		console.warn( 'THREE.WebGLProgram: Unsupported color space:', colorSpace );
+		return [ gamutMapping, 'LinearTransferOETF' ];
 
 	}
 
@@ -105,37 +105,37 @@ function getToneMappingFunction( functionName, toneMapping ) {
 
 	switch ( toneMapping ) {
 
-		case LinearToneMapping:
-			toneMappingName = 'Linear';
-			break;
+	case LinearToneMapping:
+		toneMappingName = 'Linear';
+		break;
 
-		case ReinhardToneMapping:
-			toneMappingName = 'Reinhard';
-			break;
+	case ReinhardToneMapping:
+		toneMappingName = 'Reinhard';
+		break;
 
-		case CineonToneMapping:
-			toneMappingName = 'OptimizedCineon';
-			break;
+	case CineonToneMapping:
+		toneMappingName = 'OptimizedCineon';
+		break;
 
-		case ACESFilmicToneMapping:
-			toneMappingName = 'ACESFilmic';
-			break;
+	case ACESFilmicToneMapping:
+		toneMappingName = 'ACESFilmic';
+		break;
 
-		case AgXToneMapping:
-			toneMappingName = 'AgX';
-			break;
+	case AgXToneMapping:
+		toneMappingName = 'AgX';
+		break;
 
-		case NeutralToneMapping:
-			toneMappingName = 'Neutral';
-			break;
+	case NeutralToneMapping:
+		toneMappingName = 'Neutral';
+		break;
 
-		case CustomToneMapping:
-			toneMappingName = 'Custom';
-			break;
+	case CustomToneMapping:
+		toneMappingName = 'Custom';
+		break;
 
-		default:
-			console.warn( 'THREE.WebGLProgram: Unsupported toneMapping:', toneMapping );
-			toneMappingName = 'Linear';
+	default:
+		console.warn( 'THREE.WebGLProgram: Unsupported toneMapping:', toneMapping );
+		toneMappingName = 'Linear';
 
 	}
 
@@ -171,7 +171,7 @@ function generateVertexExtensions( parameters ) {
 
 	const chunks = [
 		parameters.extensionClipCullDistance ? '#extension GL_ANGLE_clip_cull_distance : require' : '',
-		parameters.extensionMultiDraw ? '#extension GL_ANGLE_multi_draw : require' : '',
+		parameters.extensionMultiDraw ? '#extension GL_ANGLE_multi_draw : require' : ''
 	];
 
 	return chunks.filter( filterEmptyLine ).join( '\n' );
@@ -393,14 +393,14 @@ function generateEnvMapTypeDefine( parameters ) {
 
 		switch ( parameters.envMapMode ) {
 
-			case CubeReflectionMapping:
-			case CubeRefractionMapping:
-				envMapTypeDefine = 'ENVMAP_TYPE_CUBE';
-				break;
+		case CubeReflectionMapping:
+		case CubeRefractionMapping:
+			envMapTypeDefine = 'ENVMAP_TYPE_CUBE';
+			break;
 
-			case CubeUVReflectionMapping:
-				envMapTypeDefine = 'ENVMAP_TYPE_CUBE_UV';
-				break;
+		case CubeUVReflectionMapping:
+			envMapTypeDefine = 'ENVMAP_TYPE_CUBE_UV';
+			break;
 
 		}
 
@@ -418,10 +418,10 @@ function generateEnvMapModeDefine( parameters ) {
 
 		switch ( parameters.envMapMode ) {
 
-			case CubeRefractionMapping:
+		case CubeRefractionMapping:
 
-				envMapModeDefine = 'ENVMAP_MODE_REFRACTION';
-				break;
+			envMapModeDefine = 'ENVMAP_MODE_REFRACTION';
+			break;
 
 		}
 
@@ -439,17 +439,17 @@ function generateEnvMapBlendingDefine( parameters ) {
 
 		switch ( parameters.combine ) {
 
-			case MultiplyOperation:
-				envMapBlendingDefine = 'ENVMAP_BLENDING_MULTIPLY';
-				break;
+		case MultiplyOperation:
+			envMapBlendingDefine = 'ENVMAP_BLENDING_MULTIPLY';
+			break;
 
-			case MixOperation:
-				envMapBlendingDefine = 'ENVMAP_BLENDING_MIX';
-				break;
+		case MixOperation:
+			envMapBlendingDefine = 'ENVMAP_BLENDING_MIX';
+			break;
 
-			case AddOperation:
-				envMapBlendingDefine = 'ENVMAP_BLENDING_ADD';
-				break;
+		case AddOperation:
+			envMapBlendingDefine = 'ENVMAP_BLENDING_ADD';
+			break;
 
 		}
 

@@ -17,7 +17,7 @@ const SSRShader = {
 		DISTANCE_ATTENUATION: true,
 		FRESNEL: true,
 		INFINITE_THICK: false,
-		SELECTIVE: false,
+		SELECTIVE: false
 	},
 
 	uniforms: {
@@ -245,7 +245,7 @@ const SSRDepthShader = {
 
 		'tDepth': { value: null },
 		'cameraNear': { value: null },
-		'cameraFar': { value: null },
+		'cameraFar': { value: null }
 
 	},
 
@@ -310,7 +310,7 @@ const SSRBlurShader = {
 
 		'tDiffuse': { value: null },
 		'resolution': { value: new Vector2() },
-		'opacity': { value: .5 },
+		'opacity': { value: .5 }
 
 	},
 

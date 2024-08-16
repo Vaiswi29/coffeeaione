@@ -24,7 +24,7 @@ export default QUnit.module( 'Geometries', () => {
 				new PlaneGeometry( parameters.width ),
 				new PlaneGeometry( parameters.width, parameters.height ),
 				new PlaneGeometry( parameters.width, parameters.height, parameters.widthSegments ),
-				new PlaneGeometry( parameters.width, parameters.height, parameters.widthSegments, parameters.heightSegments ),
+				new PlaneGeometry( parameters.width, parameters.height, parameters.widthSegments, parameters.heightSegments )
 			];
 
 		} );

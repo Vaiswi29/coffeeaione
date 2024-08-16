@@ -419,7 +419,7 @@ function getShaders() {
 					mainTex: { value: loader.load( 'Light.webp' ) },
 					alphaTest: { value: 0.067 },
 					emission_gain: { value: 0.45 },
-					alpha: { value: 1 },
+					alpha: { value: 1 }
 				},
 				vertexShader: `
 					precision highp float;
@@ -490,7 +490,7 @@ function getShaders() {
 				blendEquation: 100,
 				blendEquationAlpha: 100,
 				blendSrc: 201,
-				blendSrcAlpha: 201,
+				blendSrcAlpha: 201
 			}
 
 		};
@@ -507,11 +507,11 @@ function getMaterial( GUID ) {
 
 	switch ( name ) {
 
-		case 'Light':
-			return new RawShaderMaterial( getShaders().Light );
+	case 'Light':
+		return new RawShaderMaterial( getShaders().Light );
 
-		default:
-			return new MeshBasicMaterial( { vertexColors: true, side: DoubleSide } );
+	default:
+		return new MeshBasicMaterial( { vertexColors: true, side: DoubleSide } );
 
 	}
 

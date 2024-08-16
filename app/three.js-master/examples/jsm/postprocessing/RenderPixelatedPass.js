@@ -120,7 +120,7 @@ class RenderPixelatedPass extends Pass {
 						this.renderResolution.x,
 						this.renderResolution.y,
 						1 / this.renderResolution.x,
-						1 / this.renderResolution.y,
+						1 / this.renderResolution.y
 					)
 				},
 				normalEdgeStrength: { value: 0 },

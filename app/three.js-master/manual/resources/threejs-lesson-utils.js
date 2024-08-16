@@ -19,7 +19,7 @@ export const threejsLessonUtils = {
 			alpha: true,
 			antialias: true,
 			powerPreference: 'low-power',
-			...options.threejsOptions,
+			...options.threejsOptions
 		} );
 		this.pixelRatio = window.devicePixelRatio;
 
@@ -193,7 +193,7 @@ export const threejsLessonUtils = {
 			scene,
 			root,
 			renderer: this.renderer,
-			elem,
+			elem
 		};
 
 		const obj3D = info.create( { scene, camera, renderInfo } );
@@ -213,13 +213,13 @@ export const threejsLessonUtils = {
 
 				renderInfo.renderer.render( renderInfo.scene, renderInfo.camera );
 
-			},
+			}
 		};
 
 		promise.then( ( result ) => {
 
 			const info = result instanceof THREE.Object3D ? {
-				obj3D: result,
+				obj3D: result
 			} : result;
 			if ( info.obj3D ) {
 
@@ -343,7 +343,7 @@ export const threejsLessonUtils = {
 
 		} );
 
-	},
+	}
 };
 
 window.threejsLessonUtils = threejsLessonUtils;

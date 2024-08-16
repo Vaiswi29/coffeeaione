@@ -9,7 +9,7 @@ import {
 	LinearSRGBColorSpace,
 	Loader,
 	RGBAFormat,
-	UVMapping,
+	UVMapping
 } from 'three';
 
 // UltraHDR Image Format - https://developer.android.com/media/platform/hdr-image-format
@@ -79,7 +79,7 @@ class UltraHDRLoader extends Loader {
 			offsetSDR: null,
 			offsetHDR: null,
 			hdrCapacityMin: null,
-			hdrCapacityMax: null,
+			hdrCapacityMax: null
 		};
 		const textDecoder = new TextDecoder();
 
@@ -102,14 +102,14 @@ class UltraHDRLoader extends Loader {
 						0xd8, // SOI
 						0xe0, // APP0
 						0xe1, // APP1
-						0xe2, // APP2
+						0xe2 // APP2
 					].includes( leadingByte )
 				) {
 
 					sections.push( {
 						sectionType: leadingByte,
 						section: [ byte, leadingByte ],
-						sectionOffset: byteOffset + 2,
+						sectionOffset: byteOffset + 2
 					} );
 
 					byteOffset += 2;
@@ -243,7 +243,7 @@ class UltraHDRLoader extends Loader {
 						height,
 						data: hdrBuffer,
 						format: RGBAFormat,
-						type: this.type,
+						type: this.type
 					} );
 
 				},
@@ -297,7 +297,7 @@ class UltraHDRLoader extends Loader {
 						texture.image = {
 							data: texData.data,
 							width: texData.width,
-							height: texData.height,
+							height: texData.height
 						};
 						texture.needsUpdate = true;
 
@@ -410,7 +410,7 @@ class UltraHDRLoader extends Loader {
 					const image = {
 						width: imageLoader.naturalWidth,
 						height: imageLoader.naturalHeight,
-						source: imageLoader,
+						source: imageLoader
 					};
 
 					URL.revokeObjectURL( imageLoader.src );
@@ -435,7 +435,7 @@ class UltraHDRLoader extends Loader {
 
 		Promise.all( [
 			getImageDataFromBuffer( sdrBuffer ),
-			getImageDataFromBuffer( gainmapBuffer ),
+			getImageDataFromBuffer( gainmapBuffer )
 		] )
 			.then( ( [ sdrImage, gainmapImage ] ) => {
 
@@ -455,7 +455,7 @@ class UltraHDRLoader extends Loader {
 				const canvas = document.createElement( 'canvas' );
 				const ctx = canvas.getContext( '2d', {
 					willReadFrequently: true,
-					colorSpace: 'srgb',
+					colorSpace: 'srgb'
 				} );
 
 				canvas.width = sdrImage.width;

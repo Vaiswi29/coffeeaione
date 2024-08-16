@@ -223,7 +223,7 @@ class BloomNode extends TempNode {
 			type: 'float',
 			inputs: [
 				{ name: 'factor', type: 'float' },
-				{ name: 'radius', type: 'float' },
+				{ name: 'radius', type: 'float' }
 			]
 		} );
 

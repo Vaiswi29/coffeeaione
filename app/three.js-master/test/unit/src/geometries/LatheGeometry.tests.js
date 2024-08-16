@@ -20,7 +20,7 @@ export default QUnit.module( 'Geometries', () => {
 			};
 
 			geometries = [
-				new LatheGeometry( parameters.points ),
+				new LatheGeometry( parameters.points )
 			];
 
 		} );

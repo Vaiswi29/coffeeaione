@@ -176,24 +176,24 @@ class EditorControls extends THREE.EventDispatcher {
 
 			switch ( pointers.length ) {
 
-				case 0:
+			case 0:
 
-					domElement.releasePointerCapture( event.pointerId );
+				domElement.releasePointerCapture( event.pointerId );
 
-					domElement.ownerDocument.removeEventListener( 'pointermove', onPointerMove );
-					domElement.ownerDocument.removeEventListener( 'pointerup', onPointerUp );
+				domElement.ownerDocument.removeEventListener( 'pointermove', onPointerMove );
+				domElement.ownerDocument.removeEventListener( 'pointerup', onPointerUp );
 
-					break;
+				break;
 
-				case 1:
+			case 1:
 
-					var pointerId = pointers[ 0 ];
-					var position = pointerPositions[ pointerId ];
+				var pointerId = pointers[ 0 ];
+				var position = pointerPositions[ pointerId ];
 
-					// minimal placeholder event - allows state correction on pointer-up
-					onTouchStart( { pointerId: pointerId, pageX: position.x, pageY: position.y } );
+				// minimal placeholder event - allows state correction on pointer-up
+				onTouchStart( { pointerId: pointerId, pageX: position.x, pageY: position.y } );
 
-					break;
+				break;
 
 			}
 
@@ -298,19 +298,19 @@ class EditorControls extends THREE.EventDispatcher {
 
 			switch ( pointers.length ) {
 
-				case 1:
-					touches[ 0 ].set( event.pageX, event.pageY, 0 ).divideScalar( window.devicePixelRatio );
-					touches[ 1 ].set( event.pageX, event.pageY, 0 ).divideScalar( window.devicePixelRatio );
-					break;
+			case 1:
+				touches[ 0 ].set( event.pageX, event.pageY, 0 ).divideScalar( window.devicePixelRatio );
+				touches[ 1 ].set( event.pageX, event.pageY, 0 ).divideScalar( window.devicePixelRatio );
+				break;
 
-				case 2:
+			case 2:
 
-					var position = getSecondPointerPosition( event );
+				var position = getSecondPointerPosition( event );
 
-					touches[ 0 ].set( event.pageX, event.pageY, 0 ).divideScalar( window.devicePixelRatio );
-					touches[ 1 ].set( position.x, position.y, 0 ).divideScalar( window.devicePixelRatio );
-					prevDistance = touches[ 0 ].distanceTo( touches[ 1 ] );
-					break;
+				touches[ 0 ].set( event.pageX, event.pageY, 0 ).divideScalar( window.devicePixelRatio );
+				touches[ 1 ].set( position.x, position.y, 0 ).divideScalar( window.devicePixelRatio );
+				prevDistance = touches[ 0 ].distanceTo( touches[ 1 ] );
+				break;
 
 			}
 
@@ -340,31 +340,31 @@ class EditorControls extends THREE.EventDispatcher {
 
 			switch ( pointers.length ) {
 
-				case 1:
-					touches[ 0 ].set( event.pageX, event.pageY, 0 ).divideScalar( window.devicePixelRatio );
-					touches[ 1 ].set( event.pageX, event.pageY, 0 ).divideScalar( window.devicePixelRatio );
-					scope.rotate( touches[ 0 ].sub( getClosest( touches[ 0 ], prevTouches ) ).multiplyScalar( - 1 ) );
-					break;
+			case 1:
+				touches[ 0 ].set( event.pageX, event.pageY, 0 ).divideScalar( window.devicePixelRatio );
+				touches[ 1 ].set( event.pageX, event.pageY, 0 ).divideScalar( window.devicePixelRatio );
+				scope.rotate( touches[ 0 ].sub( getClosest( touches[ 0 ], prevTouches ) ).multiplyScalar( - 1 ) );
+				break;
 
-				case 2:
+			case 2:
 
-					var position = getSecondPointerPosition( event );
+				var position = getSecondPointerPosition( event );
 
-					touches[ 0 ].set( event.pageX, event.pageY, 0 ).divideScalar( window.devicePixelRatio );
-					touches[ 1 ].set( position.x, position.y, 0 ).divideScalar( window.devicePixelRatio );
-					var distance = touches[ 0 ].distanceTo( touches[ 1 ] );
-					scope.zoom( delta.set( 0, 0, prevDistance - distance ) );
-					prevDistance = distance;
+				touches[ 0 ].set( event.pageX, event.pageY, 0 ).divideScalar( window.devicePixelRatio );
+				touches[ 1 ].set( position.x, position.y, 0 ).divideScalar( window.devicePixelRatio );
+				var distance = touches[ 0 ].distanceTo( touches[ 1 ] );
+				scope.zoom( delta.set( 0, 0, prevDistance - distance ) );
+				prevDistance = distance;
 
 
-					var offset0 = touches[ 0 ].clone().sub( getClosest( touches[ 0 ], prevTouches ) );
-					var offset1 = touches[ 1 ].clone().sub( getClosest( touches[ 1 ], prevTouches ) );
-					offset0.x = - offset0.x;
-					offset1.x = - offset1.x;
+				var offset0 = touches[ 0 ].clone().sub( getClosest( touches[ 0 ], prevTouches ) );
+				var offset1 = touches[ 1 ].clone().sub( getClosest( touches[ 1 ], prevTouches ) );
+				offset0.x = - offset0.x;
+				offset1.x = - offset1.x;
 
-					scope.pan( offset0.add( offset1 ) );
+				scope.pan( offset0.add( offset1 ) );
 
-					break;
+				break;
 
 			}
 

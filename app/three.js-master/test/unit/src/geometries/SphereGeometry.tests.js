@@ -19,7 +19,7 @@ export default QUnit.module( 'Geometries', () => {
 				phiStart: 0.5,
 				phiLength: 1.0,
 				thetaStart: 0.4,
-				thetaLength: 2.0,
+				thetaLength: 2.0
 			};
 
 			geometries = [
@@ -30,7 +30,7 @@ export default QUnit.module( 'Geometries', () => {
 				new SphereGeometry( parameters.radius, parameters.widthSegments, parameters.heightSegments, parameters.phiStart ),
 				new SphereGeometry( parameters.radius, parameters.widthSegments, parameters.heightSegments, parameters.phiStart, parameters.phiLength ),
 				new SphereGeometry( parameters.radius, parameters.widthSegments, parameters.heightSegments, parameters.phiStart, parameters.phiLength, parameters.thetaStart ),
-				new SphereGeometry( parameters.radius, parameters.widthSegments, parameters.heightSegments, parameters.phiStart, parameters.phiLength, parameters.thetaStart, parameters.thetaLength ),
+				new SphereGeometry( parameters.radius, parameters.widthSegments, parameters.heightSegments, parameters.phiStart, parameters.phiLength, parameters.thetaStart, parameters.thetaLength )
 			];
 
 		} );

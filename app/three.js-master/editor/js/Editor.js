@@ -92,7 +92,7 @@ function Editor() {
 
 		intersectionsDetected: new Signal(),
 
-		pathTracerUpdated: new Signal(),
+		pathTracerUpdated: new Signal()
 
 	};
 

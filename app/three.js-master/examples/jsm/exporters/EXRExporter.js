@@ -9,7 +9,7 @@ import {
 	FloatType,
 	HalfFloatType,
 	RGBAFormat,
-	DataUtils,
+	DataUtils
 } from 'three';
 import * as fflate from '../libs/fflate.module.js';
 
@@ -150,7 +150,7 @@ function buildInfoRTT( renderTarget, options = {} ) {
 		dataSize: 2 * OUT_TYPE,
 		numBlocks: Math.ceil( HEIGHT / COMPRESSION_SIZE ),
 		numInputChannels: 4,
-		numOutputChannels: NUM_CHANNELS,
+		numOutputChannels: NUM_CHANNELS
 	};
 
 }
@@ -184,7 +184,7 @@ function buildInfoDT( texture, options = {} ) {
 		dataSize: 2 * OUT_TYPE,
 		numBlocks: Math.ceil( HEIGHT / COMPRESSION_SIZE ),
 		numInputChannels: 4,
-		numOutputChannels: NUM_CHANNELS,
+		numOutputChannels: NUM_CHANNELS
 	};
 
 }
@@ -267,14 +267,14 @@ function compressData( inBuffer, info ) {
 
 	switch ( info.compression ) {
 
-		case 0:
-			compress = compressNONE;
-			break;
+	case 0:
+		compress = compressNONE;
+		break;
 
-		case 2:
-		case 3:
-			compress = compressZIP;
-			break;
+	case 2:
+	case 3:
+		compress = compressZIP;
+		break;
 
 	}
 

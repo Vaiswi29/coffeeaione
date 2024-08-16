@@ -93,8 +93,8 @@ class SVGRenderer {
 
 			switch ( quality ) {
 
-				case 'high': _quality = 1; break;
-				case 'low': _quality = 0; break;
+			case 'high': _quality = 1; break;
+			case 'low': _quality = 0; break;
 
 			}
 

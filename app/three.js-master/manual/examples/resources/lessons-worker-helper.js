@@ -47,7 +47,7 @@
 
 		self.postMessage( {
 			type: '__editor__',
-			data,
+			data
 		} );
 
 	}
@@ -66,7 +66,7 @@
 				sendMessage( {
 					type: 'log',
 					logType,
-					msg: [ ...args ].join( ' ' ),
+					msg: [ ...args ].join( ' ' )
 				} );
 
 			};
@@ -98,7 +98,7 @@
 				// means allowing context to be restored
 				// e.preventDefault();  // can't do this because firefox bug - https://bugzilla.mozilla.org/show_bug.cgi?id=1633280
 				sendMessage( {
-					type: 'lostContext',
+					type: 'lostContext'
 				} );
 
 			} );
@@ -121,7 +121,7 @@
 				lineNo,
 				colNo,
 				url,
-				msg,
+				msg
 			} );
 
 		} );
@@ -147,7 +147,7 @@
 				const args = [].slice.apply( arguments );
 				args[ 1 ] = {
 					powerPreference: 'low-power',
-					...args[ 1 ],
+					...args[ 1 ]
 				};
 				return oldFn.apply( this, args );
 
@@ -168,7 +168,7 @@
 		const {
 			makeDebugContext,
 			glFunctionArgToString,
-			glEnumToString,
+			glEnumToString
 		} = self.webglDebugHelper;
 
 		// capture GL errors
@@ -206,12 +206,12 @@
 								sendMessage( {
 									type: 'jsErrorWithStack',
 									stack: error.stack,
-									msg: `${glEnumToString( err )} in ${funcName}(${enumedArgs.join( ', ' )})`,
+									msg: `${glEnumToString( err )} in ${funcName}(${enumedArgs.join( ', ' )})`
 								} );
 
 							}
 
-						},
+						}
 					} );
 
 				}

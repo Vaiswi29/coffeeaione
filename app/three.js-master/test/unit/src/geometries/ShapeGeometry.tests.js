@@ -19,7 +19,7 @@ export default QUnit.module( 'Geometries', () => {
 			triangleShape.lineTo( - 1, 1 );
 
 			geometries = [
-				new ShapeGeometry( triangleShape ),
+				new ShapeGeometry( triangleShape )
 			];
 
 		} );

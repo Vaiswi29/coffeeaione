@@ -257,7 +257,7 @@ const ShaderLib = {
 	equirect: {
 
 		uniforms: {
-			tEquirect: { value: null },
+			tEquirect: { value: null }
 		},
 
 		vertexShader: ShaderChunk.equirect_vert,
@@ -290,7 +290,7 @@ const ShaderLib = {
 			{
 				color: { value: /*@__PURE__*/ new Color( 0x00000 ) },
 				opacity: { value: 1.0 }
-			},
+			}
 		] ),
 
 		vertexShader: ShaderChunk.shadow_vert,
@@ -348,7 +348,7 @@ ShaderLib.physical = {
 			specularIntensityMapTransform: { value: /*@__PURE__*/ new Matrix3() },
 			anisotropyVector: { value: /*@__PURE__*/ new Vector2() },
 			anisotropyMap: { value: null },
-			anisotropyMapTransform: { value: /*@__PURE__*/ new Matrix3() },
+			anisotropyMapTransform: { value: /*@__PURE__*/ new Matrix3() }
 		}
 	] ),
 

@@ -178,7 +178,7 @@
 			bottom: 0,
 			background: '#EEE',
 			'font-size': 'smaller',
-			cursor: 'pointer',
+			cursor: 'pointer'
 		} );
 		toggle.addEventListener( 'click', showHideConsole );
 
@@ -324,7 +324,7 @@
 						url: url,
 						lineNo: lineNo,
 						colNo: colNo,
-						funcName: userFnName,
+						funcName: userFnName
 					};
 
 				}
@@ -347,7 +347,7 @@
 					return {
 						url: url,
 						lineNo: lineNo,
-						colNo: colNo,
+						colNo: colNo
 					};
 
 				}
@@ -424,7 +424,7 @@
 			log,
 			lostContext,
 			jsError,
-			jsErrorWithStack,
+			jsErrorWithStack
 		};
 		const OrigWorker = self.Worker;
 		class WrappedWorker extends OrigWorker {
@@ -474,7 +474,7 @@
 
 						listener = fn;
 
-					},
+					}
 				} );
 
 			}
@@ -674,7 +674,7 @@
 			m = /\brv[ :]+(\d+)/g.exec( userAgent ) || [];
 			return {
 				name: 'IE',
-				version: m[ 1 ],
+				version: m[ 1 ]
 			};
 
 		}
@@ -686,7 +686,7 @@
 
 				return {
 					name: temp[ 1 ].replace( 'OPR', 'Opera' ),
-					version: temp[ 2 ],
+					version: temp[ 2 ]
 				};
 
 			}
@@ -703,7 +703,7 @@
 
 		return {
 			name: m[ 0 ],
-			version: m[ 1 ],
+			version: m[ 1 ]
 		};
 
 	}
@@ -736,7 +736,7 @@
 				const args = [].slice.apply( arguments );
 				args[ 1 ] = {
 					powerPreference: 'low-power',
-					...args[ 1 ],
+					...args[ 1 ]
 				};
 				const ctx = oldFn.apply( this, args );
 				if ( ! ctx ) {
@@ -781,7 +781,7 @@
 		const {
 			makeDebugContext,
 			glFunctionArgToString,
-			glEnumToString,
+			glEnumToString
 		} = self.webglDebugHelper;
 
 		// capture GL errors
@@ -823,7 +823,7 @@
                 console.error(errorMsg)  // eslint-disable-line
 							}
 
-						},
+						}
 					} );
 
 				}
@@ -853,7 +853,7 @@
 
 	return {
 		setupLesson: setupLesson,
-		showNeedWebGL: showNeedWebGL,
+		showNeedWebGL: showNeedWebGL
 	};
 
 } ) );

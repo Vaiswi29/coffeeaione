@@ -9,7 +9,7 @@
 		fixJSForCodeSite,
 		extraHTMLParsing,
 		runOnResize,
-		lessonSettings,
+		lessonSettings
 	} = lessonEditorSettings;
 
 	const lessonHelperScriptRE = /<script src="[^"]+lessons-helper\.js"><\/script>/;
@@ -97,7 +97,7 @@
 
 	/** @type {Globals} */
 	const g = {
-		html: '',
+		html: ''
 	};
 
 	/**
@@ -133,16 +133,16 @@
 	const htmlParts = {
 		js: {
 			language: 'javascript',
-			sources: [],
+			sources: []
 		},
 		css: {
 			language: 'css',
-			sources: [],
+			sources: []
 		},
 		html: {
 			language: 'html',
-			sources: [],
-		},
+			sources: []
+		}
 	};
 
 	function getRootPrefix( url ) {
@@ -272,7 +272,7 @@
 				scriptInfos[ fqURL ] = {
 					fqURL,
 					deps: [],
-					isWorker: prefix.indexOf( 'Worker' ) >= 0,
+					isWorker: prefix.indexOf( 'Worker' ) >= 0
 				};
 				newScripts.push( fqURL );
 
@@ -352,7 +352,7 @@
 		g.rootScriptInfo = {
 			fqURL,
 			deps: [],
-			source: rootScript,
+			source: rootScript
 		};
 		scriptInfos[ fqURL ] = g.rootScriptInfo;
 
@@ -623,7 +623,7 @@ import '${dirname( scriptInfo.fqURL )}/resources/lessons-worker-helper.js';`;
 		return getSourceBlob( {
 			html: htmlParts.html.sources[ 0 ].source,
 			css: htmlParts.css.sources[ 0 ].source,
-			js: htmlParts.js.sources[ 0 ].source,
+			js: htmlParts.js.sources[ 0 ].source
 		} );
 
 	}
@@ -633,7 +633,7 @@ import '${dirname( scriptInfo.fqURL )}/resources/lessons-worker-helper.js';`;
 		return getSourceBlob( {
 			html: htmlParts.html.sources[ 0 ].source,
 			css: htmlParts.css.sources[ 0 ].source,
-			js: htmlParts.js.sources[ 0 ].source,
+			js: htmlParts.js.sources[ 0 ].source
 		} );
 
 	}
@@ -686,7 +686,7 @@ import '${dirname( scriptInfo.fqURL )}/resources/lessons-worker-helper.js';`;
 
 				scripts.push( {
 					name: `worker-${basename( scriptInfo.fqURL )}`,
-					text,
+					text
 				} );
 
 			}
@@ -706,7 +706,7 @@ import '${dirname( scriptInfo.fqURL )}/resources/lessons-worker-helper.js';`;
 
 			return {
 				js: scripts[ 0 ].text,
-				html: '',
+				html: ''
 			};
 
 		}
@@ -752,7 +752,7 @@ import '${dirname( scriptInfo.fqURL )}/resources/lessons-worker-helper.js';`;
 `;
 		return {
 			js: init,
-			html,
+			html
 		};
 
 	}
@@ -784,7 +784,7 @@ import '${dirname( scriptInfo.fqURL )}/resources/lessons-worker-helper.js';`;
 			editors: '101',
 			html: scripts.html + html,
 			css: htmlParts.css.sources[ 0 ].source,
-			js: comment + code,
+			js: comment + code
 		};
 
 		const elem = document.createElement( 'div' );
@@ -849,10 +849,10 @@ import '${dirname( scriptInfo.fqURL )}/resources/lessons-worker-helper.js';`;
 			name: g.title,
 			settings: {},
 			files: [
-				{ name: 'index.html', content: scripts.html + html, },
-				{ name: 'index.css', content: htmlParts.css.sources[ 0 ].source, },
-				{ name: 'index.js', content: comment + code, },
-			],
+				{ name: 'index.html', content: scripts.html + html },
+				{ name: 'index.css', content: htmlParts.css.sources[ 0 ].source },
+				{ name: 'index.js', content: comment + code }
+			]
 		};
 
 		window.open( 'https://jsgist.org/?newGist=true', '_blank' );
@@ -1012,11 +1012,11 @@ ${s.script}
 		} );
 		switch ( res.length % 4 ) { // To produce valid Base64
 
-			default: // When could this happen ?
-			case 0 : return res;
-			case 1 : return res + '===';
-			case 2 : return res + '==';
-			case 3 : return res + '=';
+		default: // When could this happen ?
+		case 0 : return res;
+		case 1 : return res + '===';
+		case 2 : return res + '==';
+		case 3 : return res + '=';
 
 		}
 
@@ -1406,11 +1406,11 @@ ${s.script}
 					body: html,
 					css: htmlParts.css.sources[ 0 ].source,
 					title: g.title,
-					script: comment + code,
-				} ),
+					script: comment + code
+				} )
 			},
 			'sandbox.config.json': {
-				content: '{\n  "template": "static"\n}\n',
+				content: '{\n  "template": "static"\n}\n'
 			},
 			'package.json': {
 				content: JSON.stringify( {
@@ -1420,14 +1420,14 @@ ${s.script}
 					'main': 'index.html',
 					'scripts': {
 						'start': 'serve',
-						'build': 'echo This is a static template, there is no bundler or bundling involved!',
+						'build': 'echo This is a static template, there is no bundler or bundling involved!'
 					},
 					'license': 'MIT',
 					'devDependencies': {
-						'serve': '^11.2.0',
-					},
-				}, null, 2 ),
-			},
+						'serve': '^11.2.0'
+					}
+				}, null, 2 )
+			}
 		} );
 		for ( const file of Object.values( files ) ) {
 
@@ -1624,7 +1624,7 @@ async function openInStackBlitz() {
 				sourceInfo.editor = editor;
 				return {
 					div,
-					editor,
+					editor
 				};
 
 			} );
@@ -1878,7 +1878,7 @@ async function openInStackBlitz() {
 					const editor = htmlParts.js.editors[ editorNdx ].editor;
 					editor.setPosition( {
 						lineNumber: actualLineNo,
-						column: colNo,
+						column: colNo
 					} );
 					editor.revealLineInCenterIfOutsideViewport( actualLineNo );
 					editor.focus();
@@ -1905,7 +1905,7 @@ async function openInStackBlitz() {
 			disableTranslate3d: true,
 			//   model: null,
 			scrollBeyondLastLine: false,
-			minimap: { enabled: false },
+			minimap: { enabled: false }
 		} );
 
 	}

@@ -2,7 +2,7 @@ import {
 	Frustum,
 	Vector3,
 	Matrix4,
-	Quaternion,
+	Quaternion
 } from 'three';
 
 /**

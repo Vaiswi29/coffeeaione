@@ -24,7 +24,7 @@ export default QUnit.module( 'Geometries', () => {
 				new CapsuleGeometry( parameters.radius ),
 				new CapsuleGeometry( parameters.radius, parameters.length ),
 				new CapsuleGeometry( parameters.radius, parameters.length, parameters.capSegments ),
-				new CapsuleGeometry( parameters.radius, parameters.length, parameters.capSegments, parameters.radialSegments ),
+				new CapsuleGeometry( parameters.radius, parameters.length, parameters.capSegments, parameters.radialSegments )
 			];
 
 		} );

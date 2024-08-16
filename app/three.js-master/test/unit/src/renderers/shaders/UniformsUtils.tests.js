@@ -53,7 +53,7 @@ export default QUnit.module( 'Renderers', () => {
 					matrix4Value: { value: new Matrix4() },
 					quatValue: { value: new Quaternion(1, 2, 3, 4) },
 					arrayValue: { value: [1, 2, 3, 4] },
-					textureValue: { value: new Texture(null, CubeReflectionMapping) },
+					textureValue: { value: new Texture(null, CubeReflectionMapping) }
 				};
 
 				const uniformClones = UniformsUtils.clone(uniforms);
@@ -89,7 +89,7 @@ export default QUnit.module( 'Renderers', () => {
 					matrix4Value: { value: new Matrix4() },
 					quatValue: { value: new Quaternion(1, 2, 3, 4) },
 					arrayValue: { value: [1, 2, 3, 4] },
-					textureValue: { value: new Texture(null, CubeReflectionMapping) },
+					textureValue: { value: new Texture(null, CubeReflectionMapping) }
 				};
 	
 				const uniformClones = UniformsUtils.clone(uniforms);
@@ -129,7 +129,7 @@ export default QUnit.module( 'Renderers', () => {
 			QUnit.test( 'cloneUniforms skips render target textures', ( assert ) => {
 
 				const uniforms = {
-					textureValue: { value: new Texture(null, CubeReflectionMapping) },
+					textureValue: { value: new Texture(null, CubeReflectionMapping) }
 				};
 
 				uniforms.textureValue.value.isRenderTargetTexture = true;

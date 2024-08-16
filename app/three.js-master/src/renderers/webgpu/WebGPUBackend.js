@@ -1137,11 +1137,11 @@ class WebGPUBackend extends Backend {
 			const timestampWrites = {
 				querySet: timeStampQuerySet,
 				beginningOfPassWriteIndex: 0, // Write timestamp in index 0 when pass begins.
-				endOfPassWriteIndex: 1, // Write timestamp in index 1 when pass ends.
+				endOfPassWriteIndex: 1 // Write timestamp in index 1 when pass ends.
 			};
 
 			Object.assign( descriptor, {
-				timestampWrites,
+				timestampWrites
 			} );
 
 			renderContextData.timeStampQuerySet = timeStampQuerySet;
@@ -1166,14 +1166,14 @@ class WebGPUBackend extends Backend {
 				resolveBuffer: this.device.createBuffer( {
 					label: 'timestamp resolve buffer',
 					size: size,
-					usage: GPUBufferUsage.QUERY_RESOLVE | GPUBufferUsage.COPY_SRC,
+					usage: GPUBufferUsage.QUERY_RESOLVE | GPUBufferUsage.COPY_SRC
 				} ),
 				resultBuffer: this.device.createBuffer( {
 					label: 'timestamp result buffer',
 					size: size,
-					usage: GPUBufferUsage.COPY_DST | GPUBufferUsage.MAP_READ,
+					usage: GPUBufferUsage.COPY_DST | GPUBufferUsage.MAP_READ
 				} ),
-				isMappingPending: false,
+				isMappingPending: false
 			};
 
 		}

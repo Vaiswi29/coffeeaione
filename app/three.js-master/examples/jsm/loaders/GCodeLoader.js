@@ -146,7 +146,7 @@ class GCodeLoader extends Loader {
 					y: args.y !== undefined ? absolute( state.y, args.y ) : state.y,
 					z: args.z !== undefined ? absolute( state.z, args.z ) : state.z,
 					e: args.e !== undefined ? absolute( state.e, args.e ) : state.e,
-					f: args.f !== undefined ? absolute( state.f, args.f ) : state.f,
+					f: args.f !== undefined ? absolute( state.f, args.f ) : state.f
 				};
 
 				//Layer change detection is or made by watching Z, it's made by watching when we extrude at a new Z position

@@ -32,7 +32,7 @@ const SSAOShader = {
 		'cameraInverseProjectionMatrix': { value: new Matrix4() },
 		'kernelRadius': { value: 8 },
 		'minDistance': { value: 0.005 },
-		'maxDistance': { value: 0.05 },
+		'maxDistance': { value: 0.05 }
 
 	},
 
@@ -194,7 +194,7 @@ const SSAODepthShader = {
 
 		'tDepth': { value: null },
 		'cameraNear': { value: null },
-		'cameraFar': { value: null },
+		'cameraFar': { value: null }
 
 	},
 

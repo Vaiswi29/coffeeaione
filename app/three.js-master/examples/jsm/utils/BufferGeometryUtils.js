@@ -8,7 +8,7 @@ import {
 	TriangleFanDrawMode,
 	TriangleStripDrawMode,
 	TrianglesDrawMode,
-	Vector3,
+	Vector3
 } from 'three';
 
 function computeMikkTSpaceTangents( geometry, MikkTSpace, negateSign = true ) {
@@ -725,7 +725,7 @@ function mergeVertices( geometry, tolerance = 1e-4 ) {
 		result.setAttribute( name, new tmpAttribute.constructor(
 			tmpAttribute.array.slice( 0, nextIndex * tmpAttribute.itemSize ),
 			tmpAttribute.itemSize,
-			tmpAttribute.normalized,
+			tmpAttribute.normalized
 		) );
 
 		if ( ! ( name in tmpMorphAttributes ) ) continue;
@@ -737,7 +737,7 @@ function mergeVertices( geometry, tolerance = 1e-4 ) {
 			result.morphAttributes[ name ][ j ] = new tmpMorphAttribute.constructor(
 				tmpMorphAttribute.array.slice( 0, nextIndex * tmpMorphAttribute.itemSize ),
 				tmpMorphAttribute.itemSize,
-				tmpMorphAttribute.normalized,
+				tmpMorphAttribute.normalized
 			);
 
 		}

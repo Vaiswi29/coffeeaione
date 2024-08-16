@@ -17,13 +17,13 @@ export default QUnit.module( 'Audios', () => {
 						createGain: () => {
 
 							return {
-								connect: () => {},
+								connect: () => {}
 							};
 
 						}
 					};
 
-				},
+				}
 			};
 
 		}

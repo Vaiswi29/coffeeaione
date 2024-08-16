@@ -20,7 +20,7 @@ const assert = {
 
 		}
 
-	},
+	}
 };
 
 /*
@@ -60,7 +60,7 @@ function parse( buf ) {
 		4, // 1: minx, maxx, miny, maxy
 		6, // 2: minx, maxx, miny, maxy, minz, maxz
 		6, // 3: minx, maxx, miny, maxy, minm, maxm
-		8, // 4: minx, maxx, miny, maxy, minz, maxz, minm, maxm
+		8 // 4: minx, maxx, miny, maxy, minz, maxz, minm, maxm
 	];
 
 	const envelopeSize = envelopeSizes[ flag_envelope ];
@@ -174,7 +174,7 @@ function parse( buf ) {
 
 		return {
 			type: 'point',
-			point: getPoints( 1 ),
+			point: getPoints( 1 )
 		};
 
 	}
@@ -183,7 +183,7 @@ function parse( buf ) {
 
 		return {
 			type: 'lineString',
-			points: getPoints( getUint32() ),
+			points: getPoints( getUint32() )
 		};
 
 	}
@@ -192,7 +192,7 @@ function parse( buf ) {
 
 		return {
 			type: 'polygon',
-			rings: getRings( getUint32() ),
+			rings: getRings( getUint32() )
 		};
 
 	}
@@ -214,7 +214,7 @@ function parse( buf ) {
 
 		return {
 			type: 'multiPoint',
-			points,
+			points
 		};
 
 	}
@@ -236,7 +236,7 @@ function parse( buf ) {
 
 		return {
 			type: 'multiLineString',
-			lineStrings,
+			lineStrings
 		};
 
 	}
@@ -258,7 +258,7 @@ function parse( buf ) {
 
 		return {
 			type: 'multiPolygon',
-			polygons,
+			polygons
 		};
 
 	}
@@ -270,7 +270,7 @@ function parse( buf ) {
 		polygonHandler, // 3
 		multiPointHandler, // 4
 		multiLineStringHandler, // 5,
-		multiPolygonHandler, // 6,
+		multiPolygonHandler // 6,
 	];
 
 	const end = buf.length;
@@ -287,7 +287,7 @@ function parse( buf ) {
 
 	return {
 		envelope,
-		primitives,
+		primitives
 	};
 
 }

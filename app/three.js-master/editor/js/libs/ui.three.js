@@ -273,11 +273,11 @@ class UIOutliner extends UIDiv {
 
 			switch ( event.code ) {
 
-				case 'ArrowUp':
-				case 'ArrowDown':
-					event.preventDefault();
-					event.stopPropagation();
-					break;
+			case 'ArrowUp':
+			case 'ArrowDown':
+				event.preventDefault();
+				event.stopPropagation();
+				break;
 
 			}
 
@@ -288,12 +288,12 @@ class UIOutliner extends UIDiv {
 
 			switch ( event.code ) {
 
-				case 'ArrowUp':
-					scope.selectIndex( scope.selectedIndex - 1 );
-					break;
-				case 'ArrowDown':
-					scope.selectIndex( scope.selectedIndex + 1 );
-					break;
+			case 'ArrowUp':
+				scope.selectIndex( scope.selectedIndex - 1 );
+				break;
+			case 'ArrowDown':
+				scope.selectIndex( scope.selectedIndex + 1 );
+				break;
 
 			}
 

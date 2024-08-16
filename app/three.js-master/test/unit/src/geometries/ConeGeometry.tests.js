@@ -13,7 +13,7 @@ export default QUnit.module( 'Geometries', () => {
 		hooks.beforeEach( function () {
 
 			geometries = [
-				new ConeGeometry(),
+				new ConeGeometry()
 			];
 
 		} );

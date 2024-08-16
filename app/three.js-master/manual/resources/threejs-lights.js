@@ -37,7 +37,7 @@ import { threejsLessonUtils } from './threejs-lesson-utils.js';
 		const planeGeo = new THREE.PlaneGeometry( planeSize, planeSize );
 		const planeMat = new THREE.MeshPhongMaterial( {
 			map: makeCheckerTexture( planeSize ),
-			side: THREE.DoubleSide,
+			side: THREE.DoubleSide
 		} );
 
 		return function ( renderInfo ) {
@@ -78,7 +78,7 @@ import { threejsLessonUtils } from './threejs-lesson-utils.js';
 
 					controls.update();
 
-				},
+				}
 			};
 
 		};
@@ -108,7 +108,7 @@ import { threejsLessonUtils } from './threejs-lesson-utils.js';
 
 				return result;
 
-			},
+			}
 		},
 		directionalPlusHemisphere: {
 			create( props ) {
@@ -135,8 +135,8 @@ import { threejsLessonUtils } from './threejs-lesson-utils.js';
 
 				return result;
 
-			},
-		},
+			}
+		}
 	} );
 
 }

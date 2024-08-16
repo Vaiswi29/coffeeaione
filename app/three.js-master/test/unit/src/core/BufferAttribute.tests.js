@@ -302,7 +302,7 @@ export default QUnit.module( 'Core', () => {
 				array: [ 1, 2, 3, 4, 5, 6 ],
 				normalized: true,
 				name: 'attributeName',
-				usage: DynamicDrawUsage,
+				usage: DynamicDrawUsage
 			}, 'Serialized to JSON as expected with non-default values' );
 
 		} );

@@ -42,7 +42,7 @@ const SubsurfaceScatteringShader = {
 
 	vertexShader: [
 		'#define USE_UV',
-		ShaderChunk[ 'meshphong_vert' ],
+		ShaderChunk[ 'meshphong_vert' ]
 	].join( '\n' ),
 
 	fragmentShader: [
@@ -77,13 +77,13 @@ const SubsurfaceScatteringShader = {
 
 					'#if defined( SUBSURFACE ) && defined( USE_UV )',
 					' RE_Direct_Scattering(directLight, vUv, geometryPosition, geometryNormal, geometryViewDir, geometryClearcoatNormal, reflectedLight);',
-					'#endif',
+					'#endif'
 				].join( '\n' )
-			),
+			)
 
-		),
+		)
 
-	].join( '\n' ),
+	].join( '\n' )
 
 };
 

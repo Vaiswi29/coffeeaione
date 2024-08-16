@@ -5,7 +5,7 @@ import {
 	RGBAFormat,
 	UnsignedByteType,
 	ClampToEdgeWrapping,
-	LinearFilter,
+	LinearFilter
 } from 'three';
 
 export class LUTImageLoader extends Loader {
@@ -141,7 +141,7 @@ export class LUTImageLoader extends Loader {
 
 		return {
 			size,
-			texture3D,
+			texture3D
 		};
 
 	}

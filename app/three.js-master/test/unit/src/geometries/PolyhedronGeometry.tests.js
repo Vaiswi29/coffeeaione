@@ -21,7 +21,7 @@ export default QUnit.module( 'Geometries', () => {
 			];
 
 			geometries = [
-				new PolyhedronGeometry( vertices, indices ),
+				new PolyhedronGeometry( vertices, indices )
 			];
 
 		} );

@@ -17,7 +17,7 @@ class CapsuleGeometry extends LatheGeometry {
 			radius: radius,
 			length: length,
 			capSegments: capSegments,
-			radialSegments: radialSegments,
+			radialSegments: radialSegments
 		};
 
 	}

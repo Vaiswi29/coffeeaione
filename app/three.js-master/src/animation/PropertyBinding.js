@@ -448,90 +448,90 @@ class PropertyBinding {
 			// special cases were we need to reach deeper into the hierarchy to get the face materials....
 			switch ( objectName ) {
 
-				case 'materials':
+			case 'materials':
 
-					if ( ! targetObject.material ) {
+				if ( ! targetObject.material ) {
 
-						console.error( 'THREE.PropertyBinding: Can not bind to material as node does not have a material.', this );
-						return;
+					console.error( 'THREE.PropertyBinding: Can not bind to material as node does not have a material.', this );
+					return;
 
-					}
+				}
 
-					if ( ! targetObject.material.materials ) {
+				if ( ! targetObject.material.materials ) {
 
-						console.error( 'THREE.PropertyBinding: Can not bind to material.materials as node.material does not have a materials array.', this );
-						return;
+					console.error( 'THREE.PropertyBinding: Can not bind to material.materials as node.material does not have a materials array.', this );
+					return;
 
-					}
+				}
 
-					targetObject = targetObject.material.materials;
+				targetObject = targetObject.material.materials;
 
-					break;
+				break;
 
-				case 'bones':
+			case 'bones':
 
-					if ( ! targetObject.skeleton ) {
+				if ( ! targetObject.skeleton ) {
 
-						console.error( 'THREE.PropertyBinding: Can not bind to bones as node does not have a skeleton.', this );
-						return;
+					console.error( 'THREE.PropertyBinding: Can not bind to bones as node does not have a skeleton.', this );
+					return;
 
-					}
+				}
 
-					// potential future optimization: skip this if propertyIndex is already an integer
-					// and convert the integer string to a true integer.
+				// potential future optimization: skip this if propertyIndex is already an integer
+				// and convert the integer string to a true integer.
 
-					targetObject = targetObject.skeleton.bones;
+				targetObject = targetObject.skeleton.bones;
 
-					// support resolving morphTarget names into indices.
-					for ( let i = 0; i < targetObject.length; i ++ ) {
+				// support resolving morphTarget names into indices.
+				for ( let i = 0; i < targetObject.length; i ++ ) {
 
-						if ( targetObject[ i ].name === objectIndex ) {
+					if ( targetObject[ i ].name === objectIndex ) {
 
-							objectIndex = i;
-							break;
-
-						}
-
-					}
-
-					break;
-
-				case 'map':
-
-					if ( 'map' in targetObject ) {
-
-						targetObject = targetObject.map;
+						objectIndex = i;
 						break;
 
 					}
 
-					if ( ! targetObject.material ) {
+				}
 
-						console.error( 'THREE.PropertyBinding: Can not bind to material as node does not have a material.', this );
-						return;
+				break;
 
-					}
+			case 'map':
 
-					if ( ! targetObject.material.map ) {
+				if ( 'map' in targetObject ) {
 
-						console.error( 'THREE.PropertyBinding: Can not bind to material.map as node.material does not have a map.', this );
-						return;
-
-					}
-
-					targetObject = targetObject.material.map;
+					targetObject = targetObject.map;
 					break;
 
-				default:
+				}
 
-					if ( targetObject[ objectName ] === undefined ) {
+				if ( ! targetObject.material ) {
 
-						console.error( 'THREE.PropertyBinding: Can not bind to objectName of node undefined.', this );
-						return;
+					console.error( 'THREE.PropertyBinding: Can not bind to material as node does not have a material.', this );
+					return;
 
-					}
+				}
 
-					targetObject = targetObject[ objectName ];
+				if ( ! targetObject.material.map ) {
+
+					console.error( 'THREE.PropertyBinding: Can not bind to material.map as node.material does not have a map.', this );
+					return;
+
+				}
+
+				targetObject = targetObject.material.map;
+				break;
+
+			default:
+
+				if ( targetObject[ objectName ] === undefined ) {
+
+					console.error( 'THREE.PropertyBinding: Can not bind to objectName of node undefined.', this );
+					return;
+
+				}
+
+				targetObject = targetObject[ objectName ];
 
 			}
 
@@ -677,7 +677,7 @@ PropertyBinding.prototype.GetterByBindingType = [
 	PropertyBinding.prototype._getValue_direct,
 	PropertyBinding.prototype._getValue_array,
 	PropertyBinding.prototype._getValue_arrayElement,
-	PropertyBinding.prototype._getValue_toArray,
+	PropertyBinding.prototype._getValue_toArray
 
 ];
 
@@ -687,7 +687,7 @@ PropertyBinding.prototype.SetterByBindingTypeAndVersioning = [
 		// Direct
 		PropertyBinding.prototype._setValue_direct,
 		PropertyBinding.prototype._setValue_direct_setNeedsUpdate,
-		PropertyBinding.prototype._setValue_direct_setMatrixWorldNeedsUpdate,
+		PropertyBinding.prototype._setValue_direct_setMatrixWorldNeedsUpdate
 
 	], [
 
@@ -695,21 +695,21 @@ PropertyBinding.prototype.SetterByBindingTypeAndVersioning = [
 
 		PropertyBinding.prototype._setValue_array,
 		PropertyBinding.prototype._setValue_array_setNeedsUpdate,
-		PropertyBinding.prototype._setValue_array_setMatrixWorldNeedsUpdate,
+		PropertyBinding.prototype._setValue_array_setMatrixWorldNeedsUpdate
 
 	], [
 
 		// ArrayElement
 		PropertyBinding.prototype._setValue_arrayElement,
 		PropertyBinding.prototype._setValue_arrayElement_setNeedsUpdate,
-		PropertyBinding.prototype._setValue_arrayElement_setMatrixWorldNeedsUpdate,
+		PropertyBinding.prototype._setValue_arrayElement_setMatrixWorldNeedsUpdate
 
 	], [
 
 		// HasToFromArray
 		PropertyBinding.prototype._setValue_fromArray,
 		PropertyBinding.prototype._setValue_fromArray_setNeedsUpdate,
-		PropertyBinding.prototype._setValue_fromArray_setMatrixWorldNeedsUpdate,
+		PropertyBinding.prototype._setValue_fromArray_setMatrixWorldNeedsUpdate
 
 	]
 

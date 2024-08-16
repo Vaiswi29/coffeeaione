@@ -20,7 +20,7 @@ import { threejsLessonUtils } from './threejs-lesson-utils.js';
 		} );
 		return {
 			texture,
-			promise,
+			promise
 		};
 
 	}
@@ -34,7 +34,7 @@ import { threejsLessonUtils } from './threejs-lesson-utils.js';
 		const size = 8;
 		const geometry = new THREE.BoxGeometry( size, size, size );
 		const material = new THREE.MeshBasicMaterial( {
-			map: texture || filterTexture,
+			map: texture || filterTexture
 		} );
 		const mesh = new THREE.Mesh( geometry, material );
 		mesh.scale.set( scale, scale, scale );
@@ -47,14 +47,14 @@ import { threejsLessonUtils } from './threejs-lesson-utils.js';
 		const mesh = filterCube( scale );
 		const renderTarget = new THREE.WebGLRenderTarget( 1, 1, {
 			magFilter: THREE.NearestFilter,
-			minFilter: THREE.NearestFilter,
+			minFilter: THREE.NearestFilter
 		} );
 
 		const planeScene = new THREE.Scene();
 
 		const plane = new THREE.PlaneGeometry( 1, 1 );
 		const planeMaterial = new THREE.MeshBasicMaterial( {
-			map: renderTarget.texture,
+			map: renderTarget.texture
 		} );
 		const planeMesh = new THREE.Mesh( plane, planeMaterial );
 		planeScene.add( planeMesh );
@@ -101,7 +101,7 @@ import { threejsLessonUtils } from './threejs-lesson-utils.js';
 
 				renderer.render( planeScene, planeCamera );
 
-			},
+			}
 		};
 
 	}
@@ -125,7 +125,7 @@ import { threejsLessonUtils } from './threejs-lesson-utils.js';
 	}
 
 	threejsLessonUtils.init( {
-		threejsOptions: { antialias: false },
+		threejsOptions: { antialias: false }
 	} );
 	threejsLessonUtils.addDiagrams( {
 		filterCube: {
@@ -133,21 +133,21 @@ import { threejsLessonUtils } from './threejs-lesson-utils.js';
 
 				return filterCube( 1 );
 
-			},
+			}
 		},
 		filterCubeSmall: {
 			create( info ) {
 
 				return lowResCube( .1, info.renderInfo.pixelRatio );
 
-			},
+			}
 		},
 		filterCubeSmallLowRes: {
 			create() {
 
 				return lowResCube( 1 );
 
-			},
+			}
 		},
 		filterCubeMagNearest: {
 			async create() {
@@ -158,7 +158,7 @@ import { threejsLessonUtils } from './threejs-lesson-utils.js';
 				newTexture.needsUpdate = true;
 				return filterCube( 1, newTexture );
 
-			},
+			}
 		},
 		filterCubeMagLinear: {
 			async create() {
@@ -169,7 +169,7 @@ import { threejsLessonUtils } from './threejs-lesson-utils.js';
 				newTexture.needsUpdate = true;
 				return filterCube( 1, newTexture );
 
-			},
+			}
 		},
 		filterModes: {
 			async create( props ) {
@@ -205,7 +205,7 @@ import { threejsLessonUtils } from './threejs-lesson-utils.js';
 					{ x: 1, y: 1, minFilter: THREE.NearestMipmapNearestFilter, magFilter: THREE.LinearFilter },
 					{ x: - 1, y: - 1, minFilter: THREE.NearestMipmapLinearFilter, magFilter: THREE.LinearFilter },
 					{ x: 0, y: - 1, minFilter: THREE.LinearMipmapNearestFilter, magFilter: THREE.LinearFilter },
-					{ x: 1, y: - 1, minFilter: THREE.LinearMipmapLinearFilter, magFilter: THREE.LinearFilter },
+					{ x: 1, y: - 1, minFilter: THREE.LinearMipmapLinearFilter, magFilter: THREE.LinearFilter }
 				].map( ( info ) => {
 
 					const copyTexture = texture.clone();
@@ -223,7 +223,7 @@ import { threejsLessonUtils } from './threejs-lesson-utils.js';
 					mipTexture.repeat.y = depth;
 
 					const material = new THREE.MeshBasicMaterial( {
-						map: copyTexture,
+						map: copyTexture
 					} );
 
 					const mesh = new THREE.Mesh( plane, material );
@@ -234,7 +234,7 @@ import { threejsLessonUtils } from './threejs-lesson-utils.js';
 					return {
 						material,
 						copyTexture,
-						mipTexture,
+						mipTexture
 					};
 
 				} );
@@ -258,11 +258,11 @@ import { threejsLessonUtils } from './threejs-lesson-utils.js';
 						camera.position.y = Math.sin( time * .2 ) * .5;
 
 					},
-					trackball: false,
+					trackball: false
 				};
 
-			},
-		},
+			}
+		}
 	} );
 
 	const textureDiagrams = {
@@ -278,7 +278,7 @@ import { threejsLessonUtils } from './threejs-lesson-utils.js';
 
 			}
 
-		},
+		}
 	};
 
 	function createTextureDiagram( elem ) {
