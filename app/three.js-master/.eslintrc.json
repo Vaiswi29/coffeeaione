@@ -10,11 +10,14 @@
     "sourceType": "module"
   },
   "extends": [
+    "mdcs",
+    "next/core-web-vitals",
     "plugin:compat/recommended"
   ],
   "plugins": [
     "html",
-    "import"
+    "import",
+    "compat"
   ],
   "settings": {
     "polyfills": [
@@ -49,30 +52,6 @@
     "quotes": [
       "error",
       "single"
-    ],
-    "prefer-const": [
-      "error",
-      {
-        "destructuring": "any",
-        "ignoreReadBeforeAssign": false
-      }
-    ],
-    // Additional rules added below
-    "semi": [
-      "error",
-      "always"
-    ],
-    "no-unused-vars": [
-      "warn"
-    ],
-    "indent": [
-      "error",
-      "tab"
-    ],
-    "comma-dangle": [
-      "error",
-      "never"
-    ],
-    "no-console": "off"
+    ]
   }
 }
