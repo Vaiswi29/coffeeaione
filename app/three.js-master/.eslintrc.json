@@ -10,13 +10,12 @@
     "sourceType": "module"
   },
   "extends": [
-    "next/core-web-vitals",
+    "mdcs",
     "plugin:compat/recommended"
   ],
   "plugins": [
     "html",
-    "import",
-    "compat"
+    "import"
   ],
   "settings": {
     "polyfills": [
