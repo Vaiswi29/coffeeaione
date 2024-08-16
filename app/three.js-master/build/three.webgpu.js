@@ -1640,7 +1640,7 @@ const ColorManagement = {
 
 		if ( ! SUPPORTED_WORKING_COLOR_SPACES.has( colorSpace ) ) {
 
-			throw new Error( `Unsupported working color space, '${ colorSpace }'.` );
+			throw new Error( `Unsupported working color space, "${ colorSpace }".` );
 
 		}
 
@@ -10806,7 +10806,7 @@ class BufferGeometry extends EventDispatcher {
 
 		if ( isNaN( this.boundingBox.min.x ) || isNaN( this.boundingBox.min.y ) || isNaN( this.boundingBox.min.z ) ) {
 
-			console.error( 'THREE.BufferGeometry.computeBoundingBox(): Computed min/max have NaN values. The \'position\' attribute is likely to have NaN values.', this );
+			console.error( 'THREE.BufferGeometry.computeBoundingBox(): Computed min/max have NaN values. The "position" attribute is likely to have NaN values.', this );
 
 		}
 
@@ -10916,7 +10916,7 @@ class BufferGeometry extends EventDispatcher {
 
 			if ( isNaN( this.boundingSphere.radius ) ) {
 
-				console.error( 'THREE.BufferGeometry.computeBoundingSphere(): Computed radius is NaN. The \'position\' attribute is likely to have NaN values.', this );
+				console.error( 'THREE.BufferGeometry.computeBoundingSphere(): Computed radius is NaN. The "position" attribute is likely to have NaN values.', this );
 
 			}
 
@@ -13783,7 +13783,7 @@ class Sprite extends Object3D {
 
 		if ( raycaster.camera === null ) {
 
-			console.error( 'THREE.Sprite: '/Raycaster.camera/' needs to be set in order to raycast against sprites.' );
+			console.error( 'THREE.Sprite: "Raycaster.camera" needs to be set in order to raycast against sprites.' );
 
 		}
 
@@ -15413,9 +15413,9 @@ const _batchIntersects = [];
 // @TODO: geometry.drawRange support?
 // @TODO: geometry.morphAttributes support?
 // @TODO: Support uniform parameter per geometry
-// @TODO: Add an 'optimize' function to pack geometry and remove data gaps
+// @TODO: Add an "optimize" function to pack geometry and remove data gaps
 
-// copies data from attribute 'src' into 'target' starting at 'targetOffset'
+// copies data from attribute "src" into "target" starting at "targetOffset"
 function copyAttributeData( src, target, targetOffset = 0 ) {
 
 	const itemSize = target.itemSize;
@@ -15583,7 +15583,7 @@ class BatchedMesh extends Mesh {
 		const batchGeometry = this.geometry;
 		if ( Boolean( geometry.getIndex() ) !== Boolean( batchGeometry.getIndex() ) ) {
 
-			throw new Error( 'BatchedMesh: All geometries must consistently have \'index\'.' );
+			throw new Error( 'BatchedMesh: All geometries must consistently have "index".' );
 
 		}
 
@@ -15591,7 +15591,7 @@ class BatchedMesh extends Mesh {
 
 			if ( ! geometry.hasAttribute( attributeName ) ) {
 
-				throw new Error( `BatchedMesh: Added geometry missing '${ attributeName }'. All geometries must have consistent attributes.` );
+				throw new Error( `BatchedMesh: Added geometry missing "${ attributeName }". All geometries must have consistent attributes.` );
 
 			}
 
@@ -19145,7 +19145,7 @@ class LatheGeometry extends BufferGeometry {
 		let dx = 0;
 		let dy = 0;
 
-		// pre-compute normals for initial 'meridian'
+		// pre-compute normals for initial "meridian"
 
 		for ( let j = 0; j <= ( points.length - 1 ); j ++ ) {
 
@@ -21488,14 +21488,14 @@ class ExtrudeGeometry extends BufferGeometry {
 
 					if ( direction_eq ) {
 
-						// console.log('Warning: lines are a straight sequence');
+						// console.log("Warning: lines are a straight sequence");
 						v_trans_x = - v_prev_y;
 						v_trans_y = v_prev_x;
 						shrink_by = Math.sqrt( v_prev_lensq );
 
 					} else {
 
-						// console.log('Warning: lines are a straight spike');
+						// console.log("Warning: lines are a straight spike");
 						v_trans_x = v_prev_x;
 						v_trans_y = v_prev_y;
 						shrink_by = Math.sqrt( v_prev_lensq / 2 );
@@ -22327,7 +22327,7 @@ class ShapeGeometry extends BufferGeometry {
 		let groupStart = 0;
 		let groupCount = 0;
 
-		// allow single and array values for 'shapes' parameter
+		// allow single and array values for "shapes" parameter
 
 		if ( Array.isArray( shapes ) === false ) {
 
@@ -22811,12 +22811,12 @@ class TorusKnotGeometry extends BufferGeometry {
 
 		for ( let i = 0; i <= tubularSegments; ++ i ) {
 
-			// the radian 'u' is used to calculate the position on the torus curve of the current tubular segment
+			// the radian "u" is used to calculate the position on the torus curve of the current tubular segment
 
 			const u = i / tubularSegments * p * Math.PI * 2;
 
 			// now we calculate two points. P1 is our current position on the curve, P2 is a little farther ahead.
-			// these points are used to create a special 'coordinate space', which is necessary to calculate the correct vertex positions
+			// these points are used to create a special "coordinate space", which is necessary to calculate the correct vertex positions
 
 			calculatePositionOnCurve( u, p, q, radius, P1 );
 			calculatePositionOnCurve( u + 0.01, p, q, radius, P2 );
@@ -26496,7 +26496,7 @@ class FileLoader extends Loader {
 
 				} else {
 
-					throw new HttpError( `fetch for '${response.url}' responded with ${response.status}: ${response.statusText}`, response );
+					throw new HttpError( `fetch for "${response.url}" responded with ${response.status}: ${response.statusText}`, response );
 
 				}
 
@@ -26536,7 +26536,7 @@ class FileLoader extends Loader {
 						} else {
 
 							// sniff encoding
-							const re = /charset='?([^;'\s]*)'?/i;
+							const re = /charset="?([^;"\s]*)"?/i;
 							const exec = re.exec( mimeType );
 							const label = exec && exec[ 1 ] ? exec[ 1 ].toLowerCase() : undefined;
 							const decoder = new TextDecoder( label );
@@ -28469,7 +28469,7 @@ class LoaderUtils {
 		}
 
 		// Avoid the String.fromCharCode.apply(null, array) shortcut, which
-		// throws a 'maximum call stack size exceeded' error for large arrays.
+		// throws a "maximum call stack size exceeded" error for large arrays.
 
 		let s = '';
 
@@ -29002,7 +29002,7 @@ class ObjectLoader extends Loader {
 
 						} else {
 
-							console.warn( `THREE.ObjectLoader: Unsupported geometry type '${ data.type }'` );
+							console.warn( `THREE.ObjectLoader: Unsupported geometry type "${ data.type }"` );
 
 						}
 
@@ -29309,7 +29309,7 @@ class ObjectLoader extends Loader {
 
 				if ( data.image === undefined ) {
 
-					console.warn('THREE.ObjectLoader: No \'image\' specified for', data.uuid);
+					console.warn( 'THREE.ObjectLoader: No "image" specified for', data.uuid );
 
 				}
 
@@ -31551,7 +31551,7 @@ class PropertyBinding {
 
 	}
 
-	// these are used to 'bind' a nonexistent property
+	// these are used to "bind" a nonexistent property
 	_getValue_unavailable() {}
 	_setValue_unavailable() {}
 
@@ -33016,7 +33016,7 @@ class AnimationAction {
 
 			if ( pingPong && ( loopCount & 1 ) === 1 ) {
 
-				// invert time for the 'pong round'
+				// invert time for the "pong round"
 
 				return duration - time;
 
@@ -33745,7 +33745,7 @@ class AnimationMixer extends EventDispatcher {
 
 		}
 
-		return this.update( timeInSeconds ); // Update used to set exact time. Returns 'this' AnimationMixer object.
+		return this.update( timeInSeconds ); // Update used to set exact time. Returns "this" AnimationMixer object.
 
 	}
 
@@ -36089,7 +36089,7 @@ class ShapePath {
 		let holesFirst = ! isClockWise( subPaths[ 0 ].getPoints() );
 		holesFirst = isCCW ? ! holesFirst : holesFirst;
 
-		// console.log('Holes first', holesFirst);
+		// console.log("Holes first", holesFirst);
 
 		const betterShapeHoles = [];
 		const newShapes = [];
@@ -36208,7 +36208,7 @@ class ShapePath {
 
 		}
 
-		//console.log('shape', shapes);
+		//console.log("shape", shapes);
 
 		return shapes;
 
@@ -36220,7 +36220,7 @@ class WebGLMultipleRenderTargets extends WebGLRenderTarget { // @deprecated, r16
 
 	constructor( width = 1, height = 1, count = 1, options = {} ) {
 
-		console.warn( 'THREE.WebGLMultipleRenderTargets has been deprecated and will be removed in r172. Use THREE.WebGLRenderTarget and set the \'count\' parameter to enable MRT.' );
+		console.warn( 'THREE.WebGLMultipleRenderTargets has been deprecated and will be removed in r172. Use THREE.WebGLRenderTarget and set the "count" parameter to enable MRT.' );
 
 		super( width, height, { ...options, count } );
 
@@ -36269,9 +36269,9 @@ class WebGPU {
 
 	static getErrorMessage() {
 
-		const message = 'Your browser does not support WebGPU yet. See more about WebGPU on <a href="https://gpuweb.github.io/gpuweb/">gpuweb.github.io</a>';
+		const message = 'Your browser does not support <a href="https://gpuweb.github.io/gpuweb/" style="color:blue">WebGPU</a> yet';
 
-		const element = document.createElement('div');
+		const element = document.createElement( 'div' );
 		element.id = 'webgpumessage';
 		element.style.fontFamily = 'monospace';
 		element.style.fontSize = '13px';
@@ -38576,9 +38576,9 @@ class Node extends EventDispatcher {
 		builder.addChain( this );
 
 		/* Build stages expected results:
-			- 'setup'		-> Node
-			- 'analyze'		-> null
-			- 'generate'	-> String
+			- "setup"		-> Node
+			- "analyze"		-> null
+			- "generate"	-> String
 		*/
 		let result = null;
 
@@ -40269,7 +40269,7 @@ class AttributeNode extends Node {
 
 		} else {
 
-			console.warn( `AttributeNode: Vertex attribute '${ attributeName }' not found on geometry.` );
+			console.warn( `AttributeNode: Vertex attribute "${ attributeName }" not found on geometry.` );
 
 			const { defaultNode } = this;
 
@@ -44562,7 +44562,7 @@ class CubeTextureNode extends TextureNode {
 
 		} else {
 
-			console.error('THREE.CubeTextureNode: Mapping \'%s\' not supported.', texture.mapping);
+			console.error( 'THREE.CubeTextureNode: Mapping "%s" not supported.', texture.mapping );
 
 			return vec3( 0, 0, 0 );
 
@@ -46363,7 +46363,7 @@ class NodeMaterial extends Material {
 
 		if ( nodeMaterial === undefined ) {
 
-			throw new Error( `NodeMaterial: Material '${ material.type }' is not compatible.` );
+			throw new Error( `NodeMaterial: Material "${ material.type }" is not compatible.` );
 
 		}
 
@@ -49257,7 +49257,7 @@ class NodeBuilder {
 		if ( type === 'mat3' ) return new Matrix3NodeUniform( uniformNode );
 		if ( type === 'mat4' ) return new Matrix4NodeUniform( uniformNode );
 
-		throw new Error( `Uniform '${type}' not declared.` );
+		throw new Error( `Uniform "${type}" not declared.` );
 
 	}
 
@@ -52003,7 +52003,7 @@ class ColorAdjustmentNode extends TempNode {
 
 		} else {
 
-			console.error( `${ this.type }: Method '${ this.method }' not supported!` );
+			console.error( `${ this.type }: Method "${ this.method }" not supported!` );
 
 		}
 
@@ -54171,7 +54171,7 @@ class FXAANode extends TempNode {
 				// 1 0 2  ~=  0 0 1
 				// . 1 .      . 0 .
 
-				// tap 2 pixels and see which ones are 'outside' the edge, to
+				// tap 2 pixels and see which ones are "outside" the edge, to
 				// determine if the edge is vertical or horizontal
 
 				const rgbaAlongH = FxaaTexOff( uv, vec2( dirToEdge.x, dirToEdge.y ), fxaaQualityRcpFrame.xy );
@@ -57976,7 +57976,7 @@ const V_GGX_SmithCorrelated_Anisotropic = tslFn( ( { alphaT, alphaB, dotTV, dotB
 
 // Microfacet Models for Refraction through Rough Surfaces - equation (33)
 // http://graphicrants.blogspot.com/2013/08/specular-brdf-reference.html
-// alpha is 'roughness squared' in Disney’s reparameterization
+// alpha is "roughness squared" in Disney’s reparameterization
 const D_GGX = tslFn( ( { alpha, dotNH } ) => {
 
 	const a2 = alpha.pow2();
@@ -58069,7 +58069,7 @@ const BRDF_GGX = tslFn( ( inputs ) => {
 
 // Analytical approximation of the DFG LUT, one half of the
 // split-sum approximation used in indirect specular lighting.
-// via 'environmentBRDF' from 'Physically Based Shading on Mobile'
+// via 'environmentBRDF' from "Physically Based Shading on Mobile"
 // https://www.unrealengine.com/blog/physically-based-shading-on-mobile
 const DFGApprox = tslFn( ( { roughness, dotNV } ) => {
 
@@ -58126,7 +58126,7 @@ const D_Charlie = tslFn( ( { roughness, dotNH } ) => {
 
 	const alpha = roughness.pow2();
 
-	// Estevez and Kulla 2017, 'Production Friendly Microfacet Sheen BRDF'
+	// Estevez and Kulla 2017, "Production Friendly Microfacet Sheen BRDF"
 	const invAlpha = float( 1.0 ).div( alpha );
 	const cos2h = dotNH.pow2();
 	const sin2h = cos2h.oneMinus().max( 0.0078125 ); // 2^(-14/2), so sin2h^2 > 0 in fp16
@@ -58145,7 +58145,7 @@ const D_Charlie = tslFn( ( { roughness, dotNH } ) => {
 // https://github.com/google/filament/blob/master/shaders/src/brdf.fs
 const V_Neubelt = tslFn( ( { dotNV, dotNL } ) => {
 
-	// Neubelt and Pettineo 2013, 'Crafting a Next-gen Material Pipeline for The Order: 1886'
+	// Neubelt and Pettineo 2013, "Crafting a Next-gen Material Pipeline for The Order: 1886"
 	return float( 1.0 ).div( float( 4.0 ).mul( dotNL.add( dotNV ).sub( dotNL.mul( dotNV ) ) ) );
 
 } ).setLayout( {
@@ -58582,8 +58582,8 @@ const evalIridescence = tslFn( ( { outsideIOR, eta2, cosTheta1, thinFilmThicknes
 //	Sheen
 //
 
-// This is a curve-fit approxmation to the 'Charlie sheen' BRDF integrated over the hemisphere from
-// Estevez and Kulla 2017, 'Production Friendly Microfacet Sheen BRDF'. The analysis can be found
+// This is a curve-fit approxmation to the "Charlie sheen" BRDF integrated over the hemisphere from
+// Estevez and Kulla 2017, "Production Friendly Microfacet Sheen BRDF". The analysis can be found
 // in the Sheen section of https://drive.google.com/file/d/1T0D1VSyR4AllqIJTQAraEIzjlb5h4FKH/view?usp=sharing
 const IBLSheenBRDF = tslFn( ( { normal, viewDir, roughness } ) => {
 
@@ -58702,7 +58702,7 @@ class PhysicalLightingModel extends LightingModel {
 
 	}
 
-	// Fdez-Agüera's 'Multiple-Scattering Microfacet Model for Real-Time Image Based Lighting'
+	// Fdez-Agüera's "Multiple-Scattering Microfacet Model for Real-Time Image Based Lighting"
 	// Approximates multiscattering in order to preserve energy.
 	// http://www.jcgt.org/published/0008/01/03/
 
@@ -67411,7 +67411,7 @@ class WebGLUtils {
 
 		}
 
-		// if 'p' can't be resolved, assume the user defines a WebGL constant as a string (fallback/workaround for packed RGB formats)
+		// if "p" can't be resolved, assume the user defines a WebGL constant as a string (fallback/workaround for packed RGB formats)
 
 		return ( gl[ p ] !== undefined ) ? gl[ p ] : null;
 
@@ -71573,7 +71573,7 @@ function getFormat( texture, device = null ) {
 
 						if ( device && device.features.has( GPUFeatureName.Depth32FloatStencil8 ) === false ) {
 
-							console.error( 'WebGPURenderer: Depth textures with DepthStencilFormat + FloatType can only be used with the \'depth32float-stencil8\' GPU feature.' );
+							console.error( 'WebGPURenderer: Depth textures with DepthStencilFormat + FloatType can only be used with the "depth32float-stencil8" GPU feature.' );
 
 						}
 
@@ -73639,7 +73639,7 @@ class WebGPUBindingUtils {
 
 			} else {
 
-				console.error( `WebGPUBindingUtils: Unsupported binding '${ binding }'.` );
+				console.error( `WebGPUBindingUtils: Unsupported binding "${ binding }".` );
 
 			}
 
@@ -74427,7 +74427,7 @@ class WebGPUBackend extends Backend {
 
 		this.isWebGPUBackend = true;
 
-		// some parameters require default values other than 'undefined'
+		// some parameters require default values other than "undefined"
 		this.parameters.alpha = ( parameters.alpha === undefined ) ? true : parameters.alpha;
 
 		this.parameters.requiredLimits = ( parameters.requiredLimits === undefined ) ? {} : parameters.requiredLimits;
