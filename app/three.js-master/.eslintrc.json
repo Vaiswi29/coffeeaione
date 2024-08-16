@@ -10,7 +10,6 @@
     "sourceType": "module"
   },
   "extends": [
-    "mdcs",
     "plugin:compat/recommended"
   ],
   "plugins": [
