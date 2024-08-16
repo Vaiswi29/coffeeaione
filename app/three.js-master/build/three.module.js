@@ -19532,7 +19532,7 @@ function includeReplacer( match, include ) {
 		if ( newInclude !== undefined ) {
 
 			string = ShaderChunk[ newInclude ];
-			console.warn('THREE.WebGLRenderer: Shader chunk "%s" has been deprecated. Use "%s" instead.', include, newInclude);
+			console.warn('THREE.WebGLRenderer: Shader chunk \'%s\' has been deprecated. Use \'%s\' instead.', include, newInclude);
 		} else {
 
 			throw new Error( 'Can not resolve #include <' + include + '>' );
