@@ -10,7 +10,6 @@
     "sourceType": "module"
   },
   "extends": [
-    "mdcs",
     "next/core-web-vitals",
     "plugin:compat/recommended"
   ],
