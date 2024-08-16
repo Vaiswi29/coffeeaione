@@ -67,7 +67,7 @@
     ],
     "indent": [
       "error",
-      2
+      "tab"
     ],
     "comma-dangle": [
       "error",
